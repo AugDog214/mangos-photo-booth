@@ -430,6 +430,33 @@ body.bw-gallery .simg-img { filter: grayscale(1) contrast(1.05); }
 .book-placeholder .btn { margin-top: 0.8rem; }
 
 /* ============================================================
+   FAQ
+   ============================================================ */
+.faq { background: var(--ink-2); border-top: 1px solid var(--line); }
+.faq-list { max-width: 840px; margin: 3rem auto 0; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item:first-child { border-top: 1px solid var(--line); }
+.faq-q {
+  display: block; list-style: none; cursor: pointer; position: relative;
+  padding: 1.5rem 2.8rem 1.5rem 0;
+  font-family: var(--serif); font-weight: 500; line-height: 1.35;
+  font-size: clamp(1.15rem, 1.9vw, 1.55rem); color: var(--paper);
+  transition: color .3s ease;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q:hover { color: var(--gold); }
+.faq-q::after {
+  content: '+'; position: absolute; right: 0; top: 1.4rem;
+  font-family: var(--sans); font-weight: 300; font-size: 1.7rem; line-height: 1;
+  color: var(--gold); transition: transform .35s var(--ease);
+}
+.faq-item[open] .faq-q::after { transform: rotate(45deg); }
+.faq-a { padding: 0 2.8rem 1.6rem 0; }
+.faq-a p { color: var(--paper-dim); font-weight: 300; line-height: 1.75;
+  font-size: var(--body); max-width: 66ch; }
+@media (prefers-reduced-motion: reduce) { .faq-q::after { transition: none; } }
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .footer { background: var(--navy-deep); padding: var(--section) var(--gut) 2.5rem; position: relative; }
