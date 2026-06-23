@@ -8,8 +8,8 @@ const fs = require("fs");
 const path = require("path");
 
 const SITE = "https://mangosphotobooth.com";
-const PHONE = "+12393990995";
-const PHONE_DISP = "239&middot;399&middot;0995";
+const PHONE = "+12398887688";
+const PHONE_DISP = "239&middot;888&middot;7688";
 const EMAIL = "info@mangosphotobooth.com";
 const OG_IMG = "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&h=630&q=80";
 
@@ -157,7 +157,7 @@ ${loc}
     </nav>
     <div class="foot-col">
       <h3 class="foot-h">Contact</h3>
-      <a href="tel:${PHONE}">239 &middot; 399 &middot; 0995</a>
+      <a href="tel:${PHONE}">239 &middot; 888 &middot; 7688</a>
       <a href="mailto:${EMAIL}">${EMAIL}</a>
       <span class="foot-muted">Mon&ndash;Sun &middot; 9am&ndash;9pm</span>
     </div>

@@ -94,7 +94,7 @@ Until you do this, the section shows a friendly "Call to Check Your Date" button
 
 ## 7. Phone, email, hours, service area
 
-- **Phone:** search `2393990995` (appears in the buttons) — it's written as `tel:+12393990995`. Update both the link and the visible `239·399·0995` text.
+- **Phone:** search `2398887688` (appears in the buttons) — it's written as `tel:+12398887688`. Update both the link and the visible `239·888·7688` text.
 - **Email:** search `info@mangosphotobooth.com`.
 - **Hours:** search `9am` (currently "Mon–Sun · 9am–9pm").
 - **Cities served:** search `Serving` in the footer.
