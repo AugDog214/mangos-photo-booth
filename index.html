@@ -633,28 +633,23 @@
   </div>
   <div class="book-embed">
     <!-- ============================================================
-         CHECKCHERRY BOOKING WIDGET  ←  PASTE YOUR EMBED CODE HERE
-         In CheckCherry: Settings → Online Booking / Lead Forms → Embed.
-         Replace the entire .book-placeholder block below with the iframe
-         CheckCherry gives you. Keep it inside this .book-embed div.
-         PREFER the iframe embed over a <script> embed, and use these safe
-         attributes (see HOW-TO-EDIT.md, "Turn on CheckCherry booking"):
-
-         <iframe src="https://www.checkcherry.com/YOUR-EMBED-URL"
-                 title="Check availability and book — Mango's Photo Booth"
-                 loading="lazy"
-                 referrerpolicy="strict-origin-when-cross-origin"
-                 sandbox="allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin"
-                 allow="payment"
-                 style="width:100%;min-height:760px;border:0"></iframe>
-
-         Do NOT add allow-top-navigation (lets the widget redirect your whole site).
+         CHECKCHERRY BOOKING
+         The CTA below links straight to the CheckCherry reservation funnel.
+         We link (not iframe-embed) on purpose: the funnel sends
+         X-Frame-Options: SAMEORIGIN, so it CANNOT be embedded in an iframe —
+         a framed version would render blank. If CheckCherry later gives you a
+         dedicated *embed* widget (Settings → Online Booking / Lead Forms → Embed),
+         that one is frame-safe and can replace this .book-cta block with an iframe.
+         Booking URL: https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/start
          ============================================================ -->
-    <div class="book-placeholder">
-      <p class="t-eyebrow">Booking widget</p>
-      <p class="book-placeholder-title">Your CheckCherry availability checker will load right here.</p>
-      <p class="book-placeholder-sub">Paste your CheckCherry embed code into <code>index.html</code> (search for &ldquo;CHECKCHERRY BOOKING WIDGET&rdquo;). Until then, guests can reach you below.</p>
-      <a class="btn btn-gold" href="tel:+12398887688">Call to Check Your Date</a>
+    <div class="book-cta">
+      <p class="t-eyebrow">Real-Time Availability</p>
+      <p class="book-cta-title">Check your date &amp; build your package online.</p>
+      <p class="book-cta-sub">Pick your date, choose your package, and reserve in minutes through our secure CheckCherry booking. Prefer to talk it through first? Call or text and we&rsquo;ll help you plan every detail.</p>
+      <div class="book-cta-actions">
+        <a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/start" target="_blank" rel="noopener noreferrer">Check Availability &amp; Book</a>
+        <a class="btn btn-ghost" href="tel:+12398887688">Call or Text 239&middot;888&middot;7688</a>
+      </div>
     </div>
   </div>
 </section>
@@ -791,7 +786,7 @@
     <span>&copy; 2026 Mango&rsquo;s Photo Booth Company. All rights reserved.</span>
     <div class="foot-social">
       <!-- Replace href="#" with your real profile URLs. Keep target/rel as-is so links open safely. (see HOW-TO-EDIT.md) -->
-      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+      <a href="https://www.instagram.com/mangosphotobooth/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
       <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
       <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
     </div>
