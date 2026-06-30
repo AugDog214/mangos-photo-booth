@@ -132,7 +132,7 @@
 
   /* ---------- Scroll reveals (IntersectionObserver) ---------- */
   run('reveals', function () {
-    var selector = '.sec-head, .ev-row, .how-left, .how-media, .pkg-row, .bd-cell, .foot-cta';
+    var selector = '.sec-head, .ev-row, .how-left, .how-media, .pkg2-card, .bd-cell, .foot-cta';
     var nodes = Array.prototype.slice.call(document.querySelectorAll(selector));
     if (!nodes.length) return;
 
@@ -161,6 +161,35 @@
 
     // Last-resort failsafe: if something keeps content hidden, reveal after 4s.
     setTimeout(revealAll, 4000);
+  });
+
+  /* ---------- Sticky mobile booking bar (slides up past the hero) ---------- */
+  run('bookbar', function () {
+    var bar = document.getElementById('bookbar');
+    if (!bar) return;
+    var hero = document.querySelector('.hero') || document.querySelector('.page-hero');
+    var onScroll = function () {
+      var trigger = hero ? hero.offsetHeight * 0.6 : 480;
+      bar.classList.toggle('is-on', window.scrollY > trigger);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  });
+
+  /* ---------- Analytics: fire GA4 events on booking / contact clicks ---------- */
+  /* Safe no-op until a GA4 Measurement ID is activated in the page <head>. */
+  run('analytics-events', function () {
+    var track = function (name, params) {
+      if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+    };
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (href.indexOf('checkcherry.com') !== -1) track('book_click', { location: a.getAttribute('data-loc') || 'link' });
+      else if (href.indexOf('tel:') === 0) track('call_click');
+      else if (href.indexOf('mailto:') === 0) track('email_click');
+    }, true);
   });
 
 })();

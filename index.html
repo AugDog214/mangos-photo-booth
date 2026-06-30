@@ -55,6 +55,19 @@
 <link rel="stylesheet" href="css/styles.css" />
 
 <!-- ============================================================
+     GOOGLE ANALYTICS 4  —  not active yet.
+     To turn on: create a free GA4 property at analytics.google.com
+     (Admin → Data Streams → Web), copy the Measurement ID (G-XXXXXXXXXX),
+     then uncomment the two lines below and replace BOTH G-XXXXXXXXXX.
+     Conversion events (book_click / call_click / email_click) are already
+     wired in js/main.js and fire automatically once this is live.
+     ============================================================ -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+-->
+
+<!-- ============================================================
      STRUCTURED DATA — Local business + offers (Google rich results)
      ============================================================ -->
 <script type="application/ld+json">
@@ -69,7 +82,7 @@
   "logo": "https://mangosphotobooth.com/assets/mango-logo.png",
   "telephone": "+1-239-888-7688",
   "email": "info@mangosphotobooth.com",
-  "priceRange": "$550-$995+",
+  "priceRange": "$550-$1,300",
   "currenciesAccepted": "USD",
   "address": {
     "@type": "PostalAddress",
@@ -91,10 +104,9 @@
     "closes": "21:00"
   }],
   "makesOffer": [
-    { "@type": "Offer", "name": "Classic Booth", "price": "550", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "2 hours of service with prints, unlimited 2x6 or 4x6 prints, open-air booth, instant sharing, private online gallery, standard backdrop.", "itemOffered": { "@type": "Service", "name": "Classic Photo Booth Rental", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } },
-    { "@type": "Offer", "name": "Glamorous Booth", "price": "650", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "2 hours of service with prints, skin-perfecting beauty filter, instant sharing, private online gallery, standard backdrop.", "itemOffered": { "@type": "Service", "name": "Glamorous Photo Booth Rental", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } },
-    { "@type": "Offer", "name": "Live Keychain Station", "price": "995", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "2 hours of service, live keychain creation, 50 keychains included, dedicated attendant, instant sharing, private online gallery.", "itemOffered": { "@type": "Service", "name": "Live Keychain Station Rental", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } },
-    { "@type": "Offer", "name": "Magnet Station", "price": "995", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "2 hours of glam photo booth, 50 acrylic photo magnets included, unlimited prints, curated props, onsite attendant, private online gallery.", "itemOffered": { "@type": "Service", "name": "Magnet Station Rental", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } }
+    { "@type": "Offer", "name": "Classic Booth", "price": "550", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "3 hours of open-air booth service, unlimited on-site prints, your choice of 2x6 or 4x6 print size, 1 custom template, themed props, standard backdrop, on-site attendant, private online gallery, and free travel across Southwest Florida.", "itemOffered": { "@type": "Service", "name": "Classic Photo Booth Rental", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } },
+    { "@type": "Offer", "name": "Party Glam Booth", "price": "650", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "Everything in the Classic Booth plus a skin-perfecting beauty filter, an upgraded deluxe backdrop of your choice, both 2x6 and 4x6 print sizes, and 2 custom template designs. Our most popular package.", "itemOffered": { "@type": "Service", "name": "Party Glam Photo Booth Rental", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } },
+    { "@type": "Offer", "name": "The Big Kahuna", "price": "1300", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "Our premier all-inclusive package: the full Party Glam Booth plus a VIP red-carpet entrance with gold stanchions and ropes, a deluxe or premium custom backdrop, your choice of Live Keychain or Magnet Memory Station, and a custom decor enhancement (balloons, arch, or florals).", "itemOffered": { "@type": "Service", "name": "Big Kahuna All-Inclusive Photo Booth Experience", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } }
   ]
 }
 </script>
@@ -102,7 +114,7 @@
 <!-- No-JS / failsafe: reveal all animated content if JavaScript never runs -->
 <noscript><style>
   .sec-head, .ev-row, .ev-media, .ev-text, .how-left, .how-media, .how-step,
-  .pkg-row, .product, .pkg-feats li, .bd-cell, .foot-cta, .hero-inner > * {
+  .pkg2-card, .bd-cell, .foot-cta, .hero-inner > * {
     opacity: 1 !important; transform: none !important;
   }
   .simg-img { opacity: 1 !important; }
@@ -152,6 +164,12 @@
     <a class="hdr-mobile-cta" href="#book">Check Availability</a>
   </div>
 </header>
+
+<!-- Sticky mobile booking bar (phones only; slides up after the hero) -->
+<div class="bookbar" id="bookbar" aria-label="Quick booking">
+  <a class="btn btn-ghost bookbar-call" href="tel:+12398887688" aria-label="Call or text Mango's Photo Booth">Call</a>
+  <a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/start" target="_blank" rel="noopener noreferrer" data-loc="bookbar">Check Availability</a>
+</div>
 
 <main id="main">
 <!-- ============================================================
@@ -285,31 +303,82 @@
 </section>
 
 <!-- ============================================================
-     PHOTO WALL MARQUEE
+     PACKAGES (comparison cards)
      ============================================================ -->
-<section class="marquee" aria-label="Guest photo gallery">
-  <div class="marquee-head">
-    <p class="t-eyebrow">Real Guests &middot; Real Moments</p>
-    <h2 class="marquee-title t-italic">Mango&rsquo;s Memory Wall</h2>
+<section class="section packages" id="packages">
+  <div class="sec-head sec-head-center">
+    <p class="t-eyebrow">Packages</p>
+    <h2 class="sec-title">Choose your<br /><span class="t-italic text-gradient-gold">experience.</span></h2>
+    <p class="sec-lede">Three all-inclusive packages &mdash; each with 3 hours of service, unlimited prints, and free travel across Southwest Florida. Compare what&rsquo;s included and lock in your date.</p>
   </div>
-  <div class="marquee-track-wrap">
-    <div class="marquee-track" id="marquee-track" aria-hidden="true">
-      <!-- 12 photos, duplicated by JS for a seamless loop (falls back to the static set if JS is off) -->
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+  <div class="pkg2-grid">
+
+    <!-- Classic -->
+    <div class="pkg2-card">
+      <h3 class="pkg2-name">Classic Booth</h3>
+      <p class="pkg2-tag">Modern Open-Air Fun</p>
+      <div class="pkg2-price"><span class="pkg2-cur">$</span><span class="pkg2-amt">550</span></div>
+      <p class="pkg2-note">3 hours &middot; free SWFL travel &middot; setup &amp; breakdown included</p>
+      <ul class="pkg2-feats">
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>3 hours of service</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Open-air booth + touchscreen kiosk</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Unlimited on-site prints</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Your choice of print size (2&times;6 or 4&times;6)</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>1 custom template design</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Themed prop package</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Standard backdrop (white or black)</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>On-site attendant + private gallery</li>
+        <li class="no"><span class="pkg2-ic no" aria-hidden="true">&ndash;</span>Skin-perfecting beauty filter</li>
+        <li class="no"><span class="pkg2-ic no" aria-hidden="true">&ndash;</span>Both print sizes &amp; 2nd template</li>
+        <li class="no"><span class="pkg2-ic no" aria-hidden="true">&ndash;</span>Live Memory Station</li>
+        <li class="no"><span class="pkg2-ic no" aria-hidden="true">&ndash;</span>VIP red carpet &amp; custom d&eacute;cor</li>
+      </ul>
+      <div class="pkg2-addon"><strong>Make it a keepsake:</strong> add a Live Keychain or Magnet Memory Station so guests take home a favor.</div>
+      <div class="pkg2-cta"><a class="btn btn-gold" href="#book" data-loc="pkg-classic">Book the Classic</a></div>
     </div>
-    <div class="marquee-fade marquee-fade-l"></div>
-    <div class="marquee-fade marquee-fade-r"></div>
+
+    <!-- Glam (most popular) -->
+    <div class="pkg2-card is-popular">
+      <span class="pkg2-badge">Most Popular</span>
+      <h3 class="pkg2-name">Party Glam Booth</h3>
+      <p class="pkg2-tag">Elevated &amp; Picture-Perfect</p>
+      <div class="pkg2-price"><span class="pkg2-cur">$</span><span class="pkg2-amt">650</span></div>
+      <p class="pkg2-note">Everything in Classic, elevated &middot; 3 hours</p>
+      <ul class="pkg2-feats">
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Everything in the Classic Booth</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Skin-perfecting beauty filter</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Upgraded deluxe backdrop (your choice)</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Both print sizes (2&times;6 &amp; 4&times;6)</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>2 custom template designs</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Unlimited prints + instant sharing</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Themed props + private gallery</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>On-site attendant + free SWFL travel</li>
+        <li class="no"><span class="pkg2-ic no" aria-hidden="true">&ndash;</span>Live Memory Station</li>
+        <li class="no"><span class="pkg2-ic no" aria-hidden="true">&ndash;</span>VIP red carpet &amp; custom d&eacute;cor</li>
+      </ul>
+      <div class="pkg2-addon"><strong>Make it a keepsake:</strong> add a Live Keychain or Magnet Memory Station for take-home favors.</div>
+      <div class="pkg2-cta"><a class="btn btn-gold" href="#book" data-loc="pkg-glam">Book the Glam</a></div>
+    </div>
+
+    <!-- Big Kahuna -->
+    <div class="pkg2-card">
+      <h3 class="pkg2-name">The Big Kahuna</h3>
+      <p class="pkg2-tag">Ultimate All-Inclusive Experience</p>
+      <div class="pkg2-price"><span class="pkg2-cur">$</span><span class="pkg2-amt">1,300</span></div>
+      <p class="pkg2-note">Our premier, fully-loaded package &middot; 3 hours</p>
+      <ul class="pkg2-feats">
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Everything in the Party Glam Booth</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>VIP red carpet, gold stanchions &amp; ropes</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Deluxe or premium custom backdrop</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Live Memory Station &mdash; keychains <em>or</em> magnets</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Custom d&eacute;cor &mdash; balloons, arch, or florals</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Skin-perfecting beauty filter</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Both print sizes + 2 template designs</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>On-site attendant + free SWFL travel</li>
+      </ul>
+      <div class="pkg2-cta"><a class="btn btn-gold" href="#book" data-loc="pkg-kahuna">Book the Big Kahuna</a></div>
+    </div>
+
   </div>
 </section>
 
@@ -361,210 +430,6 @@
         <span class="how-badge-label">Full gallery delivered</span>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     PACKAGES
-     ============================================================ -->
-<section class="section packages" id="packages">
-  <div class="sec-head sec-head-center">
-    <p class="t-eyebrow">Packages</p>
-    <h2 class="sec-title">Choose your<br /><span class="t-italic text-gradient-gold">experience.</span></h2>
-    <p class="sec-lede">Every package is tailored to your celebration &mdash; from a timeless open-air booth to live keepsakes your guests take home.</p>
-  </div>
-  <div class="pkg-list">
-
-    <!-- 01 Classic Booth -->
-    <div class="pkg-row">
-      <div class="pkg-visual">
-        <div class="product product-strip">
-          <div class="product-inner">
-            <div class="strip">
-              <div class="simg strip-cell"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div>
-              <div class="simg strip-cell"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div>
-              <div class="simg strip-cell"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div>
-              <span class="strip-logo">MANGO&rsquo;S</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <span class="pkg-divider" aria-hidden="true"></span>
-      <div class="pkg-info">
-        <div class="pkg-info-head">
-          <span class="pkg-idx">01</span>
-          <div>
-            <h3 class="pkg-name">Classic Booth</h3>
-            <p class="pkg-tag">Simple. Fun. Timeless.</p>
-          </div>
-        </div>
-        <ul class="pkg-feats">
-          <li style="--fd:0.30s"><span class="pkg-check" aria-hidden="true"></span>2 hours of service with prints</li>
-          <li style="--fd:0.35s"><span class="pkg-check" aria-hidden="true"></span>Unlimited 2&times;6 or 4&times;6 prints</li>
-          <li style="--fd:0.40s"><span class="pkg-check" aria-hidden="true"></span>Open-air booth</li>
-          <li style="--fd:0.45s"><span class="pkg-check" aria-hidden="true"></span>Instant sharing via text &amp; email</li>
-          <li style="--fd:0.50s"><span class="pkg-check" aria-hidden="true"></span>Private online gallery</li>
-          <li style="--fd:0.55s"><span class="pkg-check" aria-hidden="true"></span>Standard backdrop</li>
-        </ul>
-        <div class="pkg-foot">
-          <div class="pkg-price">
-            <span class="pkg-price-lead">Starting at</span>
-            <span class="pkg-price-val"><span class="pkg-cur">$</span>550</span>
-            <span class="pkg-price-addl">Additional hours $100 ea.</span>
-          </div>
-          <div class="pkg-best">
-            <span class="pkg-best-label">Best for</span>
-            <span class="pkg-best-val">Birthdays, school events, and lighthearted fun</span>
-          </div>
-        </div>
-        <a class="btn btn-gold pkg-btn" href="#book">Book the Classic</a>
-      </div>
-    </div>
-
-    <!-- 02 Glamorous Booth -->
-    <div class="pkg-row">
-      <div class="pkg-visual">
-        <div class="product product-frame">
-          <div class="product-inner">
-            <div class="gframe">
-              <div class="simg gframe-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <span class="pkg-divider" aria-hidden="true"></span>
-      <div class="pkg-info">
-        <div class="pkg-info-head">
-          <span class="pkg-idx">02</span>
-          <div>
-            <h3 class="pkg-name">Glamorous Booth</h3>
-            <p class="pkg-tag">Elegant. Elevated. Unforgettable.</p>
-          </div>
-        </div>
-        <ul class="pkg-feats">
-          <li style="--fd:0.30s"><span class="pkg-check" aria-hidden="true"></span>2 hours of service with prints</li>
-          <li style="--fd:0.35s"><span class="pkg-check" aria-hidden="true"></span>Unlimited 2&times;6 or 4&times;6 prints</li>
-          <li style="--fd:0.40s"><span class="pkg-check" aria-hidden="true"></span>Skin-perfecting beauty filter</li>
-          <li style="--fd:0.45s"><span class="pkg-check" aria-hidden="true"></span>Glam black &amp; white (add-on)</li>
-          <li style="--fd:0.50s"><span class="pkg-check" aria-hidden="true"></span>Instant sharing via text &amp; email</li>
-          <li style="--fd:0.55s"><span class="pkg-check" aria-hidden="true"></span>Private online gallery</li>
-          <li style="--fd:0.60s"><span class="pkg-check" aria-hidden="true"></span>Standard backdrop</li>
-        </ul>
-        <div class="pkg-foot">
-          <div class="pkg-price">
-            <span class="pkg-price-lead">Starting at</span>
-            <span class="pkg-price-val"><span class="pkg-cur">$</span>650</span>
-            <span class="pkg-price-addl">Additional hours $130 ea.</span>
-          </div>
-          <div class="pkg-best">
-            <span class="pkg-best-label">Best for</span>
-            <span class="pkg-best-val">Weddings, upscale events, and luxury experiences</span>
-          </div>
-        </div>
-        <a class="btn btn-gold pkg-btn" href="#book">Book the Glamorous</a>
-      </div>
-    </div>
-
-    <!-- 03 Live Keychain Station -->
-    <div class="pkg-row">
-      <div class="pkg-visual">
-        <div class="product product-keys">
-          <div class="product-inner product-keys-row">
-            <div class="keytag" style="--tilt:8deg; --kd:0s">
-              <span class="keytag-ring" aria-hidden="true"></span>
-              <div class="simg keytag-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div>
-            </div>
-            <div class="keytag" style="--tilt:-6deg; --kd:0.12s">
-              <span class="keytag-ring" aria-hidden="true"></span>
-              <div class="simg keytag-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <span class="pkg-divider" aria-hidden="true"></span>
-      <div class="pkg-info">
-        <div class="pkg-info-head">
-          <span class="pkg-idx">03</span>
-          <div>
-            <h3 class="pkg-name">Live Keychain Station</h3>
-            <p class="pkg-tag">Interactive. Fun. Memorable.</p>
-          </div>
-        </div>
-        <ul class="pkg-feats">
-          <li style="--fd:0.30s"><span class="pkg-check" aria-hidden="true"></span>2 hours of service with prints</li>
-          <li style="--fd:0.35s"><span class="pkg-check" aria-hidden="true"></span>Live keychain creation</li>
-          <li style="--fd:0.40s"><span class="pkg-check" aria-hidden="true"></span>50 keychains included</li>
-          <li style="--fd:0.45s"><span class="pkg-check" aria-hidden="true"></span>Instant sharing via text &amp; email</li>
-          <li style="--fd:0.50s"><span class="pkg-check" aria-hidden="true"></span>Private online gallery</li>
-          <li style="--fd:0.55s"><span class="pkg-check" aria-hidden="true"></span>Standard backdrop</li>
-          <li style="--fd:0.60s"><span class="pkg-check" aria-hidden="true"></span>Dedicated attendant</li>
-        </ul>
-        <div class="pkg-foot">
-          <div class="pkg-price">
-            <span class="pkg-price-lead">Starting at</span>
-            <span class="pkg-price-val"><span class="pkg-cur">$</span>995</span>
-            <span class="pkg-price-addl">Additional hours $150 ea.</span>
-          </div>
-          <div class="pkg-best">
-            <span class="pkg-best-label">Best for</span>
-            <span class="pkg-best-val">Live events, brand promos, and memorable keepsakes</span>
-          </div>
-        </div>
-        <a class="btn btn-gold pkg-btn" href="#book">Book the Live</a>
-      </div>
-    </div>
-
-    <!-- 04 Magnet Station -->
-    <div class="pkg-row">
-      <div class="pkg-visual">
-        <div class="product product-mag">
-          <div class="product-inner product-mag-stage">
-            <div class="magnet" style="--mx:-18px; --my:-10px; --mr:-11deg; --md:0s">
-              <div class="simg magnet-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div>
-            </div>
-            <div class="magnet" style="--mx:26px; --my:6px; --mr:9deg; --md:0.1s">
-              <div class="simg magnet-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div>
-            </div>
-            <div class="magnet" style="--mx:-6px; --my:30px; --mr:-4deg; --md:0.2s">
-              <div class="simg magnet-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <span class="pkg-divider" aria-hidden="true"></span>
-      <div class="pkg-info">
-        <div class="pkg-info-head">
-          <span class="pkg-idx">04</span>
-          <div>
-            <h3 class="pkg-name">Magnet Station</h3>
-            <p class="pkg-tag">Interactive. Fun. Memorable.</p>
-          </div>
-        </div>
-        <ul class="pkg-feats">
-          <li style="--fd:0.30s"><span class="pkg-check" aria-hidden="true"></span>2 hours of glam photo booth</li>
-          <li style="--fd:0.35s"><span class="pkg-check" aria-hidden="true"></span>Onsite acrylic photo magnets</li>
-          <li style="--fd:0.40s"><span class="pkg-check" aria-hidden="true"></span>50 acrylic magnets included</li>
-          <li style="--fd:0.45s"><span class="pkg-check" aria-hidden="true"></span>Unlimited prints</li>
-          <li style="--fd:0.50s"><span class="pkg-check" aria-hidden="true"></span>Onsite attendant</li>
-          <li style="--fd:0.55s"><span class="pkg-check" aria-hidden="true"></span>Curated props</li>
-          <li style="--fd:0.60s"><span class="pkg-check" aria-hidden="true"></span>Private online gallery</li>
-          <li style="--fd:0.65s"><span class="pkg-check" aria-hidden="true"></span>Standard backdrop</li>
-        </ul>
-        <div class="pkg-foot">
-          <div class="pkg-price">
-            <span class="pkg-price-lead">Starting at</span>
-            <span class="pkg-price-val"><span class="pkg-cur">$</span>995</span>
-            <span class="pkg-price-addl">Additional hours $150 ea.</span>
-          </div>
-          <div class="pkg-best">
-            <span class="pkg-best-label">Best for</span>
-            <span class="pkg-best-val">Live events, brand promos, and memorable keepsakes</span>
-          </div>
-        </div>
-        <a class="btn btn-gold pkg-btn" href="#book">Book the Magnet</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -665,7 +530,7 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary class="faq-q">How much does a photo booth rental cost in Fort Myers?</summary>
-      <div class="faq-a"><p>Mango&rsquo;s Photo Booth packages start at $550 for a 2-hour open-air Classic Booth. The Glamorous Booth starts at $650, and our Live Keychain and Magnet stations start at $995. Your final price depends on hours, backdrop, add-ons, and travel to nearby cities like Naples or Marco Island.</p></div>
+      <div class="faq-a"><p>Mango&rsquo;s packages start at $550 for our 3-hour Classic open-air booth. The Party Glam Booth (our most popular) is $650, and the all-inclusive Big Kahuna &mdash; with a live keychain or magnet station, a VIP red carpet, and custom d&eacute;cor &mdash; is $1,300. Keychain and magnet stations are also available as add-ons on any package. Your final price depends on add-ons, travel, and any custom requests.</p></div>
     </details>
     <details class="faq-item">
       <summary class="faq-q">What areas of Southwest Florida do you serve?</summary>
@@ -673,7 +538,7 @@
     </details>
     <details class="faq-item">
       <summary class="faq-q">How long is a photo booth rental?</summary>
-      <div class="faq-a"><p>Our packages include two hours of attended service. Additional hours are available on request when you check your date.</p></div>
+      <div class="faq-a"><p>Every Mango's package includes three hours of attended service. Additional hours are available on request when you check your date.</p></div>
     </details>
     <details class="faq-item">
       <summary class="faq-q">What&rsquo;s included with a Mango&rsquo;s photo booth?</summary>
@@ -685,7 +550,7 @@
     </details>
     <details class="faq-item">
       <summary class="faq-q">What is a keychain or magnet station?</summary>
-      <div class="faq-a"><p>These are our live-favor stations. At the Live Keychain Station, guests watch their photos become custom keychains on the spot, with 50 keychains included. The Magnet Station turns photos into acrylic photo magnets, with 50 included, so guests take a keepsake home the same night.</p></div>
+      <div class="faq-a"><p>These are our live-favor stations — included in the Big Kahuna package, or available to add to any booth. At the Live Keychain Station, guests watch their photos become custom keychains on the spot; the Magnet Station turns photos into acrylic photo magnets — so guests take a keepsake home the same night.</p></div>
     </details>
     <details class="faq-item">
       <summary class="faq-q">Do you do weddings and corporate events?</summary>
@@ -703,7 +568,7 @@
     {
       "@type": "Question",
       "name": "How much does a photo booth rental cost in Fort Myers?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Mango's Photo Booth packages start at $550 for a 2-hour open-air Classic Booth. The Glamorous Booth starts at $650, and our Live Keychain and Magnet stations start at $995. Your final price depends on hours, backdrop, add-ons, and travel to nearby cities like Naples or Marco Island." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Mango's packages start at $550 for our 3-hour Classic open-air booth. The Party Glam Booth (our most popular) is $650, and the all-inclusive Big Kahuna — with a live keychain or magnet station, a VIP red carpet, and custom decor — is $1,300. Keychain and magnet stations are also available as add-ons on any package. Your final price depends on add-ons, travel, and any custom requests." }
     },
     {
       "@type": "Question",
@@ -713,7 +578,7 @@
     {
       "@type": "Question",
       "name": "How long is a photo booth rental?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Our packages include two hours of attended service. Additional hours are available on request when you check your date." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Every Mango's package includes three hours of attended service. Additional hours are available on request when you check your date." }
     },
     {
       "@type": "Question",
@@ -728,7 +593,7 @@
     {
       "@type": "Question",
       "name": "What is a keychain or magnet station?",
-      "acceptedAnswer": { "@type": "Answer", "text": "These are our live-favor stations. At the Live Keychain Station, guests watch their photos become custom keychains on the spot, with 50 keychains included. The Magnet Station turns photos into acrylic photo magnets, with 50 included, so guests take a keepsake home the same night." }
+      "acceptedAnswer": { "@type": "Answer", "text": "These are our live-favor stations — included in the Big Kahuna package, or available to add to any booth. At the Live Keychain Station, guests watch their photos become custom keychains on the spot; the Magnet Station turns photos into acrylic photo magnets — so guests take a keepsake home the same night." }
     },
     {
       "@type": "Question",
@@ -738,6 +603,34 @@
   ]
 }
 </script>
+<!-- ============================================================
+     PHOTO WALL MARQUEE
+     ============================================================ -->
+<section class="marquee" aria-label="Guest photo gallery">
+  <div class="marquee-head">
+    <p class="t-eyebrow">Real Guests &middot; Real Moments</p>
+    <h2 class="marquee-title t-italic">Mango&rsquo;s Memory Wall</h2>
+  </div>
+  <div class="marquee-track-wrap">
+    <div class="marquee-track" id="marquee-track" aria-hidden="true">
+      <!-- 12 photos, duplicated by JS for a seamless loop (falls back to the static set if JS is off) -->
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+    </div>
+    <div class="marquee-fade marquee-fade-l"></div>
+    <div class="marquee-fade marquee-fade-r"></div>
+  </div>
+</section>
 </main>
 
 <!-- ============================================================

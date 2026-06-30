@@ -38,6 +38,14 @@
 
 <link rel="stylesheet" href="../css/styles.css" />
 
+<!-- Google Analytics 4 — not active yet. To turn on, uncomment and replace BOTH
+     G-XXXXXXXXXX with your Measurement ID from analytics.google.com. Events
+     (book_click / call_click / email_click) are wired in js/main.js. -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+-->
+
 <noscript><style>
   .sec-head, .foot-cta { opacity: 1 !important; transform: none !important; }
 </style></noscript>
@@ -82,6 +90,12 @@
   </div>
 </header>
 
+<!-- Sticky mobile booking bar (phones only; slides up after the hero) -->
+<div class="bookbar" id="bookbar" aria-label="Quick booking">
+  <a class="btn btn-ghost bookbar-call" href="tel:+12398887688" aria-label="Call or text Mango's Photo Booth">Call</a>
+  <a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/start" target="_blank" rel="noopener noreferrer" data-loc="bookbar">Check Availability</a>
+</div>
+
 <main id="main">
 
 <section class="page-hero">
@@ -97,7 +111,7 @@
 
   <div class="answer-card">
     <h2>How much is a birthday photo booth?</h2>
-    <p>A birthday photo booth rental from Mango's starts at <strong>$550</strong> for a 2-hour open-air Classic Booth with unlimited prints and instant sharing. Glamorous, keychain, and magnet packages range up to $995. Customize any package to wow your guests.</p>
+    <p>A birthday photo booth rental from Mango's starts at <strong>$550</strong> for a 3-hour open-air Classic Booth with unlimited prints and instant sharing. The Party Glam Booth is $650, and the all-inclusive Big Kahuna is $1,300. Customize any package to wow your guests.</p>
     <p>Final pricing depends on hours, backdrop, add-ons, and travel within Southwest Florida. And don't forget — Mango the mascot is available to make an appearance at your event!</p>
   </div>
 </section>
@@ -110,12 +124,11 @@
     <p>Want to take it over the top? Mango, our mascot, can make a special appearance to surprise your guests and star in the photos. It's the kind of detail people remember long after the candles are out.</p>
     <h2>Our packages</h2>
     <ul>
-      <li><strong>Classic Booth — from $550.</strong> Two hours of open-air booth service, unlimited 2x6 or 4x6 prints, instant text &amp; email sharing, and a private online gallery.</li>
-      <li><strong>Glamorous Booth — from $650.</strong> Everything in Classic plus a skin-perfecting beauty filter and an optional glam black &amp; white add-on.</li>
-      <li><strong>Live Keychain Station — from $995.</strong> Guests watch their photos become custom keychains on the spot — 50 keychains included, with a dedicated attendant.</li>
-      <li><strong>Magnet Station — from $995.</strong> A glam booth that prints 50 acrylic photo magnets your guests take home the same night.</li>
+      <li><strong>Classic Booth — $550.</strong> Three hours of open-air booth service, unlimited on-site prints, your choice of 2x6 or 4x6 print size, a custom template, themed props, a standard backdrop, an on-site attendant, a private online gallery, and free travel across Southwest Florida.</li>
+      <li><strong>Party Glam Booth — $650 (most popular).</strong> Everything in Classic, elevated with a skin-perfecting beauty filter, an upgraded deluxe backdrop, both print sizes, and a second custom template design.</li>
+      <li><strong>The Big Kahuna — $1,300.</strong> Our premier all-inclusive experience: the full Glam Booth plus a VIP red-carpet entrance, a premium custom backdrop, your choice of a Live Keychain or Magnet Memory Station, and a custom decor enhancement.</li>
     </ul>
-    <p>See full details on the <a href="../index.html#packages">packages page</a>, or <a href="../index.html#book">check your date</a> to lock in your booking.</p>
+    <p>Want take-home favors on the Classic or Glam booth? Add a <strong>Live Keychain or Magnet Memory Station</strong> to any package. See full details on the <a href="../index.html#packages">packages page</a>, or <a href="../index.html#book">check your date</a> to lock in your booking.</p>
   </div>
 </section>
 
@@ -127,7 +140,7 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary class="faq-q">How much does a birthday photo booth cost?</summary>
-      <div class="faq-a"><p>Birthday packages start at $550 for a 2-hour open-air Classic Booth, ranging up to $995 for our live keychain and magnet stations. Final pricing depends on hours, backdrop, add-ons, and travel.</p></div>
+      <div class="faq-a"><p>Birthday packages start at $550 for a 3-hour open-air Classic Booth, up to $1,300 for the all-inclusive Big Kahuna, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel.</p></div>
     </details>
     <details class="faq-item">
       <summary class="faq-q">Is the booth good for all ages?</summary>
@@ -215,9 +228,9 @@
   "offers": {
     "@type": "AggregateOffer",
     "lowPrice": "550",
-    "highPrice": "995",
+    "highPrice": "1300",
     "priceCurrency": "USD",
-    "offerCount": "4"
+    "offerCount": "3"
   }
 }
 </script>
@@ -231,7 +244,7 @@
       "name": "How much does a birthday photo booth cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Birthday packages start at $550 for a 2-hour open-air Classic Booth, ranging up to $995 for our live keychain and magnet stations. Final pricing depends on hours, backdrop, add-ons, and travel."
+        "text": "Birthday packages start at $550 for a 3-hour open-air Classic Booth, up to $1,300 for the all-inclusive Big Kahuna, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel."
       }
     },
     {

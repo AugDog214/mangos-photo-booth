@@ -38,6 +38,14 @@
 
 <link rel="stylesheet" href="../css/styles.css" />
 
+<!-- Google Analytics 4 — not active yet. To turn on, uncomment and replace BOTH
+     G-XXXXXXXXXX with your Measurement ID from analytics.google.com. Events
+     (book_click / call_click / email_click) are wired in js/main.js. -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+-->
+
 <noscript><style>
   .sec-head, .foot-cta { opacity: 1 !important; transform: none !important; }
 </style></noscript>
@@ -82,6 +90,12 @@
   </div>
 </header>
 
+<!-- Sticky mobile booking bar (phones only; slides up after the hero) -->
+<div class="bookbar" id="bookbar" aria-label="Quick booking">
+  <a class="btn btn-ghost bookbar-call" href="tel:+12398887688" aria-label="Call or text Mango's Photo Booth">Call</a>
+  <a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/start" target="_blank" rel="noopener noreferrer" data-loc="bookbar">Check Availability</a>
+</div>
+
 <main id="main">
 
 <section class="page-hero">
@@ -97,7 +111,7 @@
 
   <div class="answer-card">
     <h2>How much is a quinceañera photo booth?</h2>
-    <p>A quinceañera photo booth rental from Mango's starts at <strong>$550</strong> for a 2-hour open-air Classic Booth. Most quinces choose the Glamorous Booth (from $650) for its beauty filter, or a Live Keychain or Magnet Station (from $995) so every guest takes home a custom favor.</p>
+    <p>A quinceañera photo booth rental from Mango's starts at <strong>$550</strong> for a 3-hour open-air Classic Booth. Most quinces choose the Party Glam Booth ($650) for its beauty filter, or the all-inclusive Big Kahuna ($1,300), which includes a live keychain or magnet station so every guest takes home a custom favor.</p>
     <p>Final pricing depends on hours, backdrop, add-ons, and travel within Southwest Florida. <a href="../index.html#book">Check your date</a> to reserve.</p>
   </div>
 </section>
@@ -105,17 +119,16 @@
 <section class="section">
   <div class="prose">
     <h2>Glamour for the guest of honor</h2>
-    <p>Our Glamorous Booth adds a skin-perfecting beauty filter and an optional glam black &amp; white look, paired with a couture backdrop that matches your colors and theme. It's the photo moment every quinceañera deserves.</p>
+    <p>Our Party Glam Booth adds a skin-perfecting beauty filter and an optional glam black &amp; white look, paired with a couture backdrop that matches your colors and theme. It's the photo moment every quinceañera deserves.</p>
     <h3>Favors the whole familia keeps</h3>
     <p>Upgrade to a Live Keychain or Magnet Station and every guest leaves with a custom keepsake from the night — 50 included — turning your celebration into something everyone remembers.</p>
     <h2>Our packages</h2>
     <ul>
-      <li><strong>Classic Booth — from $550.</strong> Two hours of open-air booth service, unlimited 2x6 or 4x6 prints, instant text &amp; email sharing, and a private online gallery.</li>
-      <li><strong>Glamorous Booth — from $650.</strong> Everything in Classic plus a skin-perfecting beauty filter and an optional glam black &amp; white add-on.</li>
-      <li><strong>Live Keychain Station — from $995.</strong> Guests watch their photos become custom keychains on the spot — 50 keychains included, with a dedicated attendant.</li>
-      <li><strong>Magnet Station — from $995.</strong> A glam booth that prints 50 acrylic photo magnets your guests take home the same night.</li>
+      <li><strong>Classic Booth — $550.</strong> Three hours of open-air booth service, unlimited on-site prints, your choice of 2x6 or 4x6 print size, a custom template, themed props, a standard backdrop, an on-site attendant, a private online gallery, and free travel across Southwest Florida.</li>
+      <li><strong>Party Glam Booth — $650 (most popular).</strong> Everything in Classic, elevated with a skin-perfecting beauty filter, an upgraded deluxe backdrop, both print sizes, and a second custom template design.</li>
+      <li><strong>The Big Kahuna — $1,300.</strong> Our premier all-inclusive experience: the full Glam Booth plus a VIP red-carpet entrance, a premium custom backdrop, your choice of a Live Keychain or Magnet Memory Station, and a custom decor enhancement.</li>
     </ul>
-    <p>See full details on the <a href="../index.html#packages">packages page</a>, or <a href="../index.html#book">check your date</a> to lock in your booking.</p>
+    <p>Want take-home favors on the Classic or Glam booth? Add a <strong>Live Keychain or Magnet Memory Station</strong> to any package. See full details on the <a href="../index.html#packages">packages page</a>, or <a href="../index.html#book">check your date</a> to lock in your booking.</p>
   </div>
 </section>
 
@@ -127,11 +140,11 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary class="faq-q">How much does a quinceañera photo booth cost?</summary>
-      <div class="faq-a"><p>Quinceañera packages start at $550 for a 2-hour open-air booth, with the Glamorous Booth from $650 and live keychain and magnet stations from $995. Final pricing depends on hours, backdrop, add-ons, and travel.</p></div>
+      <div class="faq-a"><p>Quinceañera packages start at $550 for a 3-hour open-air booth, with the Party Glam Booth at $650 and the all-inclusive Big Kahuna at $1,300 (live keychain and magnet stations available as add-ons). Final pricing depends on hours, backdrop, add-ons, and travel.</p></div>
     </details>
     <details class="faq-item">
       <summary class="faq-q">Do you have a beauty filter and custom backdrop?</summary>
-      <div class="faq-a"><p>Yes. Our Glamorous Booth includes a skin-perfecting beauty filter and an optional glam black and white look, with a backdrop matched to your theme and colors.</p></div>
+      <div class="faq-a"><p>Yes. Our Party Glam Booth includes a skin-perfecting beauty filter and an optional glam black and white look, with a backdrop matched to your theme and colors.</p></div>
     </details>
     <details class="faq-item">
       <summary class="faq-q">Can guests take home a keepsake?</summary>
@@ -215,9 +228,9 @@
   "offers": {
     "@type": "AggregateOffer",
     "lowPrice": "550",
-    "highPrice": "995",
+    "highPrice": "1300",
     "priceCurrency": "USD",
-    "offerCount": "4"
+    "offerCount": "3"
   }
 }
 </script>
@@ -231,7 +244,7 @@
       "name": "How much does a quinceanera photo booth cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Quinceanera packages start at $550 for a 2-hour open-air booth, with the Glamorous Booth from $650 and live keychain and magnet stations from $995. Final pricing depends on hours, backdrop, add-ons, and travel."
+        "text": "Quinceanera packages start at $550 for a 3-hour open-air booth, with the Party Glam Booth at $650 and the all-inclusive Big Kahuna at $1,300 (live keychain and magnet stations available as add-ons). Final pricing depends on hours, backdrop, add-ons, and travel."
       }
     },
     {
@@ -239,7 +252,7 @@
       "name": "Do you have a beauty filter and custom backdrop?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Our Glamorous Booth includes a skin-perfecting beauty filter and an optional glam black and white look, with a backdrop matched to your theme and colors."
+        "text": "Yes. Our Party Glam Booth includes a skin-perfecting beauty filter and an optional glam black and white look, with a backdrop matched to your theme and colors."
       }
     },
     {
