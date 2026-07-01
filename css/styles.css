@@ -591,3 +591,39 @@ a:focus-visible, button:focus-visible, .btn:focus-visible { outline: 2px solid v
   .footer { padding-bottom: 6rem; }
 }
 @media (prefers-reduced-motion: reduce) { .bookbar { transition: none; } }
+
+/* ============================================================
+   TWEAKS — package media, "coming soon" tiles, big CTA, social
+   ============================================================ */
+/* Larger primary CTA (booking section) */
+.btn-lg { padding: 1.35em 3em; font-size: 0.95rem; letter-spacing: 0.2em; }
+
+/* Package card media frame (top of each card) */
+.pkg2-media { position: relative; aspect-ratio: 16 / 10; border-radius: var(--radius);
+  overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--line); }
+.pkg2-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* "Coming soon" placeholder — branded, intentional (not a blank gray box) */
+.coming-soon { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.45rem;
+  text-align: center; background:
+    radial-gradient(120% 120% at 50% 0%, rgba(200,162,74,0.16), transparent 70%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0 10px, transparent 10px 20px),
+    var(--ink-3); }
+.coming-soon-icon { width: 30px; height: 30px; opacity: 0.85; }
+.coming-soon-label { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); }
+.coming-soon-sub { font-family: var(--serif); font-style: italic; font-size: 0.85rem; color: var(--paper-faint); }
+
+/* Small "coming soon" badge for backdrop tiles */
+.bd-soon { position: absolute; top: 0.7rem; right: 0.7rem; z-index: 3;
+  font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
+  border: 1px solid rgba(200,162,74,0.5); border-radius: 999px; padding: 0.4em 0.75em;
+  background: rgba(8,10,13,0.55); backdrop-filter: blur(4px); }
+
+/* Instagram nudge under the Memory Wall */
+.marquee-social { text-align: center; margin-top: 2.6rem; padding: 0 var(--gut); }
+.marquee-social a { display: inline-flex; align-items: center; gap: 0.55em; font-size: 0.86rem;
+  letter-spacing: 0.06em; color: var(--paper-dim); transition: color .3s var(--ease); }
+.marquee-social a b { color: var(--gold); font-weight: 500; }
+.marquee-social a .ms-arrow { transition: transform .35s var(--ease); }
+.marquee-social a:hover { color: var(--paper); }
+.marquee-social a:hover .ms-arrow { transform: translateX(5px); }

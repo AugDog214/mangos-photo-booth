@@ -118,7 +118,7 @@ function header() {
 
   <div class="hdr-right">
     <a class="hdr-tel" href="tel:${PHONE}">${PHONE_DISP}</a>
-    <a class="hdr-cta" href="../index.html#book">Check Availability</a>
+    <a class="hdr-cta" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="header">Book Now</a>
     <button class="hdr-burger" id="hdr-burger" aria-label="Open menu" aria-controls="hdr-mobile" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -130,14 +130,14 @@ function header() {
     <a href="../index.html#packages">Packages</a>
     <a href="../index.html#backdrops">Backdrops</a>
     <a href="../index.html#faq">FAQ</a>
-    <a class="hdr-mobile-cta" href="../index.html#book">Check Availability</a>
+    <a class="hdr-mobile-cta" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="mobile-menu">Book Now</a>
   </div>
 </header>
 
 <!-- Sticky mobile booking bar (phones only; slides up after the hero) -->
 <div class="bookbar" id="bookbar" aria-label="Quick booking">
   <a class="btn btn-ghost bookbar-call" href="tel:${PHONE}" aria-label="Call or text Mango's Photo Booth">Call</a>
-  <a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/start" target="_blank" rel="noopener noreferrer" data-loc="bookbar">Check Availability</a>
+  <a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="bookbar">Book Now</a>
 </div>`;
 }
 
@@ -265,7 +265,7 @@ ${header()}
     <h1 class="page-h1">${p.h1}</h1>
     <p class="page-lead">${p.lead}</p>
     <div class="page-actions">
-      <a class="btn btn-gold btn-packages" href="../index.html#book">Check Availability</a>
+      <a class="btn btn-gold btn-packages" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="page-hero">Book Now</a>
       <a class="btn btn-ghost" href="../index.html#packages">View Packages</a>
     </div>
   </div>
