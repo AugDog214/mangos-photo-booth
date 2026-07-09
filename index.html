@@ -32,25 +32,26 @@
 <meta property="og:description" content="The night ends. The memory doesn't. Luxury photo booth & keepsake experiences for weddings, brands, and every celebration in Fort Myers & Southwest Florida." />
 <meta property="og:locale" content="en_US" />
 <meta property="og:url" content="https://mangosphotobooth.com/" />
-<meta property="og:image" content="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&h=630&q=80" />
+<meta property="og:image" content="https://mangosphotobooth.com/assets/hero-cover-realistic.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Mango's Photo Booth Company — luxury photo booth rental in Fort Myers, Southwest Florida" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Photo Booth Rental Fort Myers | Mango's Photo Booth Company" />
 <meta name="twitter:description" content="Luxury photo booth & keepsake experiences for weddings, brands, and every celebration in Fort Myers & Southwest Florida." />
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&h=630&q=80" />
+<meta name="twitter:image" content="https://mangosphotobooth.com/assets/hero-cover-realistic.jpg" />
 
 <!-- Preconnect to image + font hosts for faster first paint -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://images.unsplash.com" />
+<link rel="preconnect" href="https://photos.smugmug.com" />
 
 <!-- Fonts loaded here (not via CSS @import) so they aren't render-blocked behind the stylesheet -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700&display=swap" />
 
 <!-- Preload the first hero image (Largest Contentful Paint) so it isn't discovered late as a CSS background -->
-<link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&h=1080&q=80" />
+<link rel="preload" as="image" fetchpriority="high" href="assets/hero-cover-realistic.jpg" />
 
 <link rel="stylesheet" href="css/styles.css" />
 
@@ -105,8 +106,8 @@
   }],
   "makesOffer": [
     { "@type": "Offer", "name": "Classic Booth", "price": "550", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "3 hours of open-air booth service, unlimited on-site prints, your choice of 2x6 or 4x6 print size, 1 custom template, themed props, standard backdrop, on-site attendant, private online gallery, and free travel across Southwest Florida.", "itemOffered": { "@type": "Service", "name": "Classic Photo Booth Rental", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } },
-    { "@type": "Offer", "name": "Party Glam Booth", "price": "650", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "Everything in the Classic Booth plus a skin-perfecting beauty filter, an upgraded deluxe backdrop of your choice, both 2x6 and 4x6 print sizes, and 2 custom template designs. Our most popular package.", "itemOffered": { "@type": "Service", "name": "Party Glam Photo Booth Rental", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } },
-    { "@type": "Offer", "name": "The Big Kahuna", "price": "1300", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "Our premier all-inclusive package: the full Party Glam Booth plus a VIP red-carpet entrance with gold stanchions and ropes, a deluxe or premium custom backdrop, your choice of Live Keychain or Magnet Memory Station, and a custom decor enhancement (balloons, arch, or florals).", "itemOffered": { "@type": "Service", "name": "Big Kahuna All-Inclusive Photo Booth Experience", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } }
+    { "@type": "Offer", "name": "Party Glam Booth", "price": "650", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "Everything in the Classic Booth plus animated GIF creation, a skin-perfecting beauty filter, an upgraded deluxe backdrop of your choice, both 2x6 and 4x6 print sizes, and 2 custom template designs. Our most popular package.", "itemOffered": { "@type": "Service", "name": "Party Glam Photo Booth Rental", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } },
+    { "@type": "Offer", "name": "The Big Kahuna", "price": "1300", "priceCurrency": "USD", "url": "https://mangosphotobooth.com/#packages", "availability": "https://schema.org/InStock", "description": "Our premier all-inclusive package: the full Party Glam Booth with animated GIF creation, a VIP red-carpet entrance with gold stanchions and ropes, a deluxe or premium custom backdrop, your choice of Live Keychain or Magnet Memory Station, and a custom decor enhancement (balloons, arch, or florals).", "itemOffered": { "@type": "Service", "name": "Big Kahuna All-Inclusive Photo Booth Experience", "serviceType": "Photo booth rental", "areaServed": ["Fort Myers", "Naples", "Cape Coral", "Southwest Florida"] } }
   ]
 }
 </script>
@@ -123,7 +124,7 @@
 
 <style>
   /* Skip link (keyboard / screen-reader accessibility) */
-  .skip { position: absolute; left: -999px; top: 0; z-index: 200; background: var(--gold); color: #1a130a;
+  .skip { position: absolute; left: -999px; top: 0; z-index: 200; background: var(--accent-gold); color: #102E4B;
     padding: 0.7em 1.2em; font-family: var(--sans); font-weight: 500; letter-spacing: 0.05em; border-radius: var(--radius); }
   .skip:focus { left: 12px; top: 12px; }
 </style>
@@ -165,10 +166,9 @@
   </div>
 </header>
 
-<!-- Sticky mobile booking bar (phones only; slides up after the hero) -->
+<!-- Floating mobile booking button (phones only; slides up after the hero) -->
 <div class="bookbar" id="bookbar" aria-label="Quick booking">
-  <a class="btn btn-ghost bookbar-call" href="tel:+12398887688" aria-label="Call or text Mango's Photo Booth">Call</a>
-  <a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="bookbar">Book Now</a>
+  <a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="bookbar">Book Now!</a>
 </div>
 
 <main id="main">
@@ -177,11 +177,7 @@
      ============================================================ -->
 <section class="hero" id="top">
   <div class="hero-stage" aria-hidden="true">
-    <div class="hero-slide is-active" style="background-image:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&h=1080&q=80')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1920&h=1080&q=80')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1920&h=1080&q=80')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1496337589254-7e19d01cec44?auto=format&fit=crop&w=1920&h=1080&q=80')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1920&h=1080&q=80')"></div>
+    <div class="hero-slide is-active" style="background-image:url('assets/hero-cover-realistic.jpg')"></div>
     <div class="hero-scrim"></div>
     <div class="hero-grain"></div>
   </div>
@@ -199,14 +195,6 @@
       <a class="btn btn-gold btn-packages" href="#packages">View Packages</a>
       <a class="btn btn-ghost" href="#how">How It Works</a>
     </div>
-  </div>
-
-  <div class="hero-dots" id="hero-dots" role="group" aria-label="Choose hero slide">
-    <button class="hero-dot is-active" data-i="0" aria-label="Show slide 1" aria-pressed="true"></button>
-    <button class="hero-dot" data-i="1" aria-label="Show slide 2" aria-pressed="false"></button>
-    <button class="hero-dot" data-i="2" aria-label="Show slide 3" aria-pressed="false"></button>
-    <button class="hero-dot" data-i="3" aria-label="Show slide 4" aria-pressed="false"></button>
-    <button class="hero-dot" data-i="4" aria-label="Show slide 5" aria-pressed="false"></button>
   </div>
 
   <div class="hero-scroll" aria-hidden="true">
@@ -228,14 +216,14 @@
     <div class="ev-row">
       <div class="ev-media">
         <div class="simg ev-img"><div class="simg-fallback"></div>
-          <img class="simg-img" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&h=1200&q=80" alt="Couple celebrating at a wedding reception" loading="lazy" referrerpolicy="no-referrer" /></div>
+          <img class="simg-img" src="assets/wedding-floral-portrait.jpg" alt="Bride framed by a white floral wedding backdrop" loading="lazy" /></div>
         <span class="ev-num" aria-hidden="true">01</span>
       </div>
       <div class="ev-text">
         <h3 class="ev-title">Weddings</h3>
         <span class="gold-rule" style="width:56px"><span class="gold-rule-line"></span><span class="gold-rule-dot"></span><span class="gold-rule-line"></span></span>
         <p class="ev-copy">Bring your wedding to life with Mango&rsquo;s Photo Booth, perfectly tailored for any size celebration. Choose our sleek standalone booth or upgrade to our interactive Mango&rsquo;s Memory Stations, where guests create custom live favors. From photo keychains and magnets to candle jars with custom photo stickers, we turn joyful moments into personalized keepsakes your guests will cherish forever.</p>
-        <a class="ev-link" href="#book">Inquire <span class="ev-arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-gold ev-book" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="event-weddings">Book Now</a>
       </div>
     </div>
 
@@ -250,7 +238,7 @@
         <h3 class="ev-title">Corporate &amp; Brands</h3>
         <span class="gold-rule" style="width:56px"><span class="gold-rule-line"></span><span class="gold-rule-dot"></span><span class="gold-rule-line"></span></span>
         <p class="ev-copy">Drive results with Mango&rsquo;s corporate branding events &mdash; maximize your ROI and build lasting digital imprints. Branded templates, custom backdrops, and instant sharing that enhance your social media content in real time, plus lead-generation capabilities during open events.</p>
-        <a class="ev-link" href="#book">Inquire <span class="ev-arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-gold ev-book" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="event-corporate">Book Now</a>
       </div>
     </div>
 
@@ -265,7 +253,7 @@
         <h3 class="ev-title">Birthdays</h3>
         <span class="gold-rule" style="width:56px"><span class="gold-rule-line"></span><span class="gold-rule-dot"></span><span class="gold-rule-line"></span></span>
         <p class="ev-copy">Celebrate any milestone with Mango&rsquo;s. We make birthdays unforgettable with personalized digital experiences built for any age &mdash; customize any package to wow your guests. And don&rsquo;t forget: Mango himself is available to make an appearance at your event!</p>
-        <a class="ev-link" href="#book">Inquire <span class="ev-arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-gold ev-book" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="event-birthdays">Book Now</a>
       </div>
     </div>
 
@@ -280,7 +268,7 @@
         <h3 class="ev-title">Quincea&ntilde;eras</h3>
         <span class="gold-rule" style="width:56px"><span class="gold-rule-line"></span><span class="gold-rule-dot"></span><span class="gold-rule-line"></span></span>
         <p class="ev-copy">A glamour booth worthy of the celebration. Beauty filters, a couture backdrop, and keepsakes the whole familia will treasure.</p>
-        <a class="ev-link" href="#book">Inquire <span class="ev-arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-gold ev-book" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="event-quinceaneras">Book Now</a>
       </div>
     </div>
 
@@ -295,7 +283,7 @@
         <h3 class="ev-title">Holiday Parties</h3>
         <span class="gold-rule" style="width:56px"><span class="gold-rule-line"></span><span class="gold-rule-dot"></span><span class="gold-rule-line"></span></span>
         <p class="ev-copy">From office galas to grand openings, any event is the perfect place for your guests to make memories and take home prints &mdash; Mango&rsquo;s has you covered.</p>
-        <a class="ev-link" href="#book">Inquire <span class="ev-arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-gold ev-book" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="event-holiday">Book Now</a>
       </div>
     </div>
 
@@ -311,6 +299,17 @@
     <h2 class="sec-title">Choose your<br /><span class="t-italic text-gradient-gold">experience.</span></h2>
     <p class="sec-lede">Three all-inclusive packages &mdash; each with 3 hours of service, unlimited prints, and free travel across Southwest Florida. Compare what&rsquo;s included and lock in your date.</p>
   </div>
+  <article class="memory-feature">
+    <div class="memory-feature-media">
+      <img src="assets/memory-station-keychains.jpg" alt="Friends holding personalized photo keychains beside a photo booth" loading="lazy" />
+    </div>
+    <div class="memory-feature-copy">
+      <p class="t-eyebrow">Mango&rsquo;s Memory Station</p>
+      <h3>Turn every photo into a favor.</h3>
+      <p>Make it a keepsake. Add a Live Keychain or Magnet Memory Station for take-home favors.</p>
+      <a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="memory-station">Add to Your Event</a>
+    </div>
+  </article>
   <div class="pkg2-grid">
 
     <!-- Classic -->
@@ -337,7 +336,6 @@
         <li class="no"><span class="pkg2-ic no" aria-hidden="true">&ndash;</span>Live Memory Station</li>
         <li class="no"><span class="pkg2-ic no" aria-hidden="true">&ndash;</span>VIP red carpet &amp; custom d&eacute;cor</li>
       </ul>
-      <div class="pkg2-addon"><strong>Make it a keepsake:</strong> add a Live Keychain or Magnet Memory Station so guests take home a favor.</div>
       <div class="pkg2-cta"><a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/set_event?event_type_id=182525" target="_blank" rel="noopener noreferrer" data-loc="pkg-classic">Book the Classic</a></div>
     </div>
 
@@ -359,13 +357,13 @@
         <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Both print sizes (2&times;6 &amp; 4&times;6)</li>
         <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>2 custom template designs</li>
         <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Unlimited prints + instant sharing</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Animated GIF creation</li>
         <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Themed props + private gallery</li>
         <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>On-site attendant + free SWFL travel</li>
         <li class="no"><span class="pkg2-ic no" aria-hidden="true">&ndash;</span>Live Memory Station</li>
         <li class="no"><span class="pkg2-ic no" aria-hidden="true">&ndash;</span>VIP red carpet &amp; custom d&eacute;cor</li>
       </ul>
-      <div class="pkg2-addon"><strong>Make it a keepsake:</strong> add a Live Keychain or Magnet Memory Station for take-home favors.</div>
-      <div class="pkg2-cta"><a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/set_event?event_type_id=182523" target="_blank" rel="noopener noreferrer" data-loc="pkg-glam">Book the Glam</a></div>
+      <div class="pkg2-cta"><a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/set_event?event_type_id=182524" target="_blank" rel="noopener noreferrer" data-loc="pkg-glam">Book the Glam</a></div>
     </div>
 
     <!-- Big Kahuna -->
@@ -373,7 +371,6 @@
       <div class="pkg2-media coming-soon">
         <svg class="coming-soon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="6.5" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3.2"/><path d="M8 6.5l1.3-2.2h5.4L16 6.5"/></svg>
         <span class="coming-soon-label">Photo Coming Soon</span>
-        <span class="coming-soon-sub">Guests holding their keychains</span>
       </div>
       <h3 class="pkg2-name">The Big Kahuna</h3>
       <p class="pkg2-tag">Ultimate All-Inclusive Experience</p>
@@ -386,10 +383,11 @@
         <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Live Memory Station &mdash; keychains <em>or</em> magnets</li>
         <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Custom d&eacute;cor &mdash; balloons, arch, or florals</li>
         <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Skin-perfecting beauty filter</li>
+        <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Animated GIF creation</li>
         <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>Both print sizes + 2 template designs</li>
         <li><span class="pkg2-ic yes" aria-hidden="true">&#10003;</span>On-site attendant + free SWFL travel</li>
       </ul>
-      <div class="pkg2-cta"><a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/set_event?event_type_id=182524" target="_blank" rel="noopener noreferrer" data-loc="pkg-kahuna">Book the Big Kahuna</a></div>
+      <div class="pkg2-cta"><a class="btn btn-gold" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation/set_event?event_type_id=182523" target="_blank" rel="noopener noreferrer" data-loc="pkg-kahuna">Book the Big Kahuna</a></div>
     </div>
 
   </div>
@@ -457,7 +455,7 @@
   <div class="marquee-track-wrap">
     <div class="marquee-track" id="marquee-track" aria-hidden="true">
       <!-- 12 photos, duplicated by JS for a seamless loop (falls back to the static set if JS is off) -->
-      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
+      <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="assets/wedding-couple.jpg" alt="" loading="lazy" /></div></div>
       <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
       <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
       <div class="brick"><div class="simg brick-img"><div class="simg-fallback"></div><img class="simg-img" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=700&h=1000&q=80" alt="" loading="lazy" referrerpolicy="no-referrer" /></div></div>
@@ -489,53 +487,101 @@
     <h2 class="sec-title">Set the <span class="t-italic">scene.</span></h2>
     <p class="sec-lede">A curated wall of standard and premium backdrops &mdash; or design something entirely your own with our team.</p>
   </div>
-  <div class="bd-grid">
-    <div class="bd-cell">
-      <span class="bd-soon">Coming Soon</span>
-      <div class="bd-ph" style="background:radial-gradient(120% 120% at 30% 20%, #efe1b4, #c9ad6e 55%, #7d6532)"></div>
-      <span class="bd-name"><span class="bd-name-i">01</span>Champagne Glitter</span>
+  <div class="bd-tier">
+    <div class="bd-tier-heading">
+      <p class="t-eyebrow">Included with Classic</p>
+      <h3>Standard</h3>
     </div>
-    <div class="bd-cell">
-      <span class="bd-soon">Coming Soon</span>
-      <div class="bd-ph" style="background:linear-gradient(135deg, #f3e6ad, #c8a24a 55%, #8a6d28)"></div>
-      <span class="bd-name"><span class="bd-name-i">02</span>Gold Sparkle</span>
+    <div class="bd-grid">
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-FhCFsLQ/0/MJrtShTz4m83FnmGQksTqQcWh7d6CMGMGpDVs4JZG/XL/Black%20%281%29-XL.jpg" alt="Solid black photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">01</span>Black</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-H68GBW6/0/NC4RrdP4SdFkH65kqL6QNmCm3grFsKvKH3pD4tB87/XL/WHITE-XL.jpg" alt="Solid white photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">02</span>White</figcaption>
+      </figure>
     </div>
-    <div class="bd-cell">
-      <span class="bd-soon">Coming Soon</span>
-      <div class="bd-ph" style="background:linear-gradient(135deg, #20242c, #0c0f15 60%, #2b2f38)"></div>
-      <span class="bd-name"><span class="bd-name-i">03</span>Black Marble</span>
+  </div>
+
+  <div class="bd-tier">
+    <div class="bd-tier-heading">
+      <p class="t-eyebrow">Upgraded Collection</p>
+      <h3>Deluxe</h3>
     </div>
-    <div class="bd-cell">
-      <span class="bd-soon">Coming Soon</span>
-      <div class="bd-ph" style="background:linear-gradient(160deg, #f6f4ee, #ddd8c8 70%, #c2bca8)"></div>
-      <span class="bd-name"><span class="bd-name-i">04</span>Ivory Drape</span>
+    <div class="bd-grid">
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-mF8dDMG/0/LbMPzvsTGXdXprTmxcVrbPSC3VGVnxWng6VzQ7L59/XL/FridayNightLights-XL.jpg" alt="Friday Night Lights photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">01</span>Friday Night Lights</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-4vW5P5r/0/MQ2JxksqLW7f5BLcfshW5sPvR8qHc7pKQFmLWCsHr/XL/LuxuryMarbleSwirl-XL.jpg" alt="Luxury Marble Swirl photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">02</span>Luxury Marble Swirl</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-KJhXv6Q/0/LCZxgcJpbczzGjtz9VWgxb6JLthtsfcFW2MPmmkKt/XL/LoveIsInTheAir_Widget-XL.jpg" alt="Love Is in the Air photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">03</span>Love Is in the Air</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-9z8SMqm/1/Lm95bjXqbJXWqwrVNKHB6qR6qpQW9dzvhp4vwzSST/XL/FloatingLights-XL.jpg" alt="Floating Lights photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">04</span>Floating Lights</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-mVb4QQr/0/KhdKHSjfL8FVk2rT2tVXMpp4RwwZ2vLm5B6zScS8H/XL/WelcomeToTheIslands%20%281%29-XL.jpg" alt="Welcome to the Islands photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">05</span>Welcome to the Islands</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-hTDzWP9/0/LZ6T9XxWC3BBzQ2wpWqtvsScK34XFfPwt3g684mxf/XL/Western%20Sunset%20uw-XL.jpg" alt="Western Sunset photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">06</span>Western Sunset</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-Px6jfpB/0/K8PMbRJrtqWd8xLRxqkWGHV29bMSkJ8qN2JQ8736M/XL/fern%20wall%20uw-XL.jpg" alt="Fern Wall photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">07</span>Fern Wall</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-vJTFwfW/1/KWZTScMq2z6pq2FsCzBVLFpbfX8FCCPj8BMnCf97C/XL/GoldSparkle-XL.jpg" alt="Gold Sparkle photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">08</span>Gold Sparkle</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-qL5SfLv/0/Kf27sdzZZhSHfnPK6mhPDKDpvMxNp3tsgSmkZQRcz/XL/SILVERSPARKLE-XL.jpg" alt="Silver Sparkle photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">09</span>Silver Sparkle</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-cqQbZQ5/1/Kg6p6Fffw3MznxsFS64xkZjCcx76kVkfXm73wVT2j/XL/3DWhiteFlowers-XL.jpg" alt="3D White Flowers photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">10</span>3D White Flowers</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-NzDqpqG/0/KDbWrz37j47bQ7G2tVNDvZ2hPDk3Vw74n6kB5JVG4/XL/VDayFloralWall-XL.jpg" alt="Valentine's Day Floral Wall photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">11</span>VDay Floral Wall</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://photos.smugmug.com/Unwatermarked-Images-for-Use/i-QdLS6mQ/1/NQ27BKc3zjgJjZhtwxB7DQd7BBnknGgjSJPMRPtvP/XL/HolidayWall-XL.jpg" alt="Holiday Wall photo booth backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">12</span>Holiday Wall</figcaption>
+      </figure>
     </div>
-    <div class="bd-cell">
-      <span class="bd-soon">Coming Soon</span>
-      <div class="bd-ph" style="background:radial-gradient(circle at 20% 25%, rgba(255,217,7,.6) 0 2px, transparent 3px), radial-gradient(circle at 70% 55%, rgba(255,217,7,.5) 0 2px, transparent 3px), radial-gradient(circle at 45% 80%, rgba(255,217,7,.45) 0 2px, transparent 3px), radial-gradient(circle at 85% 32%, rgba(255,217,7,.4) 0 2px, transparent 3px), linear-gradient(160deg,#10131a,#0a0d12)"></div>
-      <span class="bd-name"><span class="bd-name-i">05</span>Twinkle Lights</span>
+  </div>
+
+  <div class="bd-tier">
+    <div class="bd-tier-heading">
+      <p class="t-eyebrow">Statement Backdrops</p>
+      <h3>Premium</h3>
     </div>
-    <div class="bd-cell">
-      <span class="bd-soon">Coming Soon</span>
-      <div class="bd-ph" style="background:linear-gradient(160deg, #e7c6c0, #c39a92 70%, #94756f)"></div>
-      <span class="bd-name"><span class="bd-name-i">06</span>Bliss Wall</span>
-    </div>
-    <div class="bd-cell">
-      <span class="bd-soon">Coming Soon</span>
-      <div class="bd-ph" style="background:linear-gradient(160deg, #34513a, #1b2d20 75%, #2a4730)"></div>
-      <span class="bd-name"><span class="bd-name-i">07</span>Garden Greenery</span>
-    </div>
-    <div class="bd-cell">
-      <span class="bd-soon">Coming Soon</span>
-      <div class="bd-ph" style="background:linear-gradient(135deg, #e2e6eb, #aeb4bd 50%, #767c85)"></div>
-      <span class="bd-name"><span class="bd-name-i">08</span>Silver Sequin</span>
-    </div>
-    <div class="bd-cell bd-custom">
-      <a class="bd-custom-inner" href="#contact">
-        <span class="bd-custom-eyebrow t-eyebrow">Bespoke</span>
-        <span class="bd-custom-title">Talk to our designer</span>
-        <span class="bd-custom-arrow" aria-hidden="true">&rarr;</span>
-      </a>
+    <div class="bd-grid">
+      <figure class="bd-cell">
+        <img class="bd-photo" src="assets/backdrop-5d-white-flowers.jpg" alt="Five-dimensional pure white flower wall backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">01</span>5D Pure White Flowers</figcaption>
+      </figure>
+      <figure class="bd-cell">
+        <img class="bd-photo" src="https://aliflowers.com/cdn/shop/files/grass-wall.jpg?v=1759332430&amp;width=900" alt="Artificial grass wall backdrop" loading="lazy" />
+        <figcaption class="bd-name"><span class="bd-name-i">02</span>Artificial Grass</figcaption>
+      </figure>
+      <div class="bd-cell bd-custom">
+        <a class="bd-custom-inner" href="#contact">
+          <span class="bd-custom-eyebrow t-eyebrow">Bespoke</span>
+          <span class="bd-custom-title">Talk to our designer</span>
+          <span class="bd-custom-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>

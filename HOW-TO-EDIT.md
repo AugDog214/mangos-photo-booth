@@ -10,8 +10,11 @@ A plain-English guide for updating your site. **You don't need to know how to co
 |---|---|
 | `index.html` | All the words, photos, and page sections. **This is the file you'll edit most.** |
 | `css/styles.css` | The look — colors, fonts, spacing. Only touch if you want design changes. |
-| `js/main.js` | The motion — slideshow, menu, animations. Rarely needs editing. |
-| `assets/` | Your logo and (later) your photos. |
+| `js/main.js` | The motion — menu, reveal effects, and floating booking button. Rarely needs editing. |
+| `build-pages.js` | The source for all nine service and location pages. Edit this file, then run `node build-pages.js`. |
+| `assets/` | Your logo and website photos. |
+| `AGENTS.md` | Rules every coding model must follow. |
+| `PROJECT_STATUS.md` | The latest handoff: what changed, what was tested, and what comes next. |
 | `HOW-TO-EDIT.md` | This guide. |
 
 **To preview the site:** double-click `index.html` — it opens in your web browser. Edit a file, save it, then refresh the browser (F5) to see changes.
@@ -25,61 +28,59 @@ A plain-English guide for updating your site. **You don't need to know how to co
 1. Open `index.html`.
 2. Press `Ctrl+F` and type a few words of the text you want to change (e.g. `Starting at` or `Classic Booth`).
 3. Type your new text **between** the `>` and `<` symbols. Example:
-   - Before: `<span class="pkg-price-val"><span class="pkg-cur">$</span>550</span>`
-   - After (new price $575): `<span class="pkg-price-val"><span class="pkg-cur">$</span>575</span>`
+   - Before: `<span class="pkg2-amt">550</span>`
+   - After (new price $575): `<span class="pkg2-amt">575</span>`
 4. Save (`Ctrl+S`) and refresh your browser.
 
-**If you change a package price, also update it in two more spots** so Google shows the right number:
+**If you change a package price, also update these spots** so Google and every inner page show the right number:
 - The structured-data block near the top of `index.html` (search for `"makesOffer"`) — update the matching `"price": "550"`.
+- `build-pages.js` — update the package prose and any matching structured-data values, then run `node build-pages.js`.
+- `llms.txt` — keep the plain-language package summary consistent.
 
 ---
 
 ## 3. Swap in your real photos
 
-Right now the site uses tasteful **stock photos** (loaded from the internet) as placeholders. Here's how to use your own:
+The site uses a mix of Mango's project photos and stock photography. Here's how to add more:
 
 1. Put your photos in the `assets/` folder. Make a subfolder like `assets/photos/` to stay organized.
    - Use **JPG** for photos, keep them under ~500 KB each (resize big phone photos first).
-2. In `index.html`, search (`Ctrl+F`) for `images.unsplash.com`. Each one is a placeholder photo.
+2. In `index.html`, search (`Ctrl+F`) for `images.unsplash.com`. Each remaining result is a stock photo.
 3. Replace the long web address with the path to your file. Example:
    - Before: `src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&h=1200&q=80"`
    - After: `src="assets/photos/wedding-booth.jpg"`
 4. Update the `alt="..."` text to describe the photo (good for Google + accessibility).
 
 **Where the photos live on the page:**
-- **Hero slideshow** (top, 5 photos): search `hero-slide` — replace the 5 `url('...')` web addresses.
+- **Hero cover**: search `hero-cover-realistic.jpg`.
 - **Event photos** (5): search `ev-img`.
 - **The scrolling wall** (12 photos): search `brick-img`.
 - **How It Works** (1 photo): search `how-img`.
-- **Package visuals** (the print strip, framed photo, keychains, magnets): search `strip-cell`, `gframe-img`, `keytag-img`, `magnet-img`.
+- **Memory Station feature**: search `memory-station-keychains.jpg`.
 
 ---
 
-## 4. Add your real backdrop photos
+## 4. Edit the backdrop gallery
 
-The 8 backdrop tiles are currently colored **placeholder swatches**. To use real backdrop photos:
+The gallery contains 16 real backdrop images grouped as Standard, Deluxe, and Premium.
 
-1. Search `index.html` for `bd-ph` (e.g. the Champagne Glitter tile looks like:
-   `<div class="bd-ph" style="background:...">`).
-2. Replace that whole `<div class="bd-ph" ...></div>` line with a photo, like this:
-   ```html
-   <div class="simg bd-ph"><div class="simg-fallback"></div>
-     <img class="simg-img" src="assets/photos/champagne-glitter.jpg" alt="Champagne glitter backdrop" loading="lazy"></div>
-   ```
-3. Repeat for each of the 8 tiles. Keep the `<span class="bd-name">…</span>` line as-is (that's the label).
+1. Search `index.html` for the backdrop name.
+2. Update the `src="..."` address inside the matching `<img class="bd-photo">`.
+3. Update the `alt="..."` description if the image changes.
+4. Never publish a preview image containing a vendor watermark. Use the licensed direct image or an optimized project copy.
 
 ---
 
-## 5. Turn on CheckCherry booking
+## 5. CheckCherry booking
 
-The "Check Availability" buttons scroll to a **Reserve your date** section that's ready for your CheckCherry widget.
+CheckCherry blocks ordinary iframe embedding, so the site uses direct booking links.
 
-1. In CheckCherry, go to **Settings → Online Booking / Lead Forms → Embed** and copy the embed code (it looks like `<iframe ...></iframe>`).
-2. Open `index.html` and search for **`CHECKCHERRY BOOKING WIDGET`**.
-3. Delete the placeholder block that starts with `<div class="book-placeholder">` and ends with its closing `</div>`, and **paste your CheckCherry embed code in its place** (keep it inside the `<div class="book-embed">`).
-4. Save and refresh. Your live availability checker now shows right on the page.
+- General booking URL: `https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation`
+- Classic event ID: `182525`
+- Party Glam event ID: `182524`
+- Big Kahuna event ID: `182523`
 
-Until you do this, the section shows a friendly "Call to Check Your Date" button that dials your phone — so it still works.
+If CheckCherry package IDs change, update the three package buttons in `index.html`. General Book Now buttons should continue pointing to the reservation URL.
 
 ---
 
@@ -106,14 +107,14 @@ Until you do this, the section shows a friendly "Call to Check Your Date" button
 The site is pre-wired for **mangosphotobooth.com** with page title, description, social-share tags, and Google "local business" structured data (your packages, phone, hours, and the Fort Myers / Naples / Cape Coral service area).
 
 Two things to upgrade when you can:
-- **Share image:** search `og:image`. It currently points to a stock photo so links look good when shared on Facebook/iMessage. Replace it with a branded 1200×630 image hosted on your site (e.g. `https://mangosphotobooth.com/assets/share-card.jpg`).
-- After the site is live, add it to **Google Business Profile** and submit it in **Google Search Console** — that's where most local bookings come from.
+- Create a dedicated branded 1200×630 social share card. Until then, `og:image` uses the current hero photograph.
+- Add the site to **Google Business Profile** and submit it in **Google Search Console**.
 
 ---
 
 ## 9. Going live (when you're ready)
 
-This is a plain static website, so it can be hosted anywhere — the same way your other site is on GitHub Pages, or on Netlify, etc. When you're ready to publish, just say so and I'll walk you through it (and double-check the domain + booking are wired correctly first).
+The site is hosted on GitHub Pages from the repository's `main` branch. A push to `main` deploys the live website. Always run local responsive checks and update `PROJECT_STATUS.md` before pushing.
 
 ---
 
