@@ -4,7 +4,7 @@ Last updated: 2026-07-09
 
 ## Current task
 
-Status: Ready for deployment
+Status: Live
 
 The July 9 visual/content update is implemented locally:
 
@@ -18,6 +18,14 @@ The July 9 visual/content update is implemented locally:
 - Mango's Memory Station add-on feature with a generated keychain photo;
 - real backdrop gallery grouped as Standard, Deluxe, and Premium;
 - responsive QA, commit, push to `main`, and production verification.
+
+## Deployment
+
+- Feature commit: `40ef2e1` (`feat: refresh Mango's site design and booking experience`)
+- Branch: `main`
+- Pushed: 2026-07-09
+- Production URL: https://mangosphotobooth.com/
+- Result: live and verified
 
 ## Completed on 2026-07-09
 
@@ -48,6 +56,9 @@ The July 9 visual/content update is implemented locally:
 - Verified five event Book Now buttons, 16 backdrop images, two visible GIF features, and corrected Party Glam/Big Kahuna event IDs.
 - `git diff --check`: passed; line-ending notices only.
 - Independent Codex CLI review was attempted, but its repository inspection tool failed in read-only mode. Manual diff review found no blocking issue.
+- Production responsive screenshots at 375×812, 768×1024, and 1280×720: passed.
+- Production Party Glam link resolves to CheckCherry event ID `182524`; Big Kahuna resolves to `182523`.
+- Production browser console after deployment: no errors.
 
 ## Current production baseline
 
@@ -67,4 +78,10 @@ The July 9 visual/content update is implemented locally:
 
 ## Next action
 
-Commit the verified changes, push `main`, verify the GitHub Pages deployment at https://mangosphotobooth.com/, then record the production result here.
+Next recommended work:
+
+1. Replace the three remaining package “Photo Coming Soon” tiles with real booth/package photography.
+2. Replace more remaining Unsplash images with real Mango's event photos.
+3. Add the GA4 Measurement ID and verify booking/call/email conversion events.
+4. Add real Facebook and TikTok profile URLs when available.
+5. Set up Google Business Profile and Google Search Console.
