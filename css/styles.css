@@ -329,13 +329,13 @@ body.bw-gallery .simg-img { filter: grayscale(1) contrast(1.05); }
    PACKAGES (comparison cards)
    ============================================================ */
 .packages { background: var(--ink-2); }
-.memory-feature { max-width: 1240px; margin: 3.5rem auto 0; display: grid; grid-template-columns: minmax(0,1.2fr) minmax(280px,.8fr);
+.memory-feature { width: 100%; max-width: 1240px; margin: 3.5rem auto 0; display: grid; grid-template-columns: minmax(0,1.2fr) minmax(280px,.8fr);
   overflow: hidden; border: 1px solid var(--line-strong); border-radius: 22px; background: var(--ink);
   box-shadow: 0 24px 70px -48px rgba(16,46,75,.55); }
 .memory-feature-media { min-height: 360px; }
 .memory-feature-media img { width: 100%; height: 100%; object-fit: cover; }
 .memory-feature-copy { padding: clamp(2rem,5vw,4rem); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
-.memory-feature-copy h3 { font-family: var(--serif); font-size: clamp(1.7rem,3vw,2.7rem); line-height: 1.1; margin: .7rem 0 1rem; }
+.memory-feature-copy h3 { font-family: var(--serif); font-size: clamp(1.7rem,3vw,2.7rem); line-height: 1.1; margin: .7rem 0 1rem; max-width: 15ch; text-wrap: balance; }
 .memory-feature-copy > p:not(.t-eyebrow) { color: var(--paper-dim); line-height: 1.7; margin-bottom: 1.6rem; max-width: 42ch; }
 .pkg2-grid { max-width: 1240px; margin: 4rem auto 0; display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1.4rem; align-items: stretch; }
@@ -360,10 +360,10 @@ body.bw-gallery .simg-img { filter: grayscale(1) contrast(1.05); }
 .pkg2-note { font-size: 0.74rem; color: var(--paper-faint); line-height: 1.4; margin-bottom: 1.3rem; }
 .pkg2-feats { list-style: none; display: flex; flex-direction: column; gap: 0.66rem;
   padding-top: 1.3rem; border-top: 1px solid var(--line); margin-bottom: 1.4rem; }
-.pkg2-feats li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.875rem; font-weight: 300; line-height: 1.4; color: var(--paper-dim); }
+.pkg2-feats li { display: grid; grid-template-columns: 1.1rem minmax(0, 1fr); align-items: flex-start; gap: 0.65rem; font-size: 0.875rem; font-weight: 300; line-height: 1.4; color: var(--paper-dim); }
 .pkg2-feats li.no { color: var(--paper-faint); opacity: 0.6; }
 .pkg2-feats li em { font-style: italic; font-family: var(--serif); font-size: 1.04em; color: var(--gold); }
-.pkg2-ic { flex: none; width: 1.05em; text-align: center; margin-top: 0.02em; font-weight: 500; }
+.pkg2-ic { width: 1.05em; text-align: center; margin-top: 0.02em; font-weight: 500; }
 .pkg2-ic.yes { color: var(--gold); }
 .pkg2-ic.no { color: var(--paper-faint); }
 .pkg2-cta { margin-top: auto; }
@@ -584,7 +584,9 @@ body.bw-gallery .simg-img { filter: grayscale(1) contrast(1.05); }
   .how-step-copy { margin-inline: auto; }
   .memory-feature-copy { align-items: center; }
   .pkg2-price { justify-content: center; }
-  .pkg2-feats li { justify-content: center; text-align: center; }
+  .pkg2-feats { width: min(100%, 21rem); margin-inline: auto; }
+  .pkg2-feats li { text-align: left; }
+  .pkg2-cta .btn, .memory-feature-copy .btn { width: min(100%, 20rem); white-space: normal; line-height: 1.2; padding-inline: 1rem; }
   .faq-q { padding-inline: 2.2rem; }
   .faq-a { padding-right: 0; }
   .prose ul { list-style-position: inside; padding-left: 0; }
@@ -601,6 +603,11 @@ body.bw-gallery .simg-img { filter: grayscale(1) contrast(1.05); }
   .hdr-cta { display: none; }
   .hdr-brand img { height: 104px; }
   .hdr-solid .hdr-brand img { height: 88px; }
+  .memory-feature { margin-top: 2rem; border-radius: 18px; }
+  .memory-feature-media { min-height: 0; aspect-ratio: 4/3; }
+  .memory-feature-copy { padding: 1.65rem 1.15rem 1.9rem; }
+  .memory-feature-copy h3 { font-size: clamp(1.45rem, 8vw, 2.1rem); max-width: 13.5ch; }
+  .pkg2-card { padding-inline: 1.15rem; }
 }
 @media (max-width: 460px) {
   .bd-grid { grid-template-columns: 1fr; }
@@ -624,10 +631,10 @@ a:focus-visible, button:focus-visible, .btn:focus-visible { outline: 2px solid v
    FLOATING MOBILE BOOKING BUTTON  (phones only)
    Slides up after the user scrolls past the hero.
    ============================================================ */
-.bookbar { position: fixed; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); z-index: 85; display: none;
+.bookbar { position: fixed; right: .75rem; bottom: calc(.75rem + env(safe-area-inset-bottom, 0px)); z-index: 85; display: none;
   transform: translateY(160%); transition: transform .45s var(--ease); }
 .bookbar.is-on { transform: none; }
-.bookbar .btn { border-radius: 999px; padding: 1.1em 1.55em; font-size: 0.76rem; letter-spacing: 0.12em;
+.bookbar .btn { border-radius: 999px; padding: .95em 1.25em; font-size: 0.7rem; letter-spacing: 0.12em;
   box-shadow: 0 12px 34px -12px rgba(11,35,64,.72), 0 0 0 4px rgba(247,242,232,.88); }
 @media (max-width: 760px) {
   .bookbar { display: block; }
@@ -642,9 +649,9 @@ a:focus-visible, button:focus-visible, .btn:focus-visible { outline: 2px solid v
 .btn-lg { padding: 1.35em 3em; font-size: 0.95rem; letter-spacing: 0.2em; }
 
 /* Package card media frame (top of each card) */
-.pkg2-media { position: relative; aspect-ratio: 16 / 10; border-radius: var(--radius);
-  overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--line); }
-.pkg2-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pkg2-media { position: relative; aspect-ratio: 1 / 1; border-radius: var(--radius);
+  overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--line); background: #fff; }
+.pkg2-media img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
 /* "Coming soon" placeholder — branded, intentional (not a blank gray box) */
 .coming-soon { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.45rem;

@@ -8,9 +8,9 @@
 - Booking: CheckCherry reservation flow at https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation
 
 ## Packages (all include 3 hours of service + free SWFL travel)
-- Classic Booth — $550 (open-air booth, touchscreen kiosk, unlimited on-site prints, choice of 2×6 or 4×6 print size, 1 custom template, themed props, standard backdrop, attendant, private gallery)
-- Party Glam Booth — $650, most popular (everything in Classic plus animated GIF creation, skin-perfecting beauty filter, upgraded deluxe backdrop, both print sizes, 2 custom templates)
-- The Big Kahuna — $1,300 (all-inclusive: full Glam Booth with animated GIF creation plus VIP red carpet with gold stanchions, premium custom backdrop, a Live Keychain or Magnet Memory Station, and a custom decor enhancement — balloons, arch, or florals)
+- Mango's Luxury Experience — $550 (open-air booth, touchscreen kiosk, unlimited on-site prints, choice of 2×6 or 4×6 print size, 1 custom template, themed props, standard backdrop, attendant, private gallery)
+- Mango's Platinum Experience — $650, most popular (everything in Luxury plus animated GIF creation, skin-perfecting beauty filter, upgraded deluxe backdrop, both print sizes, 2 custom templates)
+- Mango's Big Kahuna Experience — $1,300 (all-inclusive: full Platinum Experience with animated GIF creation plus VIP red carpet with gold stanchions, premium custom backdrop, a live keychain or magnet station, and a custom decor enhancement — balloons, arch, or florals)
 - Add-on: Live Keychain or Magnet Memory Station can be added to the Classic or Glam booth for take-home favors.
 
 ## Details

@@ -1,6 +1,48 @@
 # Project Status
 
-Last updated: 2026-07-09
+Last updated: 2026-07-10
+
+## Current local update, 2026-07-10
+
+Status: Local changes made, not pushed live.
+
+Update on 2026-07-11:
+
+- Replaced the Memory Station/keychain add-on image with `assets/memory-station-keychains-updated.png`.
+- Homepage now references the updated image in the Memory Station card.
+- Replaced package card placeholders with:
+  - `assets/package-mangos-luxury.png` for Mango's Luxury Experience.
+  - `assets/package-mangos-platinum.png` for Mango's Platinum Experience.
+  - `assets/package-mangos-big-kahuna.png` for Mango's Big Kahuna Experience.
+- Renamed visible package titles and matching package copy/structured data/generated pages from Classic/Party Glam/Big Kahuna to the new Mango's experience names while keeping prices and CheckCherry event IDs unchanged.
+- Ran `node --check build-pages.js`, `node --check js/main.js`, and `node build-pages.js`; all passed.
+- User requested push live. Next step in this session is commit and push to `main`.
+
+Completed in this pass:
+
+- Added `assets/hero-cover-updated.jpg` from the updated supplied hero photo found at `Website/New folder/image (1).jpg`.
+- Updated the homepage hero image, preload, Open Graph image, Twitter image, and generated-page social image source to use `hero-cover-updated.jpg`.
+- Moved the full Mango's Memory Station add-on card below the three main package cards.
+- Simplified the Big Kahuna feature text from the awkward wrapped “Live Memory Station — keychains or magnets” line to “Live keychain or magnet station.”
+- Tightened mobile CSS for package feature rows, Memory Station card width, card CTA button widths, and the floating Book Now button so the layout does not overflow or cover as much content.
+- Regenerated all nine service/location pages with `node build-pages.js`.
+
+Verification performed:
+
+- `node --check build-pages.js`: passed.
+- `node --check js/main.js`: passed.
+- `node build-pages.js`: passed, generated all nine pages.
+- Text/reference check confirms homepage and generated pages reference `hero-cover-updated.jpg`, package IDs remain Classic `182525`, Glam `182524`, Big Kahuna `182523`, and the Memory Station card is now after the package grid.
+
+Still needs:
+
+- Quick local browser visual QA on mobile before any push/deploy.
+- If visual QA passes, commit and push only if the user asks to make it live.
+
+Next recommended task:
+
+1. Open the homepage locally at mobile width and verify the package section plus Memory Station card alignment.
+2. If it looks right, commit and push to `main`.
 
 ## Current task
 
