@@ -306,7 +306,7 @@ const PACKAGES_PROSE = `    <h2>Our packages</h2>
       <li><strong>Mango's Platinum Experience — $650 (most popular).</strong> Everything in Luxury, elevated with animated GIF creation, a skin-perfecting beauty filter, an upgraded deluxe backdrop, both print sizes, and a second custom template design.</li>
       <li><strong>Mango's Big Kahuna Experience — $1,300.</strong> Our premier all-inclusive experience: the full Platinum Experience with animated GIF creation, plus a VIP red-carpet entrance, a premium custom backdrop, a live keychain or magnet station, and a custom decor enhancement.</li>
     </ul>
-    <p>Want take-home favors on the Classic or Glam booth? Add a <strong>Live Keychain or Magnet Memory Station</strong> to any package. See full details on the <a href="../index.html#packages">packages page</a>, or <a href="../index.html#book">check your date</a> to lock in your booking.</p>`;
+    <p>Want take-home favors on the Luxury or Platinum experience? Add a <strong>Live Keychain or Magnet Memory Station</strong> to any package. See full details on the <a href="../index.html#packages">packages page</a>, or <a href="../index.html#book">check your date</a> to lock in your booking.</p>`;
 
 // ---------- page data ----------
 const PAGES = [];
@@ -316,7 +316,7 @@ PAGES.push({
   slug: "weddings", crumb: "Weddings",
   title: "Wedding Photo Booth Rental in Fort Myers & SWFL | Mango's Photo Booth",
   ogTitle: "Wedding Photo Booth Rental — Fort Myers & Southwest Florida",
-  description: "Luxury wedding photo booth and live-favor stations for Fort Myers, Cape Coral, Naples & Marco Island. Open-air booth from $550; Party Glam $650; all-inclusive Big Kahuna $1,300 with live keychain & magnet stations. Prints in seconds, gallery in 48 hours.",
+  description: "Luxury wedding photo booth and live-favor stations for Fort Myers, Cape Coral, Naples & Marco Island. Mango's Luxury Experience from $550; Platinum $650; Big Kahuna $1,300 with live keychain & magnet stations. Prints in seconds, gallery in 48 hours.",
   keywords: "wedding photo booth Fort Myers, wedding photo booth rental SWFL, photo booth wedding Naples, keychain favors wedding, magnet station wedding",
   serviceName: "Wedding Photo Booth Rental",
   areaServed: ["Fort Myers","Cape Coral","Naples","Marco Island"],
@@ -464,7 +464,7 @@ function locationPage(slug, city, blurb, travelNote) {
     slug, crumb: city,
     title: `Photo Booth Rental ${city}, FL | Mango's Photo Booth`,
     ogTitle: `Photo Booth Rental in ${city}, Florida`,
-    description: `Luxury photo booth rental in ${city}, FL. Weddings, corporate events, birthdays & quinceañeras. Open-air booth from $550; Party Glam $650; all-inclusive Big Kahuna $1,300 with live keychain & magnet stations. Prints in seconds, gallery in 48 hours.`,
+    description: `Luxury photo booth rental in ${city}, FL. Weddings, corporate events, birthdays & quinceañeras. Mango's Luxury Experience from $550; Platinum $650; Big Kahuna $1,300 with live keychain & magnet stations. Prints in seconds, gallery in 48 hours.`,
     keywords: `photo booth rental ${city}, photo booth ${city} FL, wedding photo booth ${city}, ${city} photo booth company`,
     serviceName: `Photo Booth Rental in ${city}`,
     areaServed: [city],

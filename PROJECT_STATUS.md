@@ -4,7 +4,7 @@ Last updated: 2026-07-10
 
 ## Current local update, 2026-07-10
 
-Status: Local changes made, not pushed live.
+Status: Pushed live to `main`.
 
 Update on 2026-07-11:
 
@@ -16,7 +16,8 @@ Update on 2026-07-11:
   - `assets/package-mangos-big-kahuna.png` for Mango's Big Kahuna Experience.
 - Renamed visible package titles and matching package copy/structured data/generated pages from Classic/Party Glam/Big Kahuna to the new Mango's experience names while keeping prices and CheckCherry event IDs unchanged.
 - Ran `node --check build-pages.js`, `node --check js/main.js`, and `node build-pages.js`; all passed.
-- User requested push live. Next step in this session is commit and push to `main`.
+- Committed as `18cc57f` (`Update package branding and homepage visuals`) and pushed to `main`.
+- Production text check passed after push: live homepage shows Mango's Luxury Experience, Mango's Platinum Experience, Mango's Big Kahuna Experience, updated Memory Station image/copy, and no browser console errors.
 
 Completed in this pass:
 
