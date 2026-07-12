@@ -105,7 +105,7 @@ function header() {
   return `
 <header class="hdr" id="site-header">
   <a class="hdr-brand" href="../index.html" aria-label="Mango's Photo Booth Company — home">
-    <img src="../assets/mango-logo.png" alt="Mango's Photo Booth Company logo" width="208" height="208" />
+    <img src="../assets/mango-logo-new-clean.png" alt="Mango's Photo Booth Company logo" width="1098" height="1280" />
   </a>
 
   <nav class="hdr-nav" aria-label="Primary">
@@ -157,7 +157,7 @@ function footer(prefix) {
 
   <div class="foot-grid">
     <div class="foot-brand">
-      <img src="${prefix}assets/mango-logo.png" alt="Mango's Photo Booth Company logo" class="foot-logo" width="256" height="256" />
+      <img src="${prefix}assets/mango-logo-new-clean.png" alt="Mango's Photo Booth Company logo" class="foot-logo" width="1098" height="1280" />
       <p class="foot-tagline">Luxury photo booth &amp; keepsake experiences for the moments worth remembering.</p>
     </div>
     <nav class="foot-col" aria-label="Services">
