@@ -105,7 +105,7 @@ function header() {
   return `
 <header class="hdr" id="site-header">
   <a class="hdr-brand" href="../index.html" aria-label="Mango's Photo Booth Company — home">
-    <img src="../assets/mango-logo-new-clean.png" alt="Mango's Photo Booth Company logo" width="1098" height="1280" />
+    <img src="../assets/mango-logo-final.png" alt="Mango's Photo Booth &amp; Entertainment logo" width="1210" height="1238" />
   </a>
 
   <nav class="hdr-nav" aria-label="Primary">
@@ -157,7 +157,7 @@ function footer(prefix) {
 
   <div class="foot-grid">
     <div class="foot-brand">
-      <img src="${prefix}assets/mango-logo-new-clean.png" alt="Mango's Photo Booth Company logo" class="foot-logo" width="1098" height="1280" />
+      <img src="${prefix}assets/mango-logo-final.png" alt="Mango's Photo Booth &amp; Entertainment logo" class="foot-logo" width="1210" height="1238" />
       <p class="foot-tagline">Luxury photo booth &amp; keepsake experiences for the moments worth remembering.</p>
     </div>
     <nav class="foot-col" aria-label="Services">
@@ -264,7 +264,7 @@ ${header()}
     <h1 class="page-h1">${p.h1}</h1>
     <p class="page-lead">${p.lead}</p>
     <div class="page-actions">
-      <a class="btn btn-gold btn-packages" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="page-hero">Book Now</a>
+      <a class="btn btn-gold btn-packages" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="page-hero">${p.bookingLabel || "Book Now"}</a>
       <a class="btn btn-ghost" href="../index.html#packages">View Packages</a>
     </div>
   </div>
@@ -304,7 +304,7 @@ const PACKAGES_PROSE = `    <h2>Our packages</h2>
     <ul>
       <li><strong>Mango's Luxury Experience — $550.</strong> Three hours of open-air booth service, unlimited on-site prints, your choice of 2x6 or 4x6 print size, a custom template, themed props, a standard backdrop, an on-site attendant, a private online gallery, and free travel across Southwest Florida.</li>
       <li><strong>Mango's Platinum Experience — $650 (most popular).</strong> Everything in Luxury, elevated with animated GIF creation, a skin-perfecting beauty filter, an upgraded deluxe backdrop, both print sizes, and a second custom template design.</li>
-      <li><strong>Mango's Big Kahuna Experience — $1,300.</strong> Our premier all-inclusive experience: the full Platinum Experience with animated GIF creation, plus a VIP red-carpet entrance, a premium custom backdrop, a live keychain or magnet station, and a custom decor enhancement.</li>
+      <li><strong>Mango's Big Kahuna Experience — $1,400.</strong> Our premier all-inclusive experience: the full Platinum Experience with animated GIF creation, plus a VIP red-carpet entrance, a premium custom backdrop, a live keychain or magnet station, a Mango Memory Frame loaded with all your photos, and a custom decor enhancement.</li>
     </ul>
     <p>Want take-home favors on the Luxury or Platinum experience? Add a <strong>Live Keychain or Magnet Memory Station</strong> to any package. See full details on the <a href="../index.html#packages">packages page</a>, or <a href="../index.html#book">check your date</a> to lock in your booking.</p>`;
 
@@ -316,7 +316,7 @@ PAGES.push({
   slug: "weddings", crumb: "Weddings",
   title: "Wedding Photo Booth Rental in Fort Myers & SWFL | Mango's Photo Booth",
   ogTitle: "Wedding Photo Booth Rental — Fort Myers & Southwest Florida",
-  description: "Luxury wedding photo booth and live-favor stations for Fort Myers, Cape Coral, Naples & Marco Island. Mango's Luxury Experience from $550; Platinum $650; Big Kahuna $1,300 with live keychain & magnet stations. Prints in seconds, gallery in 48 hours.",
+  description: "Luxury wedding photo booth and live-favor stations for Fort Myers, Cape Coral, Naples & Marco Island. Mango's Luxury Experience from $550; Platinum $650; Big Kahuna $1,400 with live keychain & magnet stations. Prints in seconds, gallery in 48 hours.",
   keywords: "wedding photo booth Fort Myers, wedding photo booth rental SWFL, photo booth wedding Naples, keychain favors wedding, magnet station wedding",
   serviceName: "Wedding Photo Booth Rental",
   areaServed: ["Fort Myers","Cape Coral","Naples","Marco Island"],
@@ -324,7 +324,7 @@ PAGES.push({
   lead: "Bring your wedding to life with a luxury photo booth experience your guests will talk about long after the last dance — perfectly tailored for any size celebration across Fort Myers, Cape Coral, Naples, and Marco Island.",
   answerH2: "How much is a wedding photo booth?",
   answerParas: [
-    "A wedding photo booth rental from Mango's starts at <strong>$550</strong> for Mango's Luxury Experience, with unlimited prints, instant sharing, and a private online gallery. Mango's Platinum Experience (our most popular) is $650, and Mango's Big Kahuna Experience — with a VIP red carpet, premium backdrop, and a live keychain or magnet station — is $1,300. Live keychain and magnet favor stations can also be added to any package.",
+    "A wedding photo booth rental from Mango's starts at <strong>$550</strong> for Mango's Luxury Experience, with unlimited prints, instant sharing, and a private online gallery. Mango's Platinum Experience (our most popular) is $650, and Mango's Big Kahuna Experience — with a VIP red carpet, premium backdrop, a live keychain or magnet station, and a Mango Memory Frame loaded with all your photos — is $1,400. Live keychain and magnet favor stations can also be added to any package.",
     "Your final price depends on hours of coverage, backdrop, add-ons, and travel within Southwest Florida. Most couples book 2 to 4 hours. <a href=\"../index.html#book\">Check your date</a> for an exact quote."
   ],
   prose: `    <h2>An elegant booth for every wedding</h2>
@@ -334,7 +334,7 @@ PAGES.push({
 ${PACKAGES_PROSE}`,
   faqTitle: "Wedding photo booth <span class=\"t-italic text-gradient-gold\">questions.</span>",
   faqs: [
-    { q: "How much does a wedding photo booth cost?", a: "Wedding packages start at $550 for Mango's Luxury Experience. Mango's Platinum Experience (our most popular) is $650, and Mango's Big Kahuna Experience — with a VIP red carpet, premium backdrop, and a live keychain or magnet station — is $1,300. Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a wedding photo booth cost?", aPlain: "Wedding packages start at $550 for Mango's Luxury Experience. Mango's Platinum Experience (our most popular) is $650, and Mango's Big Kahuna Experience — with a VIP red carpet, premium backdrop, and a live keychain or magnet station — is $1,300. Final pricing depends on hours, backdrop, add-ons, and travel." },
+    { q: "How much does a wedding photo booth cost?", a: "Wedding packages start at $550 for Mango's Luxury Experience. Mango's Platinum Experience (our most popular) is $650, and Mango's Big Kahuna Experience — with a VIP red carpet, premium backdrop, a live keychain or magnet station, and a Mango Memory Frame loaded with all your photos — is $1,400. Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a wedding photo booth cost?", aPlain: "Wedding packages start at $550 for Mango's Luxury Experience. Mango's Platinum Experience (our most popular) is $650, and Mango's Big Kahuna Experience — with a VIP red carpet, premium backdrop, a live keychain or magnet station, and a Mango Memory Frame loaded with all your photos — is $1,400. Final pricing depends on hours, backdrop, add-ons, and travel." },
     { q: "What's included with the booth?", a: "Every booth comes with a professional on-site attendant, unlimited 2x6 or 4x6 prints, a curated prop and backdrop setup, instant photo sharing by text and email, and a private online gallery after your event.", qPlain: "What's included with the booth?", aPlain: "Every booth comes with a professional on-site attendant, unlimited 2x6 or 4x6 prints, a curated prop and backdrop setup, instant photo sharing by text and email, and a private online gallery after your event." },
     { q: "What is a keychain or magnet station?", a: "These are our live-favor stations. Guests watch their photos become custom keychains (50 included) or acrylic magnets (50 included) on the spot, so they leave your wedding with a keepsake the same night.", qPlain: "What is a keychain or magnet station?", aPlain: "These are our live-favor stations. Guests watch their photos become custom keychains (50 included) or acrylic magnets (50 included) on the spot, so they leave your wedding with a keepsake the same night." },
     { q: "Do you travel to our venue?", a: "Yes. We're a service-area business and travel to venues throughout Fort Myers, Cape Coral, Naples, Marco Island, and the rest of Southwest Florida.", qPlain: "Do you travel to our venue?", aPlain: "Yes. We're a service-area business and travel to venues throughout Fort Myers, Cape Coral, Naples, Marco Island, and the rest of Southwest Florida." },
@@ -349,12 +349,13 @@ PAGES.push({
   description: "Branded corporate photo booth experiences for Fort Myers, Cape Coral & Naples. Custom templates, branded backdrops, instant social sharing, and lead capture. Packages from $550.",
   keywords: "corporate photo booth Fort Myers, brand activation photo booth, corporate event photo booth SWFL, branded photo booth Naples",
   serviceName: "Corporate & Brand Activation Photo Booth",
+  bookingLabel: "Book Your Corporate Event",
   areaServed: ["Fort Myers","Cape Coral","Naples","Marco Island"],
   h1: "Corporate &amp; Brand<br /><span class=\"t-italic\">photo experiences.</span>",
   lead: "Drive results with Mango's corporate branding events — maximize your ROI and build lasting digital imprints at conferences, grand openings, and brand activations across Southwest Florida.",
   answerH2: "How much is a corporate photo booth?",
   answerParas: [
-    "A corporate photo booth activation from Mango's starts at <strong>$550</strong> for a 3-hour open-air booth, scaling up with branded templates, custom backdrops, live keychain & magnet stations, and our all-inclusive Big Kahuna package at $1,300. Pricing depends on hours, branding, add-ons, and travel within Southwest Florida.",
+    "A corporate photo booth activation from Mango's starts at <strong>$550</strong> for a 3-hour open-air booth, scaling up with branded templates, custom backdrops, live keychain & magnet stations, and our all-inclusive Big Kahuna package at $1,400. Pricing depends on hours, branding, add-ons, and travel within Southwest Florida.",
     "Want branded keepsakes for attendees? Our Live Keychain and Magnet stations turn every photo into a take-home product carrying your logo."
   ],
   prose: `    <h2>Branding that travels home with your guests</h2>
@@ -364,7 +365,7 @@ PAGES.push({
 ${PACKAGES_PROSE}`,
   faqTitle: "Corporate photo booth <span class=\"t-italic text-gradient-gold\">questions.</span>",
   faqs: [
-    { q: "How much does a corporate photo booth cost?", a: "Corporate activations start at $550 for a 3-hour open-air booth, with branded keychain & magnet stations and an all-inclusive Big Kahuna package at $1,300. Final pricing depends on hours, custom branding, add-ons, and travel.", qPlain: "How much does a corporate photo booth cost?", aPlain: "Corporate activations start at $550 for a 3-hour open-air booth, with branded keychain & magnet stations and an all-inclusive Big Kahuna package at $1,300. Final pricing depends on hours, custom branding, add-ons, and travel." },
+    { q: "How much does a corporate photo booth cost?", a: "Corporate activations start at $550 for a 3-hour open-air booth, with branded keychain & magnet stations and an all-inclusive Big Kahuna package at $1,400. Final pricing depends on hours, custom branding, add-ons, and travel.", qPlain: "How much does a corporate photo booth cost?", aPlain: "Corporate activations start at $550 for a 3-hour open-air booth, with branded keychain & magnet stations and an all-inclusive Big Kahuna package at $1,400. Final pricing depends on hours, custom branding, add-ons, and travel." },
     { q: "Can you brand the photos and backdrop?", a: "Yes. We provide branded print templates, custom backdrops, and branded digital sharing so every photo carries your logo and campaign message.", qPlain: "Can you brand the photos and backdrop?", aPlain: "Yes. We provide branded print templates, custom backdrops, and branded digital sharing so every photo carries your logo and campaign message." },
     { q: "Can the booth capture leads?", a: "Yes. At open events, guests opt in to receive their photos, which gives your team a list of engaged attendees for follow-up.", qPlain: "Can the booth capture leads?", aPlain: "Yes. At open events, guests opt in to receive their photos, which gives your team a list of engaged attendees for follow-up." },
     { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue." }
@@ -383,7 +384,7 @@ PAGES.push({
   lead: "Celebrate any milestone with Mango's. We make birthdays unforgettable with personalized digital experiences built for any age — across Fort Myers, Cape Coral, Naples, and Marco Island.",
   answerH2: "How much is a birthday photo booth?",
   answerParas: [
-    "A birthday photo booth rental from Mango's starts at <strong>$550</strong> for Mango's Luxury Experience with unlimited prints and instant sharing. Mango's Platinum Experience is $650, and Mango's Big Kahuna Experience is $1,300. Customize any package to wow your guests.",
+    "A birthday photo booth rental from Mango's starts at <strong>$550</strong> for Mango's Luxury Experience with unlimited prints and instant sharing. Mango's Platinum Experience is $650, and Mango's Big Kahuna Experience is $1,400. Customize any package to wow your guests.",
     "Final pricing depends on hours, backdrop, add-ons, and travel within Southwest Florida. And don't forget — Mango the mascot is available to make an appearance at your event!"
   ],
   prose: `    <h2>A booth built for the party</h2>
@@ -393,7 +394,7 @@ PAGES.push({
 ${PACKAGES_PROSE}`,
   faqTitle: "Birthday photo booth <span class=\"t-italic text-gradient-gold\">questions.</span>",
   faqs: [
-    { q: "How much does a birthday photo booth cost?", a: "Birthday packages start at $550 for Mango's Luxury Experience, up to $1,300 for Mango's Big Kahuna Experience, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a birthday photo booth cost?", aPlain: "Birthday packages start at $550 for Mango's Luxury Experience, up to $1,300 for Mango's Big Kahuna Experience, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel." },
+    { q: "How much does a birthday photo booth cost?", a: "Birthday packages start at $550 for Mango's Luxury Experience, up to $1,400 for Mango's Big Kahuna Experience, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a birthday photo booth cost?", aPlain: "Birthday packages start at $550 for Mango's Luxury Experience, up to $1,400 for Mango's Big Kahuna Experience, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel." },
     { q: "Is the booth good for all ages?", a: "Yes. Our experiences are built for any age, from kids' parties to milestone birthdays, with props and templates customized to your theme.", qPlain: "Is the booth good for all ages?", aPlain: "Yes. Our experiences are built for any age, from kids' parties to milestone birthdays, with props and templates customized to your theme." },
     { q: "Can Mango the mascot come to the party?", a: "Yes! Mango is available to make a special appearance at your event — just ask when you check your date.", qPlain: "Can Mango the mascot come to the party?", aPlain: "Yes! Mango is available to make a special appearance at your event — just ask when you check your date." },
     { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue." }
@@ -412,7 +413,7 @@ PAGES.push({
   lead: "A glamour booth worthy of the celebration — beauty filters, a couture backdrop, and keepsakes the whole familia will treasure, across Fort Myers, Cape Coral, Naples, and Marco Island.",
   answerH2: "How much is a quinceañera photo booth?",
   answerParas: [
-    "A quinceañera photo booth rental from Mango's starts at <strong>$550</strong> for Mango's Luxury Experience. Most quinces choose Mango's Platinum Experience ($650) for its beauty filter, or Mango's Big Kahuna Experience ($1,300), which includes a live keychain or magnet station so every guest takes home a custom favor.",
+    "A quinceañera photo booth rental from Mango's starts at <strong>$550</strong> for Mango's Luxury Experience. Most quinces choose Mango's Platinum Experience ($650) for its beauty filter, or Mango's Big Kahuna Experience ($1,400), which includes a live keychain or magnet station so every guest takes home a custom favor.",
     "Final pricing depends on hours, backdrop, add-ons, and travel within Southwest Florida. <a href=\"../index.html#book\">Check your date</a> to reserve."
   ],
   prose: `    <h2>Glamour for the guest of honor</h2>
@@ -422,7 +423,7 @@ PAGES.push({
 ${PACKAGES_PROSE}`,
   faqTitle: "Quinceañera photo booth <span class=\"t-italic text-gradient-gold\">questions.</span>",
   faqs: [
-    { q: "How much does a quinceañera photo booth cost?", a: "Quinceañera packages start at $550 for Mango's Luxury Experience, with Mango's Platinum Experience at $650 and Mango's Big Kahuna Experience at $1,300 (live keychain and magnet stations available as add-ons). Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a quinceanera photo booth cost?", aPlain: "Quinceanera packages start at $550 for Mango's Luxury Experience, with Mango's Platinum Experience at $650 and Mango's Big Kahuna Experience at $1,300 (live keychain and magnet stations available as add-ons). Final pricing depends on hours, backdrop, add-ons, and travel." },
+    { q: "How much does a quinceañera photo booth cost?", a: "Quinceañera packages start at $550 for Mango's Luxury Experience, with Mango's Platinum Experience at $650 and Mango's Big Kahuna Experience at $1,400 (live keychain and magnet stations available as add-ons). Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a quinceanera photo booth cost?", aPlain: "Quinceanera packages start at $550 for Mango's Luxury Experience, with Mango's Platinum Experience at $650 and Mango's Big Kahuna Experience at $1,400 (live keychain and magnet stations available as add-ons). Final pricing depends on hours, backdrop, add-ons, and travel." },
     { q: "Do you have a beauty filter and custom backdrop?", a: "Yes. Mango's Platinum Experience includes a skin-perfecting beauty filter and an optional glam black and white look, with a backdrop matched to your theme and colors.", qPlain: "Do you have a beauty filter and custom backdrop?", aPlain: "Yes. Mango's Platinum Experience includes a skin-perfecting beauty filter and an optional glam black and white look, with a backdrop matched to your theme and colors." },
     { q: "Can guests take home a keepsake?", a: "Yes. Our Live Keychain and Magnet stations create custom favors on the spot, with 50 included, so every guest leaves with a memento.", qPlain: "Can guests take home a keepsake?", aPlain: "Yes. Our Live Keychain and Magnet stations create custom favors on the spot, with 50 included, so every guest leaves with a memento." },
     { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue." }
@@ -441,7 +442,7 @@ PAGES.push({
   lead: "From office galas to grand openings, any event is the perfect place for your guests to make memories and take home prints — Mango's has you covered across Southwest Florida.",
   answerH2: "How much is a holiday party photo booth?",
   answerParas: [
-    "A holiday party photo booth rental from Mango's starts at <strong>$550</strong> for Mango's Luxury Experience with unlimited prints and instant sharing. Mango's Platinum Experience is $650, and Mango's Big Kahuna Experience — with a live keychain or magnet station included — is $1,300.",
+    "A holiday party photo booth rental from Mango's starts at <strong>$550</strong> for Mango's Luxury Experience with unlimited prints and instant sharing. Mango's Platinum Experience is $650, and Mango's Big Kahuna Experience — with a live keychain or magnet station included — is $1,400.",
     "Final pricing depends on hours, backdrop, add-ons, and travel within Southwest Florida. The holidays book up fast — <a href=\"../index.html#book\">check your date</a> early."
   ],
   prose: `    <h2>The sparkle for your season</h2>
@@ -451,7 +452,7 @@ PAGES.push({
 ${PACKAGES_PROSE}`,
   faqTitle: "Holiday party photo booth <span class=\"t-italic text-gradient-gold\">questions.</span>",
   faqs: [
-    { q: "How much does a holiday party photo booth cost?", a: "Holiday party packages start at $550 for a 3-hour open-air booth, up to $1,300 for the all-inclusive Big Kahuna, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a holiday party photo booth cost?", aPlain: "Holiday party packages start at $550 for a 3-hour open-air booth, up to $1,300 for the all-inclusive Big Kahuna, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel." },
+    { q: "How much does a holiday party photo booth cost?", a: "Holiday party packages start at $550 for a 3-hour open-air booth, up to $1,400 for the all-inclusive Big Kahuna, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a holiday party photo booth cost?", aPlain: "Holiday party packages start at $550 for a 3-hour open-air booth, up to $1,400 for the all-inclusive Big Kahuna, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel." },
     { q: "Do you do office and corporate holiday parties?", a: "Yes. From office galas to client appreciation events and grand openings, we bring seasonal backdrops, props, and instant sharing to make it memorable.", qPlain: "Do you do office and corporate holiday parties?", aPlain: "Yes. From office galas to client appreciation events and grand openings, we bring seasonal backdrops, props, and instant sharing to make it memorable." },
     { q: "How fast do we get our photos?", a: "Every photo is sent instantly by text and email during the party, and your full private online gallery is delivered within 48 hours.", qPlain: "How fast do we get our photos?", aPlain: "Every photo is sent instantly by text and email during the party, and your full private online gallery is delivered within 48 hours." },
     { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue." }
@@ -464,7 +465,7 @@ function locationPage(slug, city, blurb, travelNote) {
     slug, crumb: city,
     title: `Photo Booth Rental ${city}, FL | Mango's Photo Booth`,
     ogTitle: `Photo Booth Rental in ${city}, Florida`,
-    description: `Luxury photo booth rental in ${city}, FL. Weddings, corporate events, birthdays & quinceañeras. Mango's Luxury Experience from $550; Platinum $650; Big Kahuna $1,300 with live keychain & magnet stations. Prints in seconds, gallery in 48 hours.`,
+    description: `Luxury photo booth rental in ${city}, FL. Weddings, corporate events, birthdays & quinceañeras. Mango's Luxury Experience from $550; Platinum $650; Big Kahuna $1,400 with live keychain & magnet stations. Prints in seconds, gallery in 48 hours.`,
     keywords: `photo booth rental ${city}, photo booth ${city} FL, wedding photo booth ${city}, ${city} photo booth company`,
     serviceName: `Photo Booth Rental in ${city}`,
     areaServed: [city],
@@ -472,7 +473,7 @@ function locationPage(slug, city, blurb, travelNote) {
     lead: `${blurb} Mango's brings a luxury photo booth and live-favor experience to ${city} and all of Southwest Florida — for weddings, corporate events, birthdays, quinceañeras, and holiday parties.`,
     answerH2: `How much does a photo booth cost in ${city}?`,
     answerParas: [
-      `A photo booth rental in ${city} from Mango's starts at <strong>$550</strong> for Mango's Luxury Experience, including unlimited prints, instant sharing, and a private online gallery. Mango's Platinum Experience (our most popular) is $650, and Mango's Big Kahuna Experience — with a VIP red carpet, premium backdrop, and a live keychain or magnet station — is $1,300.`,
+      `A photo booth rental in ${city} from Mango's starts at <strong>$550</strong> for Mango's Luxury Experience, including unlimited prints, instant sharing, and a private online gallery. Mango's Platinum Experience (our most popular) is $650, and Mango's Big Kahuna Experience — with a VIP red carpet, premium backdrop, and a live keychain or magnet station — is $1,400.`,
       `Your final price depends on event size, hours, backdrop, add-ons, and ${travelNote} <a href=\"../index.html#book\">Check your date</a> for an exact quote.`
     ],
     prose: `    <h2>Your ${city} photo booth company</h2>
@@ -482,7 +483,7 @@ function locationPage(slug, city, blurb, travelNote) {
 ${PACKAGES_PROSE}`,
     faqTitle: `Photo booth in ${city} <span class=\"t-italic text-gradient-gold\">questions.</span>`,
     faqs: [
-      { q: `How much does a photo booth cost in ${city}?`, a: `In ${city}, packages start at $550 for Mango's Luxury Experience, with Mango's Platinum Experience at $650 and Mango's Big Kahuna Experience at $1,300 (live keychain and magnet stations available as add-ons). Final pricing depends on event size, hours, backdrop, add-ons, and travel.`, qPlain: `How much does a photo booth cost in ${city}?`, aPlain: `In ${city}, packages start at $550 for Mango's Luxury Experience, with Mango's Platinum Experience at $650 and Mango's Big Kahuna Experience at $1,300 (live keychain and magnet stations available as add-ons). Final pricing depends on event size, hours, backdrop, add-ons, and travel.` },
+      { q: `How much does a photo booth cost in ${city}?`, a: `In ${city}, packages start at $550 for Mango's Luxury Experience, with Mango's Platinum Experience at $650 and Mango's Big Kahuna Experience at $1,400 (live keychain and magnet stations available as add-ons). Final pricing depends on event size, hours, backdrop, add-ons, and travel.`, qPlain: `How much does a photo booth cost in ${city}?`, aPlain: `In ${city}, packages start at $550 for Mango's Luxury Experience, with Mango's Platinum Experience at $650 and Mango's Big Kahuna Experience at $1,400 (live keychain and magnet stations available as add-ons). Final pricing depends on event size, hours, backdrop, add-ons, and travel.` },
       { q: `Do you serve ${city}?`, a: `Yes. We serve ${city} and the surrounding Southwest Florida region, including Fort Myers, Cape Coral, Naples, and Marco Island. We travel to your venue.`, qPlain: `Do you serve ${city}?`, aPlain: `Yes. We serve ${city} and the surrounding Southwest Florida region, including Fort Myers, Cape Coral, Naples, and Marco Island. We travel to your venue.` },
       { q: "What's included with the rental?", a: "Every booth comes with a professional on-site attendant, unlimited 2x6 or 4x6 prints, a curated prop and backdrop setup, instant photo sharing by text and email, and a private online gallery after your event.", qPlain: "What's included with the rental?", aPlain: "Every booth comes with a professional on-site attendant, unlimited 2x6 or 4x6 prints, a curated prop and backdrop setup, instant photo sharing by text and email, and a private online gallery after your event." },
       { q: "How fast do we get our photos?", a: "Every photo is sent instantly by text and email during your event, and your full private online gallery is delivered within 48 hours.", qPlain: "How fast do we get our photos?", aPlain: "Every photo is sent instantly by text and email during your event, and your full private online gallery is delivered within 48 hours." }

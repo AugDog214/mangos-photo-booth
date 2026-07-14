@@ -114,7 +114,7 @@ The July 9 visual/content update is implemented locally:
 
 ## Important decisions
 
-- Prices remain Classic $550, Party Glam $650, and Big Kahuna $1,300.
+- Prices remain Classic $550, Party Glam $650, and Big Kahuna $1,400.
 - Do not use the downloaded `luxury_marble_swirl_2k_high_res.png`; it contains a visible vendor watermark. Use the unwatermarked SmugMug source instead.
 - Keep category photography. Use `assets/wedding-floral-portrait.jpg` for Weddings and `assets/wedding-couple.jpg` in the Memory Wall.
 - Keep all user-supplied originals untouched. Project copies are optimized JPEG derivatives.
