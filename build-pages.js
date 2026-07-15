@@ -232,7 +232,7 @@ function buildSchema(p) {
     "offers": {
       "@type": "AggregateOffer",
       "lowPrice": "550",
-      "highPrice": "1300",
+      "highPrice": "1400",
       "priceCurrency": "USD",
       "offerCount": "3"
     }
@@ -253,6 +253,8 @@ function buildSchema(p) {
 
 function buildPage(p) {
   const prefix = "../";
+  const bookingHref = p.bookingHref || "https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation";
+  const bookingAttrs = p.bookingHref ? "" : ' target="_blank" rel="noopener noreferrer"';
   return `${head(p)}
 ${header()}
 
@@ -264,7 +266,7 @@ ${header()}
     <h1 class="page-h1">${p.h1}</h1>
     <p class="page-lead">${p.lead}</p>
     <div class="page-actions">
-      <a class="btn btn-gold btn-packages" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="page-hero">${p.bookingLabel || "Book Now"}</a>
+      <a class="btn btn-gold btn-packages" href="${bookingHref}"${bookingAttrs} data-loc="page-hero">${p.bookingLabel || "Book Now"}</a>
       <a class="btn btn-ghost" href="../index.html#packages">View Packages</a>
     </div>
   </div>
@@ -280,6 +282,8 @@ ${p.answerParas.map(t => `    <p>${t}</p>`).join("\n")}
 ${p.prose}
   </div>
 </section>
+
+${p.leadForm || ""}
 
 <section class="section faq">
   <div class="sec-head sec-head-center">
@@ -350,6 +354,19 @@ PAGES.push({
   keywords: "corporate photo booth Fort Myers, brand activation photo booth, corporate event photo booth SWFL, branded photo booth Naples",
   serviceName: "Corporate & Brand Activation Photo Booth",
   bookingLabel: "Book Your Corporate Event",
+  bookingHref: "#corporate-lead",
+  leadForm: `<section class="section corporate-lead" id="corporate-lead">
+  <div class="corporate-lead-inner">
+    <div class="sec-head sec-head-center">
+      <p class="t-eyebrow">Corporate Events</p>
+      <h2 class="sec-title">Tell us about your<br /><span class="t-italic text-gradient-gold">brand experience.</span></h2>
+    </div>
+    <div class="corporate-lead-embed">
+      <script src="https://mangos-photo-booth-and-entertainment.checkcherry.com/api/checkcherry_widgets" type="text/javascript" charset="utf-8"></script>
+      <div class="checkcherry__widget__contact-form" data-props='{"apiKey":"NQ4-VDE3-VTK","contactFormId":19934,"iframe":false,"host":"https://mangos-photo-booth-and-entertainment.checkcherry.com"}'></div>
+    </div>
+  </div>
+</section>`,
   areaServed: ["Fort Myers","Cape Coral","Naples","Marco Island"],
   h1: "Corporate &amp; Brand<br /><span class=\"t-italic\">photo experiences.</span>",
   lead: "Drive results with Mango's corporate branding events — maximize your ROI and build lasting digital imprints at conferences, grand openings, and brand activations across Southwest Florida.",
