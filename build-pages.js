@@ -43,6 +43,16 @@ function head(p) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9EWLK0CQBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9EWLK0CQBD');
+</script>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -78,14 +88,6 @@ ${p.keywords ? `<meta name="keywords" content="${p.keywords}" />\n` : ""}<meta n
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700&display=swap" />
 
 <link rel="stylesheet" href="../css/styles.css" />
-
-<!-- Google Analytics 4 — not active yet. To turn on, uncomment and replace BOTH
-     G-XXXXXXXXXX with your Measurement ID from analytics.google.com. Events
-     (book_click / call_click / email_click) are wired in js/main.js. -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
--->
 
 <noscript><style>
   .sec-head, .foot-cta { opacity: 1 !important; transform: none !important; }
