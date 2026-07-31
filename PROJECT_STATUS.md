@@ -1,5 +1,48 @@
 # Project Status
 
+## GA4 tracking enabled, 2026-07-30
+
+Model/tool: OpenAI Codex with gstack `/browse`.
+
+Status: Pushed live to `main`.
+
+Changed:
+
+- Added the Google tag for GA4 measurement ID `G-9EWLK0CQBD` immediately after `<head>` in `index.html`.
+- Added the same tag to the shared `build-pages.js` head template and regenerated all nine service/location pages.
+- Existing `book_click`, `call_click`, and `email_click` event tracking in `js/main.js` is now active because `window.gtag` is available.
+- Implementation commit: `d558dcc` (`Enable GA4 tracking across the site`).
+
+Files touched:
+
+- `index.html`
+- `build-pages.js`
+- All nine generated service/location `index.html` files
+- `PROJECT_STATUS.md`
+
+Verification:
+
+- `node --check build-pages.js`: passed.
+- `node --check js/main.js`: passed.
+- `node build-pages.js`: passed and regenerated nine pages.
+- All ten HTML routes contain exactly one `gtag.js` loader and one `G-9EWLK0CQBD` config call; no `G-XXXXXXXXXX` placeholders remain.
+- `git diff --check`: passed.
+- Local homepage and generated wedding route initialized `window.gtag` and the correct data-layer config with no console errors.
+- Local GA4 collection request returned HTTP `204`.
+- Production `https://mangosphotobooth.com/` loaded `gtag.js` with the correct measurement ID and sent a production `page_view` that returned HTTP `204`, with no console errors.
+
+Unfinished:
+
+- Confirm visits appear in GA4 Realtime after Google finishes processing the new stream.
+- In GA4 Admin, mark `book_click`, `call_click`, and `email_click` as key events after they first appear.
+- Google Analytics MCP authorization is paused until a Desktop OAuth client JSON is created and downloaded.
+
+Next recommended task:
+
+1. Open GA4 Realtime and confirm the live website visit appears.
+2. Trigger one booking, phone, and email link test, then mark those three events as key events in GA4.
+3. Resume the Google Analytics MCP Desktop OAuth setup when ready.
+
 Last updated: 2026-07-10
 
 ## Current local update, 2026-07-10
