@@ -1,5 +1,46 @@
 # Project Status
 
+## Hero social banner updated locally, 2026-08-04
+
+Model/tool: OpenAI Codex with UI/UX Pro Max guidance; visual tooling intentionally skipped at coordinator request.
+
+Status: Production release authorized. The scoped hero banner is ready to commit and push to `main`; production verification is still pending.
+
+Changed:
+
+- Replaced the homepage hero's right-edge vertical Instagram/Facebook rail with a full-width horizontal banner attached to the hero's bottom edge.
+- Ordered the banner content as Instagram icon, exact CTA text “Follow us on”, then Facebook icon.
+- Used a translucent, muted-yellow gradient, pale-yellow icon/text treatment, subtle top border, and backdrop blur so the banner stays integrated with the dark hero image.
+- Preserved the social destinations, accessible link labels, 44–48px touch targets, visible focus treatment, and external-link protection.
+- Raised the desktop scroll cue and desktop/mobile hero dot indicator above the banner to prevent overlap.
+
+Files touched:
+
+- `index.html`
+- `css/styles.css`
+- `PROJECT_STATUS.md`
+
+Verification:
+
+- Python HTML tag-structure check: passed.
+- CSS comment/string/brace-structure check: passed.
+- Source-order assertion confirmed Instagram -> “Follow us on” -> Facebook.
+- `node --check js/main.js`: passed.
+- `git diff --check`: passed; line-ending notices only.
+- Local preview returned HTTP 200 with the expected Mango's Photo Booth page title at `http://127.0.0.1:4173/`.
+- Fresh browser QA at 1280×720 and 375×812 confirmed a full-width bottom-edge banner, correct Instagram -> “Follow us on” -> Facebook order, 44px mobile link targets, and no horizontal overflow.
+- Fresh local browser-console check: no errors after a clean reload.
+
+Unfinished:
+
+- Existing unrelated local analytics/GTM work remains uncommitted and unchanged by this task.
+- Production verification will be added after the GitHub Pages deployment completes.
+
+Next recommended task:
+
+1. Commit only the hero banner changes and this handoff entry.
+2. Push to `main`, wait for GitHub Pages, and verify the live homepage at desktop and mobile widths.
+
 ## GA4 tracking enabled, 2026-07-30
 
 Model/tool: OpenAI Codex with gstack `/browse`.
