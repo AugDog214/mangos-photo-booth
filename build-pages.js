@@ -18,8 +18,12 @@ const BUSINESS = {
   "@type": "ProfessionalService",
   "@id": SITE + "/#business",
   "name": "Mango's Photo Booth & Entertainment",
+  "category": "Photo booth rental service",
+  "serviceType": "Photo booth rental",
   "telephone": PHONE,
-  "url": SITE + "/"
+  "url": SITE + "/",
+  "areaServed": ["Fort Myers", "Cape Coral", "Naples", "Marco Island", "Southwest Florida"],
+  "hasMap": "https://www.google.com/maps/place/Mango's+Photo+Booth/@26.4180175,-81.719206,9z/data=!4m8!3m7!1s0x51c86c0f3a122a7:0x553b99ef38386f72!8m2!3d26.4180175!4d-81.719206!9m1!1b1!16s%2Fg%2F11zd1tzd2v"
 };
 
 const SERVICE_PAGES = ["weddings","corporate","birthdays","quinceaneras","holiday-parties"];
@@ -230,6 +234,18 @@ function buildSchema(p) {
       { "@type": "ListItem", "position": 2, "name": p.crumb, "item": url }
     ]
   };
+  const localBusiness = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": SITE + "/#business",
+    "name": "Mango's Photo Booth & Entertainment",
+    "url": SITE + "/",
+    "telephone": PHONE,
+    "category": "Photo booth rental service",
+    "serviceType": "Photo booth rental",
+    "areaServed": p.areaServed.map(n => ({ "@type": "City", "name": n })),
+    "hasMap": BUSINESS.hasMap
+  };
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -255,7 +271,7 @@ function buildSchema(p) {
       "acceptedAnswer": { "@type": "Answer", "text": f.aPlain }
     }))
   };
-  return [breadcrumb, service, faqPage]
+  return [breadcrumb, localBusiness, service, faqPage]
     .map(o => `<script type="application/ld+json">\n${JSON.stringify(o, null, 2)}\n</script>`)
     .join("\n");
 }
