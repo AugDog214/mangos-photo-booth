@@ -129,7 +129,7 @@
 
   /* ---------- Event videos: play only while visible ---------- */
   run('event-videos', function () {
-    var videos = Array.prototype.slice.call(document.querySelectorAll('.brick-video video, .gallery-card video, .memory-feature video'));
+    var videos = Array.prototype.slice.call(document.querySelectorAll('.brick-video video, .memory-feature video'));
     if (!videos.length) return;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var setPlaying = function (video, shouldPlay) {

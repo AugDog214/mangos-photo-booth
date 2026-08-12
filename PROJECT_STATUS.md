@@ -1,5 +1,25 @@
 # Project Status
 
+## First-gig Gallery published without upload integration, 2026-08-12
+
+Model/tool: OpenAI Codex with gstack `/land-and-deploy` and `/browse`.
+
+Status: Public Gallery release contains event photos only. The QR code, event-code form, file picker, upload JavaScript, Turnstile/API configuration, and Gallery video card were removed before deployment. The private upload backend remains local and undeployed.
+
+Changed:
+
+- Reframed the Gallery copy around Mango's first photo booth gig.
+- Kept the supplied event-photo grid and public Gallery navigation.
+- Removed `gallery/upload-qr.svg` and `gallery/upload.js`.
+- Removed all guest-upload HTML, upload configuration metadata, and related Gallery CSS.
+- Removed the Gallery video card so the page showcases photos only; homepage media remains unchanged.
+
+Verification:
+
+- Confirmed the Gallery contains nine photo cards and zero video, QR, upload, event-code, file-picker, Turnstile, or upload-API references.
+- Confirmed all remaining local Gallery assets exist.
+- Desktop and mobile browser QA passed before deployment with no console errors or horizontal overflow.
+
 ## Secure QR and manual guest uploader release, 2026-08-12
 
 Model/tool: OpenAI Codex with coordinated frontend, backend, and independent security-review agents; gstack `/cso`, gstack `/browse`, and UI/UX Pro Max guidance.

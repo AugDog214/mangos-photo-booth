@@ -4,16 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mango's Photo Booth Gallery | Real Southwest Florida Events</title>
-<meta name="description" content="Explore real guest photos and video from Mango's Photo Booth &amp; Entertainment events across Fort Myers and Southwest Florida." />
+<meta name="description" content="Explore real guest photos from Mango's Photo Booth &amp; Entertainment's first event in Southwest Florida." />
 <meta name="author" content="Mango's Photo Booth &amp; Entertainment" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#080A0D" />
-<!-- Public upload configuration. The API hostname is public; leave the
-     Turnstile site key blank until its production widget is provisioned.
-     Never place secret keys, event codes, or access tokens in these fields. -->
-<meta name="mangos-upload-api-base" content="https://uploads.mangosphotobooth.com" />
-<meta name="mangos-upload-turnstile-site-key" content="" />
-<meta name="mangos-upload-turnstile-action" content="event_lookup" />
 <link rel="canonical" href="https://mangosphotobooth.com/gallery/" />
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
@@ -48,7 +42,7 @@
   "@context": "https://schema.org",
   "@type": "ImageGallery",
   "name": "Mango's Photo Booth Gallery",
-  "description": "Real guest photos and video from Mango's Photo Booth & Entertainment events across Southwest Florida.",
+  "description": "Real guest photos from Mango's Photo Booth & Entertainment's first event in Southwest Florida.",
   "url": "https://mangosphotobooth.com/gallery/",
   "provider": {
     "@type": "ProfessionalService",
@@ -58,8 +52,7 @@
   },
   "associatedMedia": [
     { "@type": "ImageObject", "contentUrl": "https://mangosphotobooth.com/assets/event-party-friends-01.webp" },
-    { "@type": "ImageObject", "contentUrl": "https://mangosphotobooth.com/assets/event-birthday-friends.webp" },
-    { "@type": "VideoObject", "name": "Mango's Photo Booth in action", "contentUrl": "https://mangosphotobooth.com/assets/event-party-hero.mp4", "thumbnailUrl": "https://mangosphotobooth.com/assets/event-party-hero-poster.jpg", "uploadDate": "2026-08-01" }
+    { "@type": "ImageObject", "contentUrl": "https://mangosphotobooth.com/assets/event-birthday-friends.webp" }
   ]
 }
 </script>
@@ -111,7 +104,7 @@
     <div class="gallery-hero-inner">
       <p class="t-eyebrow">Real Guests &middot; Real Moments</p>
       <h1>Mango&rsquo;s Photo Booth Gallery</h1>
-      <p>Step inside the celebrations. These are the laughs, poses, and keepsake moments our guests take home long after the party ends.</p>
+      <p>Step inside our first photo booth gig. These are the laughs, poses, and keepsake moments our guests took home from the celebration.</p>
       <div class="gallery-hero-actions">
         <a class="btn btn-gold" href="#gallery" data-loc="gallery-hero">Explore the Gallery</a>
         <a class="btn btn-ghost" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="gallery-hero-book">Book Your Date</a>
@@ -121,9 +114,9 @@
 
   <section class="section gallery-showcase" id="gallery" data-analytics-section="gallery-grid">
     <div class="sec-head sec-head-center">
-      <p class="t-eyebrow">From the Memory Wall</p>
+      <p class="t-eyebrow">Our First Photo Booth Gig</p>
       <h2 class="sec-title">Made for the moment.<br /><span class="t-italic">Kept for years.</span></h2>
-      <p class="sec-lede">A selection of real Mango&rsquo;s Photo Booth guest photos and event highlights.</p>
+      <p class="sec-lede">Real guests, real smiles, and the first event memories captured by Mango&rsquo;s Photo Booth &amp; Entertainment.</p>
     </div>
 
     <div class="gallery-grid">
@@ -147,12 +140,6 @@
         <img src="../assets/event-party-friends-01.webp" alt="Four friends posing together at the photo booth" loading="lazy" />
         <figcaption>Birthday celebration &middot; Four friends</figcaption>
       </figure>
-      <figure class="gallery-card gallery-card--portrait">
-        <video autoplay muted loop playsinline preload="metadata" poster="../assets/event-party-hero-poster.jpg" aria-label="Guests using Mango's Photo Booth at a birthday celebration">
-          <source src="../assets/event-party-hero.mp4" type="video/mp4" />
-        </video>
-        <figcaption>Behind the booth &middot; In action</figcaption>
-      </figure>
       <figure class="gallery-card gallery-card--square">
         <img src="../assets/event-party-friends-05.webp" alt="Four friends blowing kisses at the photo booth camera" loading="lazy" />
         <figcaption>Birthday celebration &middot; Guest portraits</figcaption>
@@ -172,98 +159,6 @@
     </div>
   </section>
 
-  <section class="section gallery-upload" id="upload" data-analytics-section="guest-uploads">
-    <div class="gallery-upload-shell" data-upload-state="unconfigured">
-      <div class="gallery-upload-heading">
-        <div>
-          <p class="t-eyebrow">Private Guest Uploads</p>
-          <h2>Share your view of the celebration.</h2>
-        </div>
-        <p class="upload-availability" id="upload-availability" role="status">
-          <span class="upload-availability-dot" aria-hidden="true"></span>
-          Uploads are not activated yet
-        </p>
-      </div>
-
-      <p class="gallery-upload-lede">Scan the code to open this page on your phone, or select photos and videos manually. A private event code is required before anything can be uploaded.</p>
-
-      <div class="gallery-upload-grid">
-        <aside class="upload-qr-card" aria-labelledby="upload-qr-title">
-          <div class="upload-qr-frame">
-            <img src="upload-qr.svg" width="232" height="232" alt="QR code that opens the private guest upload section on mangosphotobooth.com" />
-          </div>
-          <h3 id="upload-qr-title">Open on your phone</h3>
-          <p>Point your camera at the code. You will still need the private event code from your host.</p>
-          <button class="upload-copy-link" id="upload-copy-link" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h11v11H8zM5 16H3V3h13v2" /></svg>
-            <span>Copy upload link</span>
-          </button>
-        </aside>
-
-        <form class="upload-form" id="guest-upload-form" novalidate>
-          <div class="upload-config-notice" id="upload-config-notice" role="status">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm0-14v5m0 3.5v.01" /></svg>
-            <div>
-              <strong>Secure uploads are being connected.</strong>
-              <span>The QR link works now, but file submission will stay disabled until the protected upload service is activated.</span>
-            </div>
-          </div>
-
-          <fieldset class="upload-step" id="upload-access-step">
-            <legend><span>1</span> Unlock your event</legend>
-            <label class="upload-label" for="upload-event-code">Private event code <span aria-hidden="true">*</span></label>
-            <p class="upload-help" id="upload-event-code-help">Enter the code exactly as your host shared it. It is never saved in this browser.</p>
-            <div class="upload-code-row">
-              <input id="upload-event-code" name="eventCode" type="text" maxlength="64" minlength="6" pattern="[A-Z0-9-]{6,64}" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="upload-event-code-help upload-event-code-error" disabled required />
-              <button class="btn btn-gold upload-unlock" id="upload-unlock" type="submit" disabled>Unlock</button>
-            </div>
-            <p class="upload-field-error" id="upload-event-code-error" role="alert"></p>
-            <div class="upload-turnstile" id="upload-turnstile" aria-label="Security verification"></div>
-          </fieldset>
-
-          <fieldset class="upload-step upload-files-step" id="upload-files-step" hidden disabled>
-            <legend><span>2</span> Choose photos and videos</legend>
-            <div class="upload-event-summary" id="upload-event-summary" aria-live="polite"></div>
-
-            <label class="upload-dropzone" id="upload-dropzone" for="upload-files">
-              <input id="upload-files" name="files" type="file" accept="image/jpeg,image/png,image/webp,image/gif,video/mp4" multiple disabled />
-              <span class="upload-dropzone-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v5h14v-5" /></svg>
-              </span>
-              <strong>Choose files</strong>
-              <span>or drag and drop here</span>
-              <small id="upload-file-rules">Accepted types and size limits appear after your event is unlocked.</small>
-            </label>
-
-            <ul class="upload-file-list" id="upload-file-list" aria-label="Selected files"></ul>
-            <p class="upload-empty" id="upload-empty">No files selected yet.</p>
-
-            <label class="upload-consent">
-              <input id="upload-consent" type="checkbox" disabled required />
-              <span>I took these files or have permission to share them, and I consent to Mango&rsquo;s reviewing and storing them only for this private event gallery.</span>
-            </label>
-            <p class="upload-field-error" id="upload-consent-error" role="alert"></p>
-
-            <div class="upload-privacy-note">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2m-11 0h12v10H6z" /></svg>
-              <div>
-                <p><strong>Private by default.</strong> Files are collected only for this event, then quarantined and checked before review. Uploading does not publish anything to the public Gallery or grant marketing permission.</p>
-                <details class="upload-privacy-details">
-                  <summary>Privacy and retention details</summary>
-                  <p>Original files stay private while processing. Stuck uploads are deleted within 7 days, and originals are deleted within 24 hours after a terminal result. Upload metadata may be kept for up to 90 days for security and support. Retention for approved private-gallery derivatives is still being finalized. Any public Gallery, social media, or marketing use requires a separate opt-in. To request deletion or ask a privacy question, email <a href="mailto:info@mangosphotobooth.com?subject=Guest%20upload%20privacy">info@mangosphotobooth.com</a>.</p>
-                </details>
-              </div>
-            </div>
-
-            <button class="btn btn-gold upload-submit" id="upload-submit" type="button" disabled>Upload selected files</button>
-            <div class="upload-overall-status" id="upload-overall-status" aria-live="polite"></div>
-          </fieldset>
-
-          <p class="upload-help-link">Need an event code? <a href="mailto:info@mangosphotobooth.com?subject=Guest%20upload%20access" data-loc="gallery-upload-help">Contact Mango&rsquo;s</a>.</p>
-        </form>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="footer" id="contact" data-analytics-section="contact">
@@ -314,7 +209,6 @@
   </div>
 </footer>
 
-<script src="upload.js" defer></script>
 <script src="../js/main.js" defer></script>
 </body>
 </html>

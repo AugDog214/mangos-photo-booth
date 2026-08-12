@@ -65,16 +65,13 @@ The site uses a mix of Mango's project photos and stock photography. Here's how 
 - `gallery/index.html` is the public Gallery page.
 - Supplied event photos use the `assets/event-party-friends-*.webp` naming pattern.
 - The birthday feature uses `assets/event-birthday-friends.webp`.
-- The hero and Gallery video use `assets/event-party-hero.mp4` with `assets/event-party-hero-poster.jpg` as the fallback image.
+- The homepage hero and Memory Wall video use `assets/event-party-hero.mp4` with `assets/event-party-hero-poster.jpg` as the fallback image. The public Gallery itself is photo-only.
 - Keep uploaded guest media optimized for the web before adding it to either the Gallery or the homepage Memory Wall.
 - Guest-upload QR and manual file submission must point to an approved private upload destination. Do not publish a file picker that has no working storage endpoint.
 
 ### Secure guest-upload system
 
-The Gallery upload experience has two parts:
-
-- `gallery/` contains the public event-code, QR, file-picker, preview, consent, and progress interface.
-- `upload-api/` contains the Cloudflare Worker, private R2 quarantine storage contract, D1 event/upload records, Turnstile validation, rate limits, and server-side file checks.
+The public `gallery/` route is a photo-only showcase and contains no QR code, event-code field, file picker, upload JavaScript, or upload-service configuration. The reviewed local `upload-api/` foundation is not part of the public website.
 
 Uploads must remain disabled until every account-bound control is configured. Never place the Turnstile secret, Cloudflare API token, event tokens, or admin credentials in HTML or committed files. Production activation requires:
 
