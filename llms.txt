@@ -1,4 +1,4 @@
-# Mango's Photo Booth Company
+# Mango's Photo Booth & Entertainment
 > Luxury photo booth, keychain, and magnet-station rentals for weddings,
 > corporate events, birthdays, and quinceañeras in Southwest Florida.
 
@@ -31,6 +31,7 @@
 - [Photo Booth Rental Marco Island](https://mangosphotobooth.com/photo-booth-marco-island/)
 
 ## Key pages
+- [Gallery](https://mangosphotobooth.com/gallery/)
 - [Packages](https://mangosphotobooth.com/#packages)
 - [How It Works](https://mangosphotobooth.com/#how)
 - [Check Availability](https://mangosphotobooth.com/#book)

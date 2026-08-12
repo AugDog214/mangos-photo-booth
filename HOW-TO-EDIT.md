@@ -60,9 +60,36 @@ The site uses a mix of Mango's project photos and stock photography. Here's how 
 
 ---
 
+## Gallery and event media
+
+- `gallery/index.html` is the public Gallery page.
+- Supplied event photos use the `assets/event-party-friends-*.webp` naming pattern.
+- The birthday feature uses `assets/event-birthday-friends.webp`.
+- The hero and Gallery video use `assets/event-party-hero.mp4` with `assets/event-party-hero-poster.jpg` as the fallback image.
+- Keep uploaded guest media optimized for the web before adding it to either the Gallery or the homepage Memory Wall.
+- Guest-upload QR and manual file submission must point to an approved private upload destination. Do not publish a file picker that has no working storage endpoint.
+
+### Secure guest-upload system
+
+The Gallery upload experience has two parts:
+
+- `gallery/` contains the public event-code, QR, file-picker, preview, consent, and progress interface.
+- `upload-api/` contains the Cloudflare Worker, private R2 quarantine storage contract, D1 event/upload records, Turnstile validation, rate limits, and server-side file checks.
+
+Uploads must remain disabled until every account-bound control is configured. Never place the Turnstile secret, Cloudflare API token, event tokens, or admin credentials in HTML or committed files. Production activation requires:
+
+1. A Cloudflare account and the `uploads.mangosphotobooth.com` Worker custom domain. DNS is currently managed at GoDaddy, so follow the zone-migration checklist in `upload-api/README.md` and preserve every GitHub Pages and mail record.
+2. A Worker deployment with the private R2 and D1 bindings described in `upload-api/README.md`.
+3. Turnstile configured for `mangosphotobooth.com` and `www.mangosphotobooth.com`.
+4. Worker secrets and production IDs configured outside Git.
+5. A real event record created in D1 with a high-entropy event code and expiration time; store only its peppered hash.
+6. Negative-path and real-file upload tests before changing the Gallery configuration from disabled to enabled.
+
+Guest files go into quarantine. They must never be served publicly from that bucket. A separate, access-controlled moderation/scanning process must approve, re-encode, and promote media before it appears in a public gallery.
+
 ## 4. Edit the backdrop gallery
 
-The gallery contains 16 real backdrop images grouped as Standard, Deluxe, and Premium.
+The gallery contains 15 real backdrop images grouped as Standard, Deluxe, and Premium.
 
 1. Search `index.html` for the backdrop name.
 2. Update the `src="..."` address inside the matching `<img class="bd-photo">`.
@@ -115,6 +142,8 @@ Two things to upgrade when you can:
 ## 9. Going live (when you're ready)
 
 The site is hosted on GitHub Pages from the repository's `main` branch. A push to `main` deploys the live website. Always run local responsive checks and update `PROJECT_STATUS.md` before pushing.
+
+Because GitHub Pages publishes the repository root, the protected upload backend is intentionally excluded from the website repository's published files. Keep the reviewed `upload-api/` source in a separate private deployment repository before production activation. Do not copy `_headers` into Cloudflare as-is: GitHub Pages ignores that file, and a production Content Security Policy must be rebuilt and browser-tested for the live GA4, CheckCherry, font, image, Turnstile, and upload API origins before adding it as a Cloudflare Response Header Rule.
 
 ---
 

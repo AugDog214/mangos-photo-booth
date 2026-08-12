@@ -5,3 +5,10 @@ desktop.ini
 *~
 .vscode/
 .gstack/
+.dev.vars
+.env
+.env.*
+!.env.example
+!.env.sample
+upload-api/.wrangler/
+upload-api/

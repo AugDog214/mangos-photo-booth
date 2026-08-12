@@ -17,7 +17,7 @@ const OG_IMG = SITE + "/assets/hero-cover-updated.jpg";
 const BUSINESS = {
   "@type": "ProfessionalService",
   "@id": SITE + "/#business",
-  "name": "Mango's Photo Booth Company",
+  "name": "Mango's Photo Booth & Entertainment",
   "telephone": PHONE,
   "url": SITE + "/"
 };
@@ -49,7 +49,6 @@ function head(p) {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-9EWLK0CQBD');
 </script>
 
@@ -58,7 +57,7 @@ function head(p) {
 
 <title>${p.title}</title>
 <meta name="description" content="${p.description}" />
-${p.keywords ? `<meta name="keywords" content="${p.keywords}" />\n` : ""}<meta name="author" content="Mango's Photo Booth Company" />
+${p.keywords ? `<meta name="keywords" content="${p.keywords}" />\n` : ""}<meta name="author" content="Mango's Photo Booth & Entertainment" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#080A0D" />
 <link rel="canonical" href="${url}" />
@@ -69,19 +68,22 @@ ${p.keywords ? `<meta name="keywords" content="${p.keywords}" />\n` : ""}<meta n
 <link rel="manifest" href="../site.webmanifest" />
 
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="Mango's Photo Booth Company" />
+<meta property="og:site_name" content="Mango's Photo Booth & Entertainment" />
 <meta property="og:title" content="${p.ogTitle || p.title}" />
 <meta property="og:description" content="${p.description}" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:url" content="${url}" />
 <meta property="og:image" content="${OG_IMG}" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Mango's Photo Booth Company — luxury photo booth rental in Southwest Florida" />
+<meta property="og:image:secure_url" content="${OG_IMG}" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1536" />
+<meta property="og:image:height" content="1024" />
+<meta property="og:image:alt" content="Mango's Photo Booth & Entertainment — luxury photo booth rental in Southwest Florida" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${p.ogTitle || p.title}" />
 <meta name="twitter:description" content="${p.description}" />
 <meta name="twitter:image" content="${OG_IMG}" />
+<meta name="twitter:image:alt" content="Mango's Photo Booth & Entertainment at a Southwest Florida celebration" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -106,7 +108,7 @@ ${p.keywords ? `<meta name="keywords" content="${p.keywords}" />\n` : ""}<meta n
 function header() {
   return `
 <header class="hdr" id="site-header">
-  <a class="hdr-brand" href="../index.html" aria-label="Mango's Photo Booth Company — home">
+  <a class="hdr-brand" href="../index.html" aria-label="Mango's Photo Booth &amp; Entertainment — home">
     <img src="../assets/mango-logo-final.png" alt="Mango's Photo Booth &amp; Entertainment logo" width="1210" height="1238" />
   </a>
 
@@ -115,6 +117,7 @@ function header() {
     <a href="../index.html#how" class="hdr-link">How It Works</a>
     <a href="../index.html#packages" class="hdr-link">Packages</a>
     <a href="../index.html#backdrops" class="hdr-link">Backdrops</a>
+    <a href="../gallery/index.html" class="hdr-link">Gallery</a>
     <a href="../index.html#faq" class="hdr-link">FAQ</a>
   </nav>
 
@@ -131,6 +134,7 @@ function header() {
     <a href="../index.html#how">How It Works</a>
     <a href="../index.html#packages">Packages</a>
     <a href="../index.html#backdrops">Backdrops</a>
+    <a href="../gallery/index.html">Gallery</a>
     <a href="../index.html#faq">FAQ</a>
     <a class="hdr-mobile-cta" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="mobile-menu">Book Now</a>
   </div>
@@ -146,7 +150,7 @@ function footer(prefix) {
   const svc = SERVICE_PAGES.map(s => `      <a href="${prefix}${s}/index.html">${LABELS[s]}</a>`).join("\n");
   const loc = LOCATION_PAGES.map(s => `      <a href="${prefix}${s}/index.html">${LABELS[s]}</a>`).join("\n");
   return `
-<footer class="footer" id="contact">
+<footer class="footer" id="contact" data-analytics-section="contact">
   <div class="foot-cta">
     <p class="t-eyebrow">Reserve Your Date</p>
     <h2 class="foot-cta-title">Let&rsquo;s make it<br /><span class="t-italic text-gradient-gold">unforgettable.</span></h2>
@@ -165,6 +169,7 @@ function footer(prefix) {
     <nav class="foot-col" aria-label="Services">
       <h3 class="foot-h">Services</h3>
 ${svc}
+      <a href="${prefix}gallery/index.html">Gallery</a>
     </nav>
     <nav class="foot-col" aria-label="Service areas">
       <h3 class="foot-h">Service Areas</h3>
@@ -179,7 +184,7 @@ ${loc}
   </div>
 
   <div class="foot-base">
-    <span>&copy; 2026 Mango&rsquo;s Photo Booth Company. All rights reserved.</span>
+    <span>&copy; 2026 Mango&rsquo;s Photo Booth &amp; Entertainment. All rights reserved.</span>
     <div class="foot-social">
       <a href="https://www.instagram.com/mangosphotobooth/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
       <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
@@ -202,8 +207,10 @@ function faqHtml(faqs) {
 
 function relatedHtml(slug, prefix) {
   const others = [...SERVICE_PAGES, ...LOCATION_PAGES].filter(s => s !== slug);
-  const links = others.map(s => `    <a href="${prefix}${s}/index.html">${LABELS[s]}</a>`).join("\n");
-  return `<section class="section">
+  const links = others.map(s => `    <a href="${prefix}${s}/index.html">${LABELS[s]}</a>`).concat([
+    `    <a href="${prefix}gallery/index.html">Gallery</a>`
+  ]).join("\n");
+  return `<section class="section" data-analytics-section="related-pages">
   <div class="related">
     <p class="related-h">Explore more</p>
     <div class="related-links">
@@ -262,14 +269,14 @@ ${header()}
 
 <main id="main">
 
-<section class="page-hero">
+<section class="page-hero" data-analytics-section="hero">
   <div class="page-hero-inner">
     <p class="crumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>${p.crumb}</span></p>
     <h1 class="page-h1">${p.h1}</h1>
     <p class="page-lead">${p.lead}</p>
     <div class="page-actions">
-      <a class="btn btn-gold btn-packages" href="${bookingHref}"${bookingAttrs} data-loc="page-hero">${p.bookingLabel || "Book Now"}</a>
-      <a class="btn btn-ghost" href="../index.html#packages">View Packages</a>
+      <a class="btn btn-gold btn-packages" href="${bookingHref}"${bookingAttrs} data-analytics-action="primary-hero-cta" data-loc="page-hero">${p.bookingLabel || "Book Now"}</a>
+      <a class="btn btn-ghost" href="../index.html#packages" data-analytics-action="view-packages" data-loc="page-hero">View Packages</a>
     </div>
   </div>
 
@@ -279,7 +286,7 @@ ${p.answerParas.map(t => `    <p>${t}</p>`).join("\n")}
   </div>
 </section>
 
-<section class="section">
+<section class="section" data-analytics-section="content">
   <div class="prose">
 ${p.prose}
   </div>
@@ -287,7 +294,7 @@ ${p.prose}
 
 ${p.leadForm || ""}
 
-<section class="section faq">
+<section class="section faq" data-analytics-section="faq">
   <div class="sec-head sec-head-center">
     <p class="t-eyebrow">Good to Know</p>
     <h2 class="sec-title">${p.faqTitle}</h2>
@@ -357,7 +364,7 @@ PAGES.push({
   serviceName: "Corporate & Brand Activation Photo Booth",
   bookingLabel: "Book Your Corporate Event",
   bookingHref: "#corporate-lead",
-  leadForm: `<section class="section corporate-lead" id="corporate-lead">
+  leadForm: `<section class="section corporate-lead" id="corporate-lead" data-analytics-section="corporate-lead-form">
   <div class="corporate-lead-inner">
     <div class="sec-head sec-head-center">
       <p class="t-eyebrow">Corporate Events</p>
