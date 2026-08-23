@@ -214,6 +214,22 @@
     onScroll();
   });
 
+  /* ---------- Hero packages CTA: land on the pricing cards ---------- */
+  run('packages-anchor', function () {
+    document.querySelectorAll('a.btn-packages[href="#packages"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var target = document.getElementById('packages');
+        if (!target) return;
+        e.preventDefault();
+        var header = document.getElementById('site-header');
+        var offset = header ? header.getBoundingClientRect().height + 12 : 84;
+        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        window.history.replaceState(null, '', '#packages');
+      });
+    });
+  });
+
   /* ---------- Analytics: send UI engagement and conversion intent to GA4 ---------- */
   run('analytics-events', function () {
     var track = function (name, params) {
