@@ -12,18 +12,32 @@ const PHONE = "+12398887688";
 const PHONE_DISP = "239&middot;888&middot;7688";
 const EMAIL = "info@mangosphotobooth.com";
 const OG_IMG = SITE + "/assets/hero-cover-updated.jpg";
+const LOGO_IMG = SITE + "/assets/mango-logo-final.png";
+const MAP_URL = "https://www.google.com/maps/place/Mango's+Photo+Booth/@26.4180175,-81.719206,9z/data=!4m8!3m7!1s0x51c86c0f3a122a7:0x553b99ef38386f72!8m2!3d26.4180175!4d-81.719206!9m1!1b1!16s%2Fg%2F11zd1tzd2v";
+const FACEBOOK_URL = "https://www.facebook.com/people/Mangos-Photo-Booth-and-Entertainment/61591107657844/";
+const INSTAGRAM_URL = "https://www.instagram.com/mangosphotobooth/";
+const TIKTOK_URL = "https://www.tiktok.com/@mangosphotobooth";
+const SERVICE_AREAS = ["Fort Myers", "Cape Coral", "Naples", "Marco Island", "Estero", "Bonita Springs"];
 
 // Business node reused as schema "provider"
 const BUSINESS = {
-  "@type": "ProfessionalService",
+  "@type": ["LocalBusiness", "EntertainmentBusiness"],
   "@id": SITE + "/#business",
   "name": "Mango's Photo Booth & Entertainment",
+  "alternateName": "Mango's Photo Booth",
+  "description": "Luxury open-air photo booth rentals and live memory favor stations for weddings, corporate brand activations, quinceañeras, birthdays, and private events across Southwest Florida.",
   "category": "Photo booth rental service",
   "serviceType": "Photo booth rental",
   "telephone": PHONE,
+  "email": EMAIL,
   "url": SITE + "/",
-  "areaServed": ["Fort Myers", "Cape Coral", "Naples", "Marco Island", "Southwest Florida"],
-  "hasMap": "https://www.google.com/maps/place/Mango's+Photo+Booth/@26.4180175,-81.719206,9z/data=!4m8!3m7!1s0x51c86c0f3a122a7:0x553b99ef38386f72!8m2!3d26.4180175!4d-81.719206!9m1!1b1!16s%2Fg%2F11zd1tzd2v"
+  "logo": LOGO_IMG,
+  "image": OG_IMG,
+  "priceRange": "$550-$1,400",
+  "currenciesAccepted": "USD",
+  "areaServed": SERVICE_AREAS,
+  "hasMap": MAP_URL,
+  "sameAs": [INSTAGRAM_URL, FACEBOOK_URL]
 };
 
 const SERVICE_PAGES = ["weddings","corporate","birthdays","quinceaneras","holiday-parties"];
@@ -191,7 +205,7 @@ ${loc}
     <span>&copy; 2026 Mango&rsquo;s Photo Booth &amp; Entertainment. All rights reserved.</span>
     <div class="foot-social">
       <a href="https://www.instagram.com/mangosphotobooth/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-      <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+      <a href="${TIKTOK_URL}" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
       <a href="https://www.facebook.com/people/Mangos-Photo-Booth-and-Entertainment/61591107657844/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
     </div>
   </div>
@@ -226,6 +240,40 @@ ${links}
 
 function buildSchema(p) {
   const url = SITE + "/" + p.slug + "/";
+  const servedAreas = p.areaServed && p.areaServed.length ? p.areaServed : SERVICE_AREAS;
+  const areaNodes = servedAreas.map(n => ({ "@type": "City", "name": n }));
+  const offers = [
+    {
+      "@type": "Offer",
+      "price": "550",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": SITE + "/#packages",
+      "itemOffered": { "@type": "Service", "name": "Mango's Luxury Experience", "serviceType": "Luxury open-air photo booth rental", "description": "Three hours of open-air booth service, unlimited prints, one custom template, themed props, standard backdrop, attendant, instant sharing, and a private gallery." }
+    },
+    {
+      "@type": "Offer",
+      "price": "650",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": SITE + "/#packages",
+      "itemOffered": { "@type": "Service", "name": "Mango's Platinum Experience", "serviceType": "Luxury photo booth rental", "description": "Three hours with the Luxury Experience plus a skin-perfecting beauty filter, upgraded deluxe backdrop, both print sizes, two custom templates, instant sharing, animated GIFs, and a private gallery." }
+    },
+    {
+      "@type": "Offer",
+      "price": "1400",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": SITE + "/#packages",
+      "itemOffered": { "@type": "Service", "name": "Mango's Big Kahuna Experience", "serviceType": "All-inclusive photo booth and event entertainment", "description": "The Platinum Experience plus VIP red carpet, premium backdrop, live keychain or magnet station, Mango Memory Frame, and custom décor." }
+    },
+    {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": SITE + "/#memory-station",
+      "itemOffered": { "@type": "Service", "name": "Mango's Live Memory Station Add-On", "serviceType": "Photo keychain and acrylic magnet station", "description": "On-site custom photo keychains and acrylic magnets made as take-home favors during the event." }
+    }
+  ];
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -236,15 +284,27 @@ function buildSchema(p) {
   };
   const localBusiness = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@type": ["LocalBusiness", "EntertainmentBusiness"],
     "@id": SITE + "/#business",
     "name": "Mango's Photo Booth & Entertainment",
+    "alternateName": "Mango's Photo Booth",
+    "description": BUSINESS.description,
     "url": SITE + "/",
     "telephone": PHONE,
+    "email": EMAIL,
+    "logo": LOGO_IMG,
+    "image": OG_IMG,
+    "priceRange": "$550-$1,400",
     "category": "Photo booth rental service",
     "serviceType": "Photo booth rental",
-    "areaServed": p.areaServed.map(n => ({ "@type": "City", "name": n })),
-    "hasMap": BUSINESS.hasMap
+    "areaServed": SERVICE_AREAS.map(n => ({ "@type": "City", "name": n })),
+    "hasMap": MAP_URL,
+    "sameAs": [INSTAGRAM_URL, FACEBOOK_URL, TIKTOK_URL],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Photo Booth Rental & Entertainment Packages",
+      "itemListElement": offers
+    }
   };
   const service = {
     "@context": "https://schema.org",
@@ -252,7 +312,7 @@ function buildSchema(p) {
     "name": p.serviceName,
     "serviceType": "Photo booth rental",
     "provider": BUSINESS,
-    "areaServed": p.areaServed.map(n => ({ "@type": "City", "name": n })),
+    "areaServed": areaNodes,
     "url": url,
     "offers": {
       "@type": "AggregateOffer",
@@ -271,7 +331,25 @@ function buildSchema(p) {
       "acceptedAnswer": { "@type": "Answer", "text": f.aPlain }
     }))
   };
-  return [breadcrumb, localBusiness, service, faqPage]
+  const webPage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": url + "#webpage",
+    "url": url,
+    "name": p.title,
+    "description": p.description,
+    "isPartOf": { "@id": SITE + "/#website" },
+    "about": { "@id": SITE + "/#business" }
+  };
+  const webSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": SITE + "/#website",
+    "url": SITE + "/",
+    "name": "Mango's Photo Booth & Entertainment",
+    "publisher": { "@id": SITE + "/#business" }
+  };
+  return [breadcrumb, localBusiness, service, faqPage, webPage, webSite]
     .map(o => `<script type="application/ld+json">\n${JSON.stringify(o, null, 2)}\n</script>`)
     .join("\n");
 }
@@ -410,7 +488,7 @@ ${PACKAGES_PROSE}`,
     { q: "How much does a corporate photo booth cost?", a: "Corporate activations start at $550 for a 3-hour open-air booth, with branded keychain & magnet stations and an all-inclusive Big Kahuna package at $1,400. Final pricing depends on hours, custom branding, add-ons, and travel.", qPlain: "How much does a corporate photo booth cost?", aPlain: "Corporate activations start at $550 for a 3-hour open-air booth, with branded keychain & magnet stations and an all-inclusive Big Kahuna package at $1,400. Final pricing depends on hours, custom branding, add-ons, and travel." },
     { q: "Can you brand the photos and backdrop?", a: "Yes. We provide branded print templates, custom backdrops, and branded digital sharing so every photo carries your logo and campaign message.", qPlain: "Can you brand the photos and backdrop?", aPlain: "Yes. We provide branded print templates, custom backdrops, and branded digital sharing so every photo carries your logo and campaign message." },
     { q: "Can the booth capture leads?", a: "Yes. At open events, guests opt in to receive their photos, which gives your team a list of engaged attendees for follow-up.", qPlain: "Can the booth capture leads?", aPlain: "Yes. At open events, guests opt in to receive their photos, which gives your team a list of engaged attendees for follow-up." },
-    { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue." }
+    { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, Estero, Bonita Springs, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, Estero, Bonita Springs, and the surrounding Southwest Florida region. We travel to your venue." }
   ]
 });
 
@@ -439,7 +517,7 @@ ${PACKAGES_PROSE}`,
     { q: "How much does a birthday photo booth cost?", a: "Birthday packages start at $550 for Mango's Luxury Experience, up to $1,400 for Mango's Big Kahuna Experience, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a birthday photo booth cost?", aPlain: "Birthday packages start at $550 for Mango's Luxury Experience, up to $1,400 for Mango's Big Kahuna Experience, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel." },
     { q: "Is the booth good for all ages?", a: "Yes. Our experiences are built for any age, from kids' parties to milestone birthdays, with props and templates customized to your theme.", qPlain: "Is the booth good for all ages?", aPlain: "Yes. Our experiences are built for any age, from kids' parties to milestone birthdays, with props and templates customized to your theme." },
     { q: "Can Mango the mascot come to the party?", a: "Yes! Mango is available to make a special appearance at your event — just ask when you check your date.", qPlain: "Can Mango the mascot come to the party?", aPlain: "Yes! Mango is available to make a special appearance at your event — just ask when you check your date." },
-    { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue." }
+    { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, Estero, Bonita Springs, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, Estero, Bonita Springs, and the surrounding Southwest Florida region. We travel to your venue." }
   ]
 });
 
@@ -468,7 +546,7 @@ ${PACKAGES_PROSE}`,
     { q: "How much does a quinceañera photo booth cost?", a: "Quinceañera packages start at $550 for Mango's Luxury Experience, with Mango's Platinum Experience at $650 and Mango's Big Kahuna Experience at $1,400 (live keychain and magnet stations available as add-ons). Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a quinceanera photo booth cost?", aPlain: "Quinceanera packages start at $550 for Mango's Luxury Experience, with Mango's Platinum Experience at $650 and Mango's Big Kahuna Experience at $1,400 (live keychain and magnet stations available as add-ons). Final pricing depends on hours, backdrop, add-ons, and travel." },
     { q: "Do you have a beauty filter and custom backdrop?", a: "Yes. Mango's Platinum Experience includes a skin-perfecting beauty filter and an optional glam black and white look, with a backdrop matched to your theme and colors.", qPlain: "Do you have a beauty filter and custom backdrop?", aPlain: "Yes. Mango's Platinum Experience includes a skin-perfecting beauty filter and an optional glam black and white look, with a backdrop matched to your theme and colors." },
     { q: "Can guests take home a keepsake?", a: "Yes. Our Live Keychain and Magnet stations create custom favors on the spot, with 50 included, so every guest leaves with a memento.", qPlain: "Can guests take home a keepsake?", aPlain: "Yes. Our Live Keychain and Magnet stations create custom favors on the spot, with 50 included, so every guest leaves with a memento." },
-    { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue." }
+    { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, Estero, Bonita Springs, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, Estero, Bonita Springs, and the surrounding Southwest Florida region. We travel to your venue." }
   ]
 });
 
@@ -497,7 +575,7 @@ ${PACKAGES_PROSE}`,
     { q: "How much does a holiday party photo booth cost?", a: "Holiday party packages start at $550 for a 3-hour open-air booth, up to $1,400 for the all-inclusive Big Kahuna, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel.", qPlain: "How much does a holiday party photo booth cost?", aPlain: "Holiday party packages start at $550 for a 3-hour open-air booth, up to $1,400 for the all-inclusive Big Kahuna, with live keychain and magnet stations available as add-ons. Final pricing depends on hours, backdrop, add-ons, and travel." },
     { q: "Do you do office and corporate holiday parties?", a: "Yes. From office galas to client appreciation events and grand openings, we bring seasonal backdrops, props, and instant sharing to make it memorable.", qPlain: "Do you do office and corporate holiday parties?", aPlain: "Yes. From office galas to client appreciation events and grand openings, we bring seasonal backdrops, props, and instant sharing to make it memorable." },
     { q: "How fast do we get our photos?", a: "Every photo is sent instantly by text and email during the party, and your full private online gallery is delivered within 48 hours.", qPlain: "How fast do we get our photos?", aPlain: "Every photo is sent instantly by text and email during the party, and your full private online gallery is delivered within 48 hours." },
-    { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, and the surrounding Southwest Florida region. We travel to your venue." }
+    { q: "What areas do you serve?", a: "We serve Fort Myers, Cape Coral, Naples, Marco Island, Estero, Bonita Springs, and the surrounding Southwest Florida region. We travel to your venue.", qPlain: "What areas do you serve?", aPlain: "We serve Fort Myers, Cape Coral, Naples, Marco Island, Estero, Bonita Springs, and the surrounding Southwest Florida region. We travel to your venue." }
   ]
 });
 
@@ -505,10 +583,10 @@ ${PACKAGES_PROSE}`,
 function locationPage(slug, city, blurb, travelNote) {
   return {
     slug, crumb: city,
-    title: `Photo Booth Rental ${city}, FL | Mango's Photo Booth`,
+    title: `Photo Booth Rental in ${city}, FL | Mango's Photo Booth & Entertainment`,
     ogTitle: `Photo Booth Rental in ${city}, Florida`,
-    description: `Luxury photo booth rental in ${city}, FL. Weddings, corporate events, birthdays & quinceañeras. Mango's Luxury Experience from $550; Platinum $650; Big Kahuna $1,400 with live keychain & magnet stations. Prints in seconds, gallery in 48 hours.`,
-    keywords: `photo booth rental ${city}, photo booth ${city} FL, wedding photo booth ${city}, ${city} photo booth company`,
+    description: `Luxury photo booth rental in ${city}, FL for weddings, birthdays, corporate events and quinceañeras. Custom backdrops, live photo keychains and packages from $550.`,
+    keywords: `photo booth rental ${city} FL, photo booth ${city}, wedding photo booth ${city}, live photo keychain ${city}`,
     serviceName: `Photo Booth Rental in ${city}`,
     areaServed: [city],
     h1: `Photo Booth Rental<br /><span class=\"t-italic\">in ${city}.</span>`,
@@ -537,6 +615,108 @@ PAGES.push(locationPage("photo-booth-fort-myers", "Fort Myers", "Fort Myers is o
 PAGES.push(locationPage("photo-booth-cape-coral", "Cape Coral", "Just across the river from our Fort Myers base, Cape Coral is one of our most-served cities.", "the short trip from Fort Myers."));
 PAGES.push(locationPage("photo-booth-naples", "Naples", "We bring the same luxury experience down to Naples.", "travel from Fort Myers to Naples."));
 PAGES.push(locationPage("photo-booth-marco-island", "Marco Island", "From beachfront weddings to island celebrations, we love Marco Island events.", "travel from Fort Myers to Marco Island."));
+
+// ---------- additive AI/local-search landing pages ----------
+function localSearchPage({ slug, crumb, title, ogTitle, description, keywords, serviceName, h1, lead, venueCopy, faqTitle, faqs, areaServed }) {
+  return {
+    slug, crumb, title, ogTitle, description, keywords, serviceName,
+    areaServed: areaServed || SERVICE_AREAS,
+    h1,
+    lead,
+    answerH2: `What does a ${serviceName} cost?`,
+    answerParas: [
+      `Mango's packages start at <strong>$550</strong> for three hours of attended photo booth service. Platinum is $650, and Big Kahuna is $1,400 with premium décor and a Live Memory Station.` ,
+      `We travel to your venue, handle setup, and keep the experience moving. <a href="../index.html#book">Check your date</a> through our secure CheckCherry booking flow for an exact quote.`
+    ],
+    prose: `    <h2>${serviceName} for Southwest Florida celebrations</h2>
+    <p>${venueCopy}</p>
+    <h3>What Mango's brings to your venue</h3>
+    <p>Every booking includes an on-site attendant, unlimited prints, instant text and email sharing, and a private gallery after the event. Add a skin-perfecting beauty filter, custom backdrop, VIP red carpet, or Live Memory Station for photo keychains and acrylic magnets guests can take home.</p>
+${PACKAGES_PROSE}`,
+    faqTitle,
+    faqs
+  };
+}
+
+PAGES.push(localSearchPage({
+  slug: "photo-booth-rental-fort-myers-fl",
+  crumb: "Photo Booth Rental Fort Myers",
+  title: "Photo Booth Rental Fort Myers, FL | Mango's Photo Booth & Entertainment",
+  ogTitle: "Photo Booth Rental Fort Myers, Florida | Mango's",
+  description: "Book a luxury photo booth rental in Fort Myers, FL. Attended service, custom backdrops, instant sharing and live photo keychains for weddings, birthdays and events.",
+  keywords: "photo booth rental Fort Myers FL, Fort Myers event entertainment, live photo keychains Fort Myers",
+  serviceName: "Photo Booth Rental in Fort Myers",
+  h1: "Photo Booth Rental<br /><span class=\"t-italic\">in Fort Myers, FL.</span>",
+  lead: "Mango's is based in Fort Myers and brings a polished, attended photo booth experience to celebrations throughout Lee County and Southwest Florida.",
+  venueCopy: "Planning a celebration near The Heitman House, the Burroughs Home, downtown Fort Myers, or a private venue? We coordinate delivery, setup, backdrop placement, and guest flow around your event timeline. We are an independent service-area business and are not affiliated with any venue.",
+  faqTitle: "Fort Myers photo booth <span class=\"t-italic text-gradient-gold\">questions.</span>",
+  faqs: [
+    { q: "Do you deliver and set up in Fort Myers?", a: "Yes. We deliver, set up, attend, and pack down at Fort Myers venues. We confirm access, parking, setup timing, and power requirements before the event.", qPlain: "Do you deliver and set up in Fort Myers?", aPlain: "Yes. We deliver, set up, attend, and pack down at Fort Myers venues. We confirm access, parking, setup timing, and power requirements before the event." },
+    { q: "How much is a Fort Myers photo booth rental?", a: "Packages start at $550 for three hours. Platinum is $650 and Big Kahuna is $1,400. Add-ons and final travel details are confirmed through CheckCherry.", qPlain: "How much is a Fort Myers photo booth rental?", aPlain: "Packages start at $550 for three hours. Platinum is $650 and Big Kahuna is $1,400. Add-ons and final travel details are confirmed through CheckCherry." },
+    { q: "Can guests get photo keychains at the event?", a: "Yes. Add the Live Memory Station for custom photo keychains or acrylic magnets made on-site as take-home favors.", qPlain: "Can guests get photo keychains at the event?", aPlain: "Yes. Add the Live Memory Station for custom photo keychains or acrylic magnets made on-site as take-home favors." }
+  ],
+  areaServed: SERVICE_AREAS
+}));
+
+PAGES.push(localSearchPage({
+  slug: "photo-booth-rental-naples-fl",
+  crumb: "Photo Booth Rental Naples",
+  title: "Photo Booth Rental Naples, FL | Mango's Photo Booth & Entertainment",
+  ogTitle: "Photo Booth Rental Naples, Florida | Mango's",
+  description: "Luxury photo booth rental in Naples, FL for weddings, birthdays, corporate events and private celebrations. Custom backdrops, instant sharing and live photo keychains.",
+  keywords: "photo booth rental Naples FL, Naples wedding photo booth, Naples event entertainment, photo keychain station Naples",
+  serviceName: "Photo Booth Rental in Naples",
+  h1: "Photo Booth Rental<br /><span class=\"t-italic\">in Naples, FL.</span>",
+  lead: "Bring Mango's attended photo booth and keepsake experience to your Naples celebration, from coastal weddings to private parties and brand events.",
+  venueCopy: "For events near Naples Beach Club, downtown Naples, waterfront resorts, or private estates, we plan arrival and setup around the venue's load-in rules. Mango's is an independent service-area business and is not affiliated with any venue.",
+  faqTitle: "Naples photo booth <span class=\"t-italic text-gradient-gold\">questions.</span>",
+  faqs: [
+    { q: "Do you travel from Fort Myers to Naples?", a: "Yes. Mango's travels to Naples venues with delivery, setup, an on-site attendant, pack down, and a private gallery after the event.", qPlain: "Do you travel from Fort Myers to Naples?", aPlain: "Yes. Mango's travels to Naples venues with delivery, setup, an on-site attendant, pack down, and a private gallery after the event." },
+    { q: "What is included in a Naples photo booth package?", a: "Every package includes three hours, an attendant, unlimited prints, instant sharing, props, a backdrop setup, and a private online gallery. Premium upgrades are available.", qPlain: "What is included in a Naples photo booth package?", aPlain: "Every package includes three hours, an attendant, unlimited prints, instant sharing, props, a backdrop setup, and a private online gallery. Premium upgrades are available." },
+    { q: "Can you create custom wedding or brand templates?", a: "Yes. We create custom print templates and can coordinate branded backdrops and sharing for weddings, corporate activations, and private events.", qPlain: "Can you create custom wedding or brand templates?", aPlain: "Yes. We create custom print templates and can coordinate branded backdrops and sharing for weddings, corporate activations, and private events." }
+  ],
+  areaServed: SERVICE_AREAS
+}));
+
+PAGES.push(localSearchPage({
+  slug: "photo-booth-rental-cape-coral-fl",
+  crumb: "Photo Booth Rental Cape Coral",
+  title: "Photo Booth Rental Cape Coral, FL | Mango's Photo Booth & Entertainment",
+  ogTitle: "Photo Booth Rental Cape Coral, Florida | Mango's",
+  description: "Book a luxury photo booth in Cape Coral, FL with attended service, custom backdrops, instant sharing and live photo keychains for celebrations and brand events.",
+  keywords: "photo booth rental Cape Coral FL, Cape Coral wedding photo booth, Cape Coral event entertainment, live photo keychains",
+  serviceName: "Photo Booth Rental in Cape Coral",
+  h1: "Photo Booth Rental<br /><span class=\"t-italic\">in Cape Coral, FL.</span>",
+  lead: "Just across the river from our Fort Myers base, Mango's brings a high-touch photo booth and live keepsake experience to Cape Coral venues.",
+  venueCopy: "Whether your event is near Cape Harbour, a waterfront home, a private clubhouse, or a corporate venue, we confirm load-in, power, setup space, and timing before we arrive. Mango's is not affiliated with any venue.",
+  faqTitle: "Cape Coral photo booth <span class=\"t-italic text-gradient-gold\">questions.</span>",
+  faqs: [
+    { q: "Do you offer delivery and setup in Cape Coral?", a: "Yes. We travel to Cape Coral, set up the booth and backdrop, provide an attendant during the event, and pack everything down afterward.", qPlain: "Do you offer delivery and setup in Cape Coral?", aPlain: "Yes. We travel to Cape Coral, set up the booth and backdrop, provide an attendant during the event, and pack everything down afterward." },
+    { q: "How quickly do guests receive their photos?", a: "Guests can receive photos instantly by text and email during the event. The full private gallery is delivered after the celebration.", qPlain: "How quickly do guests receive their photos?", aPlain: "Guests can receive photos instantly by text and email during the event. The full private gallery is delivered after the celebration." },
+    { q: "Do you serve corporate events in Cape Coral?", a: "Yes. We support corporate and brand activations with branded templates, custom backdrops, instant sharing, and optional live keepsake stations.", qPlain: "Do you serve corporate events in Cape Coral?", aPlain: "Yes. We support corporate and brand activations with branded templates, custom backdrops, instant sharing, and optional live keepsake stations." }
+  ],
+  areaServed: SERVICE_AREAS
+}));
+
+PAGES.push(localSearchPage({
+  slug: "wedding-photo-booth-southwest-florida",
+  crumb: "Wedding Photo Booth Southwest Florida",
+  title: "Wedding Photo Booth Southwest Florida | Mango's Photo Booth & Entertainment",
+  ogTitle: "Wedding Photo Booth Rental in Southwest Florida | Mango's",
+  description: "Luxury wedding photo booth rental across Fort Myers, Naples, Cape Coral, Marco Island, Estero and Bonita Springs. Custom backdrops, prints and live photo favors.",
+  keywords: "wedding photo booth Southwest Florida, wedding photo booth Fort Myers, wedding photo booth Naples, wedding photo favors",
+  serviceName: "Wedding Photo Booth Rental in Southwest Florida",
+  h1: "Wedding Photo Booths<br /><span class=\"t-italic\">across Southwest Florida.</span>",
+  lead: "Give your guests an attended photo experience with instant prints, a private gallery, custom styling, and take-home keychains or magnets.",
+  venueCopy: "Mango's serves wedding venues across Lee and Collier counties, including celebrations near The Heitman House, the Burroughs Home, Naples Beach Club, waterfront venues, and private estates. We coordinate load-in and setup directly with your venue team and are not affiliated with any listed venue.",
+  faqTitle: "Southwest Florida wedding photo booth <span class=\"t-italic text-gradient-gold\">questions.</span>",
+  faqs: [
+    { q: "Where do you provide wedding photo booth service?", a: "We travel throughout Fort Myers, Cape Coral, Naples, Marco Island, Estero, Bonita Springs, and surrounding Lee and Collier County venues.", qPlain: "Where do you provide wedding photo booth service?", aPlain: "We travel throughout Fort Myers, Cape Coral, Naples, Marco Island, Estero, Bonita Springs, and surrounding Lee and Collier County venues." },
+    { q: "What wedding package is most popular?", a: "The Platinum Experience is $650 and adds a beauty filter, upgraded backdrop, both print sizes, two templates, instant sharing, and animated GIFs. Big Kahuna adds VIP décor and the Live Memory Station.", qPlain: "What wedding package is most popular?", aPlain: "The Platinum Experience is $650 and adds a beauty filter, upgraded backdrop, both print sizes, two templates, instant sharing, and animated GIFs. Big Kahuna adds VIP décor and the Live Memory Station." },
+    { q: "Can you set up before the ceremony or reception?", a: "Yes. We confirm the venue's access window, setup location, power, and guest-flow plan before the wedding so the booth is ready when you want it open.", qPlain: "Can you set up before the ceremony or reception?", aPlain: "Yes. We confirm the venue's access window, setup location, power, and guest-flow plan before the wedding so the booth is ready when you want it open." }
+  ],
+  areaServed: SERVICE_AREAS
+}));
 
 // ---------- write files ----------
 let count = 0;

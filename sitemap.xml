@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://mangosphotobooth.com/gallery/</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-08-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -65,5 +65,29 @@
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mangosphotobooth.com/photo-booth-rental-fort-myers-fl/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mangosphotobooth.com/photo-booth-rental-naples-fl/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mangosphotobooth.com/photo-booth-rental-cape-coral-fl/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mangosphotobooth.com/wedding-photo-booth-southwest-florida/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
