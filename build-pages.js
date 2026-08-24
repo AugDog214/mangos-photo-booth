@@ -35,9 +35,10 @@ const BUSINESS = {
   "image": OG_IMG,
   "priceRange": "$550-$1,400",
   "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card, Debit Card, Online Payment",
   "areaServed": SERVICE_AREAS,
   "hasMap": MAP_URL,
-  "sameAs": [INSTAGRAM_URL, FACEBOOK_URL]
+  "sameAs": [INSTAGRAM_URL, FACEBOOK_URL, TIKTOK_URL]
 };
 
 const SERVICE_PAGES = ["weddings","corporate","birthdays","quinceaneras","holiday-parties"];
@@ -204,9 +205,9 @@ ${loc}
   <div class="foot-base">
     <span>&copy; 2026 Mango&rsquo;s Photo Booth &amp; Entertainment. All rights reserved.</span>
     <div class="foot-social">
-      <a href="https://www.instagram.com/mangosphotobooth/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+      <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
       <a href="${TIKTOK_URL}" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
-      <a href="https://www.facebook.com/people/Mangos-Photo-Booth-and-Entertainment/61591107657844/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+      <a href="${FACEBOOK_URL}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
     </div>
   </div>
 </footer>
@@ -295,6 +296,7 @@ function buildSchema(p) {
     "logo": LOGO_IMG,
     "image": OG_IMG,
     "priceRange": "$550-$1,400",
+    "paymentAccepted": BUSINESS.paymentAccepted,
     "category": "Photo booth rental service",
     "serviceType": "Photo booth rental",
     "areaServed": SERVICE_AREAS.map(n => ({ "@type": "City", "name": n })),

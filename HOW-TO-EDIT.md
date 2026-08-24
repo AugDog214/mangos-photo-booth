@@ -11,7 +11,7 @@ A plain-English guide for updating your site. **You don't need to know how to co
 | `index.html` | All the words, photos, and page sections. **This is the file you'll edit most.** |
 | `css/styles.css` | The look — colors, fonts, spacing. Only touch if you want design changes. |
 | `js/main.js` | The motion — menu, reveal effects, and floating booking button. Rarely needs editing. |
-| `build-pages.js` | The source for all nine service and location pages. Edit this file, then run `node build-pages.js`. |
+| `build-pages.js` | The source for all thirteen service and location pages. Edit this file, then run `node build-pages.js`. |
 | `assets/` | Your logo and website photos. |
 | `AGENTS.md` | Rules every coding model must follow. |
 | `PROJECT_STATUS.md` | The latest handoff: what changed, what was tested, and what comes next. |
@@ -26,7 +26,7 @@ A plain-English guide for updating your site. **You don't need to know how to co
 ## 2. Change words or prices
 
 1. Open `index.html`.
-2. Press `Ctrl+F` and type a few words of the text you want to change (e.g. `Starting at` or `Classic Booth`).
+2. Press `Ctrl+F` and type a few words of the text you want to change (e.g. `Starting at` or `Mango's Luxury Experience`).
 3. Type your new text **between** the `>` and `<` symbols. Example:
    - Before: `<span class="pkg2-amt">550</span>`
    - After (new price $575): `<span class="pkg2-amt">575</span>`
@@ -52,11 +52,11 @@ The site uses a mix of Mango's project photos and stock photography. Here's how 
 4. Update the `alt="..."` text to describe the photo (good for Google + accessibility).
 
 **Where the photos live on the page:**
-- **Hero cover**: search `hero-cover-realistic.jpg`.
+- **Hero cover**: search `hero-cover-updated.jpg`.
 - **Event photos** (5): search `ev-img`.
 - **The scrolling wall** (12 photos): search `brick-img`.
 - **How It Works** (1 photo): search `how-img`.
-- **Memory Station feature**: search `memory-station-keychains.jpg`.
+- **Memory Station feature**: search `memory-station-keychains-showcase.png`.
 
 ---
 
@@ -111,9 +111,7 @@ If CheckCherry package IDs change, update the three package buttons in `index.ht
 ## 6. Add your social media links
 
 1. Search `index.html` for `foot-social`.
-2. Replace each `href="#"` with your real profile link. Example:
-   - Before: `<a href="#" aria-label="Instagram">Instagram</a>`
-   - After: `<a href="https://instagram.com/yourhandle" aria-label="Instagram">Instagram</a>`
+2. Update the three profile URLs in the homepage and `gallery/index.html` together. Generated service pages inherit their social URLs from `build-pages.js` (`INSTAGRAM_URL`, `FACEBOOK_URL`, and `TIKTOK_URL`).
 
 ---
 
@@ -122,13 +120,13 @@ If CheckCherry package IDs change, update the three package buttons in `index.ht
 - **Phone:** search `2398887688` (appears in the buttons) — it's written as `tel:+12398887688`. Update both the link and the visible `239·888·7688` text.
 - **Email:** search `info@mangosphotobooth.com`.
 - **Hours:** search `9am` (currently "Mon–Sun · 9am–9pm").
-- **Cities served:** search `Serving` in the footer.
+- **Cities served:** search `Service Areas` in the footer and keep the JSON-LD, sitemap, `llms.txt`, and local landing pages consistent.
 
 ---
 
 ## 8. SEO notes (already set up for you)
 
-The site is pre-wired for **mangosphotobooth.com** with page title, description, social-share tags, and Google "local business" structured data (your packages, phone, hours, and the Fort Myers / Naples / Cape Coral service area).
+The site is pre-wired for **mangosphotobooth.com** with page title, description, social-share tags, and Google/AI-readable entity structured data (your packages, phone, hours, and the Fort Myers / Cape Coral / Naples / Marco Island / Estero / Bonita Springs service areas).
 
 Two things to upgrade when you can:
 - Create a dedicated branded 1200×630 social share card. Until then, `og:image` uses the current hero photograph.
