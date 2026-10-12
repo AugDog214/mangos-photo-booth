@@ -4,7 +4,7 @@
 
 Model/tool: OpenAI Codex with FFmpeg and gstack `/browse` (local browser-service startup attempted).
 
-Status: Local only. Changes are uncommitted, not pushed, and not live.
+Status: Committed and pushed to `main` on 2026-10-11. GitHub Pages deployment has been triggered; live-route verification remains pending.
 
 Changed:
 
@@ -32,11 +32,11 @@ Verification:
 
 Unfinished:
 
-- Fresh desktop and mobile browser QA is pending until the local gstack browser service is available.
+- Fresh desktop and mobile browser QA, plus live-route verification after GitHub Pages finishes deploying, remain pending because the local gstack browser service is unavailable.
 
 Next recommended task:
 
-1. Run the homepage at desktop and 375px mobile widths, confirm the complete Memory Wall has no horizontal overflow and no console errors, then commit/push only with user approval.
+1. Verify the live homepage at desktop and 375px mobile widths, confirming the complete Memory Wall has no horizontal overflow and no console errors.
 
 ---
 
