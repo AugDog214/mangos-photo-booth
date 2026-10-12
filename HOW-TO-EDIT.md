@@ -54,7 +54,7 @@ The site uses a mix of Mango's project photos and stock photography. Here's how 
 **Where the photos live on the page:**
 - **Hero cover**: search `hero-cover-updated.jpg`.
 - **Event photos** (5): search `ev-img`.
-- **The scrolling wall** (12 photos): search `brick-img`.
+- **The scrolling wall** (event photos and short videos): search `brick-img`. Each card uses a portrait crop; keep new media inside that frame instead of stretching it.
 - **How It Works** (1 photo): search `how-img`.
 - **Memory Station feature**: search `memory-station-keychains-showcase.png`.
 
@@ -63,7 +63,7 @@ The site uses a mix of Mango's project photos and stock photography. Here's how 
 ## Gallery and event media
 
 - `gallery/index.html` is the public Gallery page.
-- Supplied event photos use the `assets/event-party-friends-*.webp` naming pattern.
+- Supplied event photos use the `assets/event-party-friends-*.webp` naming pattern. The latest Memory Wall additions are `assets/memory-wall-pop-stroke-cropped.jpg` and the three `assets/memory-wall-*.mp4` clips with matching `-poster.jpg` fallback images.
 - The birthday feature uses `assets/event-birthday-friends.webp`.
 - The homepage hero and Memory Wall video use `assets/event-party-hero.mp4` with `assets/event-party-hero-poster.jpg` as the fallback image. The public Gallery itself is photo-only.
 - Keep uploaded guest media optimized for the web before adding it to either the Gallery or the homepage Memory Wall.

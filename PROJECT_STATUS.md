@@ -1,5 +1,45 @@
 # Project Status
 
+## Memory Wall event-media update prepared locally, 2026-10-11
+
+Model/tool: OpenAI Codex with FFmpeg and gstack `/browse` (local browser-service startup attempted).
+
+Status: Local only. Changes are uncommitted, not pushed, and not live.
+
+Changed:
+
+- Added the supplied night-lights, PopStroke team, and gold-glam event clips to the homepage Memory Wall as muted, looping portrait cards. The existing visible-media playback behavior continues to prevent off-screen clips from playing.
+- Created individual poster images for each new clip so the wall has a polished still before playback begins.
+- Cropped the supplied tall PopStroke photo collage into a focused portrait of the group at the gold backdrop, removing the surrounding collage layout before publishing it in the wall.
+- Documented the new Memory Wall asset pattern and portrait-crop requirement in `HOW-TO-EDIT.md`.
+
+Files touched:
+
+- `index.html`
+- `HOW-TO-EDIT.md`
+- `assets/memory-wall-pop-stroke-cropped.jpg`
+- `assets/memory-wall-night-lights.mp4` and `assets/memory-wall-night-lights-poster.jpg`
+- `assets/memory-wall-pop-stroke-team.mp4` and `assets/memory-wall-pop-stroke-team-poster.jpg`
+- `assets/memory-wall-gold-glam.mp4` and `assets/memory-wall-gold-glam-poster.jpg`
+
+Verification:
+
+- `node --check js/main.js`: passed.
+- `git diff --check`: passed (line-ending notices only).
+- Confirmed all seven new Memory Wall assets exist. Each video is a 4-second H.264 MP4; each has a dedicated JPEG poster.
+- Visually inspected the generated photo crop: it is a 780×960 portrait focused on the group, without the original stacked-photo collage presentation.
+- Attempted local gstack `/browse` QA twice, but its browser service did not start within its 15-second timeout. Desktop/mobile browser rendering and console checks remain pending.
+
+Unfinished:
+
+- Fresh desktop and mobile browser QA is pending until the local gstack browser service is available.
+
+Next recommended task:
+
+1. Run the homepage at desktop and 375px mobile widths, confirm the complete Memory Wall has no horizontal overflow and no console errors, then commit/push only with user approval.
+
+---
+
 ## First-gig Gallery published without upload integration, 2026-08-12
 
 Model/tool: OpenAI Codex with gstack `/land-and-deploy` and `/browse`.
