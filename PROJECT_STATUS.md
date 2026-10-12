@@ -4,7 +4,7 @@
 
 Model/tool: OpenAI Codex with FFmpeg and gstack `/browse` (local browser-service startup attempted).
 
-Status: Committed and pushed to `main` on 2026-10-11. GitHub Pages deployment has been triggered; live-route verification remains pending.
+Status: Committed and pushed to `main` on 2026-10-11. GitHub Pages deployment succeeded for commit `325432b`; live-route browser verification remains pending.
 
 Changed:
 
