@@ -1,5 +1,36 @@
 # Project Status
 
+## Memory Wall ordering refreshed locally, 2026-10-12
+
+Model/tool: OpenAI Codex.
+
+Status: Local only. Change is uncommitted, not pushed, and not live.
+
+Changed:
+
+- Interspersed the Networking Beast photos and video moments throughout Mango's Memory Wall rather than grouping them at the end.
+- Kept all fifteen existing wall cards and the seamless marquee behavior intact.
+
+Files touched:
+
+- `index.html`
+- `PROJECT_STATUS.md`
+
+Verification:
+
+- Confirmed the wall contains 15 unique cards: 11 photos and 4 video moments.
+- `git diff --check`: passed (line-ending notices only).
+
+Unfinished:
+
+- Visual desktop and mobile QA remains pending before publication.
+
+Next recommended task:
+
+1. Review the revised wall sequence and publish only after user approval.
+
+---
+
 ## Older hero photo removed locally, 2026-10-11
 
 Model/tool: OpenAI Codex.
