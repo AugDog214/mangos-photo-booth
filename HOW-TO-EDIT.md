@@ -63,9 +63,9 @@ The site uses a mix of Mango's project photos and stock photography. Here's how 
 ## Gallery and event media
 
 - `gallery/index.html` is the public Gallery page.
-- Supplied event photos use the `assets/event-party-friends-*.webp` naming pattern. The latest Memory Wall additions are `assets/memory-wall-pop-stroke-cropped.jpg` and the three `assets/memory-wall-*.mp4` clips with matching `-poster.jpg` fallback images.
+- Supplied event photos use the `assets/event-party-friends-*.webp` naming pattern. The latest Memory Wall additions include `assets/networking-beast-booth-moment.jpg`, `assets/memory-wall-pop-stroke-cropped.jpg`, and the three `assets/memory-wall-*.mp4` clips with matching `-poster.jpg` fallback images.
 - The birthday feature uses `assets/event-birthday-friends.webp`.
-- The homepage hero and Memory Wall video use `assets/event-party-hero.mp4` with `assets/event-party-hero-poster.jpg` as the fallback image. The public Gallery itself is photo-only.
+- The homepage hero now opens with `assets/hero-networking-beast-team.jpg` and includes the 4-second `assets/hero-networking-beast-moments.mp4` clip with its matching poster. The public Gallery itself is photo-only.
 - Keep uploaded guest media optimized for the web before adding it to either the Gallery or the homepage Memory Wall.
 - Guest-upload QR and manual file submission must point to an approved private upload destination. Do not publish a file picker that has no working storage endpoint.
 

@@ -1,5 +1,49 @@
 # Project Status
 
+## Networking Beast hero refresh prepared locally, 2026-10-11
+
+Model/tool: OpenAI Codex with FFmpeg.
+
+Status: Local only. Changes are uncommitted, not pushed, and not live.
+
+Changed:
+
+- Replaced the opening homepage hero image with a new Networking Beast team moment from `IMG_0197.MOV`.
+- Replaced the prior hero video with a web-optimized, muted Networking Beast video from `IMG_0200.MOV`, trimmed precisely to its first 4 seconds and paired with a still poster.
+- Added the supplied `IMG_0204.HEIC` Networking Beast booth moment to both the Memory Wall and the hero slideshow, using an optimized JPEG asset and tailored crop positions.
+- Recolored the outlined desktop-header `Book Now` control to green `#22A778`, with a solid green hover state and white hover text for contrast.
+- Updated the editing guide to identify the current hero media assets.
+
+Files touched:
+
+- `index.html`
+- `css/styles.css`
+- `HOW-TO-EDIT.md`
+- `assets/hero-networking-beast-team.jpg`
+- `assets/hero-networking-beast-moments.mp4`
+- `assets/hero-networking-beast-moments-poster.jpg`
+- `assets/networking-beast-booth-moment.jpg`
+- `PROJECT_STATUS.md`
+
+Verification:
+
+- `node --check js/main.js`: passed.
+- `git diff --check`: passed (line-ending notices only).
+- Confirmed the generated hero still is a 1080px-wide portrait image and visually inspected its crop.
+- Confirmed `hero-networking-beast-moments.mp4` is H.264, 1080×1920, and exactly 4.000 seconds long.
+- Confirmed the Networking Beast booth image was converted from HEIC to an optimized 1,800px-wide JPEG for browser compatibility.
+- Attempted local gstack `/browse` QA, but its browser service did not start within its 15-second timeout.
+
+Unfinished:
+
+- Fresh desktop and mobile browser QA remains required before publishing; the local gstack browser service is currently unavailable.
+
+Next recommended task:
+
+1. Preview the homepage at desktop and 375px mobile widths, verify the new hero crops, video playback, green Book Now control, and browser console, then publish when approved.
+
+---
+
 ## Memory Wall event-media update prepared locally, 2026-10-11
 
 Model/tool: OpenAI Codex with FFmpeg and gstack `/browse` (local browser-service startup attempted).
