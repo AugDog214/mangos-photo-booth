@@ -4,7 +4,7 @@
 
 Model/tool: OpenAI Codex with FFmpeg.
 
-Status: Local only. Changes are uncommitted, not pushed, and not live.
+Status: Committed and pushed to `main` on 2026-10-11. GitHub Pages deployment has been triggered; final live-route verification remains pending.
 
 Changed:
 
