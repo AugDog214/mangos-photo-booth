@@ -1,5 +1,38 @@
 # Project Status
 
+## Older hero photo removed locally, 2026-10-11
+
+Model/tool: OpenAI Codex.
+
+Status: Local only. Change is uncommitted, not pushed, and not live.
+
+Changed:
+
+- Removed the older hero slideshow photo featuring the group against the leafy backdrop, along with its matching slide selector.
+- Replaced it with a supplied PopStroke gold-backdrop celebration photo, taken from `20260813_182542904.mp4` at the 2-second mark.
+- Renumbered the remaining selectors so the five active hero moments stay in sync.
+
+Files touched:
+
+- `index.html`
+- `assets/hero-popstroke-mic.jpg`
+- `PROJECT_STATUS.md`
+
+Verification:
+
+- Confirmed the hero slideshow contains five slides and five matching controls.
+- `git diff --check`: passed (line-ending notices only).
+
+Unfinished:
+
+- Desktop and mobile visual QA remains pending before publication.
+
+Next recommended task:
+
+1. Review the revised hero rotation, then publish only after user approval.
+
+---
+
 ## Networking Beast hero refresh prepared locally, 2026-10-11
 
 Model/tool: OpenAI Codex with FFmpeg.
