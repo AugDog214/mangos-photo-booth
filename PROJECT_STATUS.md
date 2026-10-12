@@ -11,7 +11,7 @@ Changed:
 - Replaced the opening homepage hero image with a new Networking Beast team moment from `IMG_0197.MOV`.
 - Replaced the prior hero video with a web-optimized, muted Networking Beast video from `IMG_0200.MOV`, trimmed precisely to its first 4 seconds and paired with a still poster.
 - Added the supplied `IMG_0204.HEIC` Networking Beast booth moment to both the Memory Wall and the hero slideshow, using an optimized JPEG asset and tailored crop positions.
-- Recolored the outlined desktop-header `Book Now` control to green `#22A778`, with a solid green hover state and white hover text for contrast.
+- Recolored the desktop-header `Book Now` control to a solid green `#22A778`, with a darker-green hover state and white text for contrast. Versioned the stylesheet reference so the updated control bypasses a browser's prior CSS cache.
 - Updated the editing guide to identify the current hero media assets.
 
 Files touched:

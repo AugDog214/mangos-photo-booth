@@ -205,10 +205,10 @@ body.bw-gallery .simg-img { filter: grayscale(1) contrast(1.05); }
 .hdr-tel { font-size: 0.84rem; letter-spacing: var(--track-mid); color: var(--gold); font-weight: 500; }
 .hdr-cta {
   font-size: 0.78rem; letter-spacing: var(--track-mid); text-transform: uppercase; font-weight: 500;
-  color: #187A59; border: 1px solid #22A778; padding: 0.85em 1.4em; border-radius: var(--radius);
+  color: #fff; border: 1px solid #22A778; background: #22A778; padding: 0.85em 1.4em; border-radius: var(--radius);
   transition: border-color .3s ease, color .3s ease, background .3s ease;
 }
-.hdr-cta:hover { border-color: #22A778; color: #fff; background: #22A778; }
+.hdr-cta:hover { border-color: #187A59; color: #fff; background: #187A59; }
 .hdr-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
 .hdr-burger span { width: 24px; height: 1.5px; background: var(--paper); display: block; transition: transform .3s var(--ease), opacity .3s ease; }
 
