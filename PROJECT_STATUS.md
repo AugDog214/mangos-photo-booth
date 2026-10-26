@@ -1,5 +1,54 @@
 # Project Status
 
+## Security release live and verified, 2026-10-26
+
+Model/tool: OpenAI Codex, Git/GitHub CLI, Node.js and gstack `/browse`.
+
+Status: Security code is committed, pushed, merged and live on GitHub Pages.
+The owner authorized publication with "push live". Release source commit:
+`88d2d1985e9a04b3e9c7067fa2c24ea5579d27d0`; merge commit:
+`9163b2045e898724473eaa9e33f01e16cd2e3ee4`.
+
+- PR: https://github.com/AugDog214/mangos-photo-booth/pull/1
+- Passing security workflow: https://github.com/AugDog214/mangos-photo-booth/actions/runs/40381210454
+- Successful code deployment: https://github.com/AugDog214/mangos-photo-booth/actions/runs/40381466395
+- Live site: https://mangosphotobooth.com/
+
+Fresh verification:
+
+- GitHub's `checks`, `codeql` and CodeQL result checks passed. The PR analysis
+  reported zero open code-scanning alerts for that PR ref.
+- GitHub Pages built and deployed the merge commit successfully.
+- All fifteen live routes returned 200 and exposed the intended CSP/referrer
+  meta policies. The existing security report's HTTP-header limitations remain.
+- Live widths at 375/768/1280, mobile menu open/Escape, package scrolling, five
+  hero slides, 30 duplicated Memory Wall nodes and the twelve homepage booking
+  links passed. Corporate CheckCherry form rendered; gallery uploads stay absent.
+- Sampled live homepage, corporate and gallery console checks found no errors.
+- No inquiry, booking, payment or customer message was submitted.
+
+Publication changed the twenty-five files described in the prior audit entry.
+This documentation follow-up updates `PROJECT_STATUS.md` and the three security
+reports to record actual CI/live results; it does not change runtime code.
+
+Unfinished:
+
+- Dependabot's first managed update run failed fetching job details with
+  "missing response" before processing dependencies. GitHub rejected a retry of
+  that run. Configuration is published, but reliable update execution remains
+  unverified: https://github.com/AugDog214/mangos-photo-booth/actions/runs/40381475608
+- CI emitted non-blocking Node 20 action-runtime and runner-image migration
+  notices. Review maintained action revisions during the next update cycle;
+  no unreviewed upgrade was installed to silence the notices.
+- Protected GitHub settings, real response headers/CDN/DNS, provider spam/data
+  controls and the dormant upload dependency findings remain as documented.
+  This publication did not change those settings or activate uploads.
+
+Exact next recommended task: review Dependabot's managed update details and
+decide whether to authorize the separate repository/header/provider follow-up.
+
+---
+
 ## Security publication authorized, 2026-10-26
 
 Model/tool: OpenAI Codex, Git/GitHub, Node.js and gstack `/browse`.

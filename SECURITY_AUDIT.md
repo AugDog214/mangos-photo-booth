@@ -6,6 +6,12 @@ Baseline commit: `cb922bec82a11ce7a8ba4840631d5388a44c350d`.
 Working branch: `security/2026-10-26-audit-hardening`.
 Initial audit snapshot: changes were local and uncommitted; no publication or external setting changes had occurred. The owner subsequently authorized publication on 2026-10-26. Release verification is recorded in `PROJECT_STATUS.md`; the findings below retain their original audit-time context. DNS, protected settings, secrets and inquiry submissions remain outside this publication.
 
+## Release verification, 2026-10-26
+
+**VERIFIED LIVE:** owner-authorized [PR #1](https://github.com/AugDog214/mangos-photo-booth/pull/1) merged as `9163b2045e898724473eaa9e33f01e16cd2e3ee4`. The [security workflow](https://github.com/AugDog214/mangos-photo-booth/actions/runs/40381210454) passed its static and CodeQL jobs, with zero open alerts reported for the PR analysis. The [Pages deployment](https://github.com/AugDog214/mangos-photo-booth/actions/runs/40381466395) succeeded. All fifteen live routes returned 200 with the expected meta policies; responsive/navigation and CheckCherry rendering checks passed without a submission. These results supersede the initial local-only/deployment-pending statuses below.
+
+**IMPLEMENTED BUT UNVERIFIED for reliable operation:** weekly Dependabot configuration is published, but its [first managed update run](https://github.com/AugDog214/mangos-photo-booth/actions/runs/40381475608) failed fetching job details with "missing response". GitHub refused a retry. No cause or resolution is claimed. Actual response headers, protected repository settings, provider-side controls and dormant upload findings remain unresolved as stated in the audit. Non-blocking action-runtime/runner migration notices are recorded in `PROJECT_STATUS.md` for maintenance.
+
 ## Assessment
 
 **VERIFIED:** No exploitable P0/P1 vulnerability or privileged credential leak was established in the published site within the reviewed scope. This is not a guarantee that none exists. The main gaps concern browser defense in depth, repository controls, provider-managed form security and unused upload-development tooling.
@@ -212,4 +218,4 @@ Local evidence is retained outside the published repository in the parent folder
 
 At completion of the local audit, live security had **not changed**. The branch adds modest browser guardrails, publication checks and maintenance automation while preserving content and behavior. Subsequent publication evidence is recorded in `PROJECT_STATUS.md`. These changes do not establish full XSS prevention, vendor spam resistance or a WAF. The largest remaining practical risks are uncontrolled publication to `main`, third-party script/form dependence, absent response headers and unsafe reuse of dormant upload tooling.
 
-Approve local change review/publication separately; approve repository settings separately; approve any CDN/DNS plan separately. See [SECURITY_IMPROVEMENTS.md](SECURITY_IMPROVEMENTS.md) for exact changes and [SECURITY_MAINTENANCE.md](SECURITY_MAINTENANCE.md) for concrete owner actions.
+Publication was subsequently authorized and verified as recorded above. Repository setting changes and any CDN/DNS plan still require separate approval. See [SECURITY_IMPROVEMENTS.md](SECURITY_IMPROVEMENTS.md) for exact changes and [SECURITY_MAINTENANCE.md](SECURITY_MAINTENANCE.md) for concrete owner actions.

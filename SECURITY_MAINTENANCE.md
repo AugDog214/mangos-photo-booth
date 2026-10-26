@@ -3,7 +3,9 @@
 Date: 2026-10-26. Applies only to this static GitHub Pages website.
 The owner authorized this release on 2026-10-26. Release evidence is recorded in `PROJECT_STATUS.md`. Future publications and account changes require appropriate owner authorization; this release does not authorize DNS or protected-setting changes.
 
-## Before approving publication
+Release result: [PR #1](https://github.com/AugDog214/mangos-photo-booth/pull/1) is merged and its security checks, CodeQL and Pages deployment passed. Fifteen live routes and the booking/contact UI were verified. Dependabot's first managed update run failed before dependency processing ("missing response" fetching job details); GitHub refused a retry. Review [the update run](https://github.com/AugDog214/mangos-photo-booth/actions/runs/40381475608) and the repository's dependency-update page before calling weekly updates operational. The remaining account/header/provider decisions below still require separate approval.
+
+## Before future publications
 
 1. Review the branch `security/2026-10-26-audit-hardening` and the three security documents. A push to `main` publishes automatically; use a reviewed PR after explicit approval.
 2. Run from this repository:

@@ -4,6 +4,12 @@ Date: 2026-10-26. Branch: `security/2026-10-26-audit-hardening`.
 Baseline: `cb922bec82a11ce7a8ba4840631d5388a44c350d`.
 **Mango's Photo Booth only.** This document records the local audit snapshot. The owner authorized publication on 2026-10-26; subsequent CI and live verification are recorded in `PROJECT_STATUS.md`.
 
+## Release result
+
+**VERIFIED LIVE on 2026-10-26:** [PR #1](https://github.com/AugDog214/mangos-photo-booth/pull/1) merged as `9163b2045e898724473eaa9e33f01e16cd2e3ee4`. [Security checks and CodeQL passed](https://github.com/AugDog214/mangos-photo-booth/actions/runs/40381210454), and [GitHub Pages deployed successfully](https://github.com/AugDog214/mangos-photo-booth/actions/runs/40381466395). All fifteen live routes expose the intended policies; responsive/mobile navigation, hero/Memory Wall and CheckCherry rendering checks passed with no inquiry or booking submission. These results supersede the initial local/pending-deployment statuses in the original change table below.
+
+Dependabot configuration is published, but its [first update run](https://github.com/AugDog214/mangos-photo-booth/actions/runs/40381475608) failed fetching job details with "missing response" and cannot be retried through GitHub's run API. Reliable weekly execution remains **IMPLEMENTED BUT UNVERIFIED**. The remaining protected-setting, HTTP-header/CDN, provider-control and dormant-upload actions are unchanged.
+
 ## What changed
 
 | Files | Change and purpose | Verification/status |
