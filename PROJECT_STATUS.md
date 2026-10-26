@@ -1,5 +1,97 @@
 # Project Status
 
+## Security publication authorized, 2026-10-26
+
+Model/tool: OpenAI Codex, Git/GitHub, Node.js and gstack `/browse`.
+
+The owner explicitly requested "push live" for Mango's Photo Booth. The security
+release is prepared on `security/2026-10-26-audit-hardening`; publication is
+authorized, with remote CI and deployment verification pending at this entry.
+No DNS, protected repository setting, upload activation or provider-data change
+is included.
+
+Changed: the three security documents now distinguish the initial local audit
+snapshot from the subsequently authorized release. The prior security entry
+lists the complete implementation and affected files.
+
+Fresh verification: fetched `origin/main` and confirmed no upstream divergence;
+the 13-page generator, 15-page security check and `git diff --check` passed.
+Existing local responsive, booking, content/SEO and secret-pattern evidence is
+retained. The published site still uses branch-based GitHub Pages.
+
+Exact next task: push the reviewed branch, run the security workflow through a
+PR, merge after passing checks, then verify GitHub Pages and live pages. Record
+the actual result before marking the release live.
+
+---
+
+## Security audit and local hardening, 2026-10-26
+
+Model/tool: OpenAI Codex; reviewed pinned security skills, Git/GitHub read-only APIs,
+Node.js, npm metadata audit, Python local checks and gstack `/browse`.
+
+Status: Local only on `security/2026-10-26-audit-hardening`, based on
+`cb922bec82a11ce7a8ba4840631d5388a44c350d`. Uncommitted, not pushed and not live.
+No PR, deployment, DNS change, protected GitHub setting change or inquiry submission.
+Scope is Mango's Photo Booth only.
+
+Changed:
+
+- Added a conservative CSP and explicit referrer policy to the homepage, gallery
+  and generator; regenerated all thirteen service/location pages.
+- Added key/signing-file ignore patterns and corrected the inactive `_headers`
+  draft without enabling headers or subdomain-wide HSTS.
+- Added a dependency-free static security check, a proposed SHA-pinned
+  check/CodeQL workflow and weekly Dependabot action-update configuration.
+- Wrote `SECURITY_AUDIT.md`, `SECURITY_IMPROVEMENTS.md` and
+  `SECURITY_MAINTENANCE.md`, including exact tool provenance and approval gates.
+
+Files touched:
+
+- `index.html`, `gallery/index.html`, `build-pages.js` and its thirteen generated
+  `*/index.html` files;
+- `.gitignore`, `_headers`, `scripts/security-check.mjs`;
+- `.github/workflows/security.yml`, `.github/dependabot.yml`;
+- the three security documents and `PROJECT_STATUS.md`.
+
+Verification:
+
+- `node build-pages.js`: passed; repeat generation is byte-idempotent.
+- `node scripts/security-check.mjs`: passed for fifteen pages and 67 booking links.
+- Independent checks: 710 local links/resources and 222 anchors, zero missing;
+  all original HTML/content/SEO preserved except the two security meta tags.
+- Browser checks: all fifteen routes, mobile menu/Escape, package anchor, five
+  hero slides and looping Memory Wall passed; viewport widths 375/768/1280 and
+  homepage/gallery/corporate screenshots reviewed; no unexpected local errors.
+- Three synthetic loopback CSP cases were blocked. CheckCherry widget rendered;
+  external booking destinations checked without submitting an inquiry/booking.
+- Skill hashes matched the prior receipt. Source/history pattern review found
+  no confirmed privileged credential leak within documented coverage.
+- Published site has no npm dependencies. Native audit of the ignored inactive
+  upload tooling found nine flagged package nodes, including two critical.
+  Those packages were not modified or activated; full dormant-service testing
+  was skipped and remains a separate prerequisite to future use.
+- `git diff --check`: passed.
+
+Unfinished:
+
+- GitHub workflow/CodeQL execution and live policy effects remain unverified.
+- Branch protection, Dependabot settings and account-level domain verification
+  require owner review/approval. Secret scanning/push protection already exist.
+- Complete script CSP, clickjacking and other response headers require an
+  approved hosting/CDN configuration; `_headers` is ignored by GitHub Pages.
+- CheckCherry server validation, spam controls, private lead access, retention
+  and actual delivery require provider-account review and an approved test.
+- Upload activation remains blocked; its tooling needs a separate upgrade/retest.
+
+Exact next recommended task:
+
+1. Review this local security branch and the three reports, then decide whether
+   to authorize a branch push/PR. Approve publication and any GitHub/CDN/provider
+   changes separately. Keep the upload service disabled.
+
+---
+
 ## Memory Wall ordering refreshed locally, 2026-10-12
 
 Model/tool: OpenAI Codex.

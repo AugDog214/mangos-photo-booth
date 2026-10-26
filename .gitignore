@@ -12,3 +12,7 @@ desktop.ini
 !.env.sample
 upload-api/.wrangler/
 upload-api/
+*.pem
+*.key
+*.p12
+*.pfx
