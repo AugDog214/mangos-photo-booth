@@ -1,5 +1,46 @@
 # Project Status
 
+## Wedding photos, interactive Memory Wall and Platinum shine, 2026-10-26
+
+Model/tool: OpenAI Codex (GPT-6), Pillow and gstack /browse.
+
+Status: Publication authorized by the owner with "push live". Release checks
+passed; push and GitHub Pages deployment verification are pending.
+
+- Added optimized WebP copies of all nine supplied October 24 event photos to
+  the homepage Memory Wall. Originals in Downloads were left untouched.
+- Inserted 20261024_181529 as hero slide one and 20261024_215723 as slide three;
+  retained the five existing slides and updated the preload and seven dot labels.
+- Added pointer dragging/touch swiping, arrow-key browsing, hover/focus pause
+  and seamless autoplay to the Memory Wall. Reduced motion disables autoplay.
+- Added a moving warm shine around and behind the featured Platinum card,
+  disabled for reduced motion.
+
+Files: index.html, css/styles.css, js/main.js, eleven optimized assets,
+scripts/prepare-october-photos.py and PROJECT_STATUS.md.
+
+Verification: JavaScript syntax and the existing static security check passed
+(15 pages, 67 booking links, CSP/referrer metadata and disabled uploads).
+git diff --check passed. Local desktop/mobile screenshots were inspected;
+375px layout has no horizontal overflow. Confirmed seven hero slides/dots,
+the requested photo order, nine new images plus their loop copies, loaded
+images, hover pause and keyboard movement. Synthetic pointer-handler drag
+and release passed; physical touch gestures were not tested. Browser console
+was clean. The installed browse version lacks CDP input commands, so no
+helper upgrade or additional browser installation was performed.
+
+Preview: http://127.0.0.1:4173/
+
+Release preparation: refreshed homepage CSS/JS asset versions so returning
+visitors receive the new interaction and shine. Focused differential security
+review found no new security findings; no dependencies, security policies,
+booking destinations or upload controls changed.
+
+Next recommended task: push this approved release and verify GitHub Pages,
+production photo order, Memory Wall behavior and browser console.
+
+---
+
 ## Security release live and verified, 2026-10-26
 
 Model/tool: OpenAI Codex, Git/GitHub CLI, Node.js and gstack `/browse`.

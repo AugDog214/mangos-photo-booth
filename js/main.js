@@ -116,15 +116,79 @@
     }
   });
 
-  /* ---------- Marquee: duplicate the row for a seamless loop ---------- */
+  /* ---------- Memory Wall: seamless autoplay with drag, swipe and keyboard ---------- */
   run('marquee', function () {
     var track = document.getElementById('marquee-track');
     if (!track || track.dataset.cloned === '1') return;
     var originals = Array.prototype.slice.call(track.children);
     originals.forEach(function (node) {
-      track.appendChild(node.cloneNode(true));
+      var clone = node.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
     });
     track.dataset.cloned = '1';
+    var wrap = track.parentElement;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var position = 0;
+    var cycle = 0;
+    var hover = false;
+    var focused = false;
+    var pointer = null;
+    var lastX = 0;
+    var previous = 0;
+    track.classList.add('is-interactive');
+    var measure = function () {
+      cycle = originals.length ? track.children[originals.length].offsetLeft - originals[0].offsetLeft : 0;
+    };
+    var render = function () {
+      if (cycle) position = ((position % cycle) + cycle) % cycle;
+      track.style.transform = 'translate3d(' + (-position) + 'px,0,0)';
+    };
+    measure();
+    window.addEventListener('resize', function () { measure(); render(); });
+    wrap.addEventListener('mouseenter', function () { hover = true; });
+    wrap.addEventListener('mouseleave', function () { hover = false; });
+    wrap.addEventListener('focusin', function () { focused = true; });
+    wrap.addEventListener('focusout', function (event) { focused = wrap.contains(event.relatedTarget); });
+    wrap.addEventListener('dragstart', function (event) { event.preventDefault(); });
+    wrap.addEventListener('pointerdown', function (event) {
+      if (!event.isPrimary || event.button !== 0) return;
+      pointer = event.pointerId;
+      lastX = event.clientX;
+      wrap.setPointerCapture(pointer);
+      wrap.classList.add('is-dragging');
+    });
+    wrap.addEventListener('pointermove', function (event) {
+      if (pointer !== event.pointerId) return;
+      position += lastX - event.clientX;
+      lastX = event.clientX;
+      render();
+    });
+    var release = function (event) {
+      if (pointer !== event.pointerId) return;
+      pointer = null;
+      wrap.classList.remove('is-dragging');
+      if (wrap.hasPointerCapture(event.pointerId)) wrap.releasePointerCapture(event.pointerId);
+    };
+    wrap.addEventListener('pointerup', release);
+    wrap.addEventListener('pointercancel', release);
+    wrap.addEventListener('lostpointercapture', release);
+    wrap.addEventListener('keydown', function (event) {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      position += (event.key === 'ArrowRight' ? 1 : -1) * (originals[0].getBoundingClientRect().width + 18);
+      render();
+    });
+    var animate = function (now) {
+      var elapsed = previous ? Math.min(now - previous, 50) : 0;
+      previous = now;
+      if (!reduce.matches && !hover && !focused && pointer === null && !document.hidden) {
+        position += elapsed * .035;
+        render();
+      }
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
   });
 
   /* ---------- Event videos: play only while visible ---------- */
