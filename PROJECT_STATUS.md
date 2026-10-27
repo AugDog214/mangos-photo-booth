@@ -1,5 +1,29 @@
 # Project Status
 
+## Hero opening photo and mixed Memory Wall order, 2026-10-27
+
+Model/tool: OpenAI Codex (GPT-6), Git/Node.js and gstack /browse.
+
+Status: Owner authorized "push live"; checks passed, publication pending.
+
+Changed index.html: 20261024_215723 is the first hero slide and preload;
+20261024_181529 moves to slide three. Dot labels match. Reordered all 24
+Memory Wall items to interleave wedding, networking, birthday, party and
+video moments. No photos were removed; drag/swipe and hover pause are unchanged.
+Also updated this PROJECT_STATUS.md handoff.
+
+Fresh verification: existing security check passed for 15 routes and 67 booking
+links; git diff --check passed. Local browser confirmed seven slides, correct
+first-slide/preload, mixed wall order and 48 items including loop copies.
+Desktop wall screenshot inspected; settled 375px viewport has 375px page
+width. Console clean. Generated wedding page returned 200 and hero visible.
+Focused source review: only static media ordering/preload/labels changed;
+security policies, destinations, dependencies and executable code unchanged.
+
+Next recommended task: verify GitHub Pages deployment and production ordering.
+
+---
+
 ## Wedding photos, interactive Memory Wall and Platinum shine, 2026-10-26
 
 Model/tool: OpenAI Codex (GPT-6), Pillow and gstack /browse.
