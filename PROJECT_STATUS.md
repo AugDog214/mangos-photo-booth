@@ -4,7 +4,9 @@
 
 Model/tool: OpenAI Codex (GPT-6), Git/Node.js and gstack /browse.
 
-Status: Owner authorized "push live"; checks passed, publication pending.
+Status: Committed, pushed and live. Owner authorized "push live".
+Runtime commit: d916c4585736c449716c20b440e43298c2235cfa.
+Successful deployment: https://github.com/AugDog214/mangos-photo-booth/actions/runs/40449102183
 
 Changed index.html: 20261024_215723 is the first hero slide and preload;
 20261024_181529 moves to slide three. Dot labels match. Reordered all 24
@@ -20,7 +22,12 @@ width. Console clean. Generated wedding page returned 200 and hero visible.
 Focused source review: only static media ordering/preload/labels changed;
 security policies, destinations, dependencies and executable code unchanged.
 
-Next recommended task: verify GitHub Pages deployment and production ordering.
+Production verification: homepage returned 200, confirmed 215723 first and
+preloaded, the mixed wedding/networking/birthday/video order and 48 wall
+items including copies. Browser console clean.
+
+Next recommended task: view the new mixed photo order on the live site.
+No implementation work remains for this request.
 
 ---
 
