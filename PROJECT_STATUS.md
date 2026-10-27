@@ -4,8 +4,12 @@
 
 Model/tool: OpenAI Codex (GPT-6), Pillow and gstack /browse.
 
-Status: Publication authorized by the owner with "push live". Release checks
-passed; push and GitHub Pages deployment verification are pending.
+Status: Committed, pushed and live. The owner authorized publication with
+"push live". Runtime release commit: 397fe82efc1fb1ce58e0332662f40d720fc60c3c.
+
+- Successful Pages deployment: https://github.com/AugDog214/mangos-photo-booth/actions/runs/40439676778
+- Passing static checks and CodeQL workflow: https://github.com/AugDog214/mangos-photo-booth/actions/runs/40439689134
+- Production: https://mangosphotobooth.com/
 
 - Added optimized WebP copies of all nine supplied October 24 event photos to
   the homepage Memory Wall. Originals in Downloads were left untouched.
@@ -36,8 +40,19 @@ visitors receive the new interaction and shine. Focused differential security
 review found no new security findings; no dependencies, security policies,
 booking destinations or upload controls changed.
 
-Next recommended task: push this approved release and verify GitHub Pages,
-production photo order, Memory Wall behavior and browser console.
+Production verification: homepage returned 200; confirmed seven slides with
+the requested first/third images, all eleven new assets loaded, nine Memory
+Wall photos plus their seamless copies, active interactive track and Platinum
+shine. Live hover pause and keyboard movement passed. Desktop and 375px mobile
+screenshots inspected; settled mobile scroll width equals viewport width.
+Browser console was clean. Physical touch-device testing remains unperformed.
+
+CI notices: existing Node/action runner migration notices remain. CodeQL also
+suggests an on.push trigger for default-branch Security tab visibility; this
+release did not change workflow triggers or claim an empty alerts inventory.
+
+Next recommended task: try the live Memory Wall on a physical phone to confirm
+the feel of touch swiping. No implementation work remains for this release.
 
 ---
 
