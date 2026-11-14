@@ -1,5 +1,31 @@
 # Project Status
 
+## Six-guide blog release, November 14, 2026
+
+Codex prepared the blog for the owner-authorized push to main. The guest-capacity article and metadata use “more than 50 guests” for the guest-count charge. All six guides carry their publication date in the byline and article structured data. Release verification continues after the push.
+
+## Guest-count pricing clarification, November 14, 2026
+
+OpenAI Codex updated the guest-capacity draft in `scripts/blog-articles.json` and regenerated the blog. The owner confirmed that pricing increases for events above 50 guests and depends on headcount. The public site and CheckCherry list the three-hour starting prices. The exact guest-count amounts were unavailable in the materials checked. The guide directs planners to request a quote using their expected attendance.
+
+Verified the 51-guest threshold in the generated article. Static checks passed for 22 pages. Local and uncommitted, awaiting editorial review. To add exact amounts, confirm the applicable fee schedule with the owner.
+
+## Guest capacity guide, November 14, 2026
+
+OpenAI Codex added the sixth local draft at `blog/photo-booth-guest-capacity/`. The guide compares group sessions, individual guests and peak arrival windows, with an illustrative 120-person event and citations to two operators’ own planning figures. Mango’s actual hourly pace is still unmeasured in this brief.
+
+Updated the article catalog, blog renderer, generated hub and article, sitemap, social captions and cropped preview image. The browser confirmed six guide cards, two source links, the article URL, loaded cover image, booking destination and fit at 1440px and 375px. Static checks passed for 22 pages and 88 booking links. Local and uncommitted, ready for owner review before release. Next editorial step is to add a firsthand example if the owner has one.
+
+## Blog launch drafts, November 14, 2026
+
+OpenAI Codex built a local blog index and five articles using the shared page generator, navigation, brand stylesheet and event imagery. The drafts cover hotel setup, SWFL package costs, wedding timelines, keepsake choices and corporate artwork briefs. Editable copy lives in `scripts/blog-articles.json`. `scripts/build-blog.js` renders plain HTML from that copy when `build-pages.js` runs. New files include `blog/`, `assets/blog/` and `css/blog.css`. Updated the homepage, gallery, service-page generator and outputs, shared header breakpoint, sitemap, editing guide and security checker. Social captions and tagged Facebook/Instagram links are in the workspace’s Social Media & ads folder.
+
+Search implementation includes crawlable navigation, canonical URLs, article metadata and JSON-LD. Each article has a 1200 × 630 JPEG for link previews. Owner review should confirm prices, examples and byline, add firsthand details, and set the actual publication date at release. Google and Bing reporting, ChatGPT referrals and sharing previews can be evaluated after publication.
+
+Verified six blog routes, local links and fragments, social image dimensions, metadata and sitemap membership. Desktop and mobile screenshots inspected. All five articles returned HTTP 200 with loaded images at 375px, and the mobile menu linked back to the blog. Local console showed no errors. The static security check passed for 21 pages and 85 booking links. The 1100px homepage header fits, though homepage content briefly measured 1115px wide during load around the existing How It Works media.
+
+Local edits only. Drafts await owner review and publication approval. Codex biweekly topic reminder active. Device delivery and live social preview rendering await verification.
+
 ## Hero opening photo and mixed Memory Wall order, 2026-10-27
 
 Model/tool: OpenAI Codex (GPT-6), Git/Node.js and gstack /browse.

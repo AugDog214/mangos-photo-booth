@@ -57,7 +57,7 @@ const LABELS = {
 };
 
 // ---------- shared markup ----------
-function head(p) {
+function head(p, prefix = "../") {
   const url = SITE + "/" + p.slug + "/";
   return `<!DOCTYPE html>
 <html lang="en">
@@ -83,35 +83,36 @@ ${p.keywords ? `<meta name="keywords" content="${p.keywords}" />\n` : ""}<meta n
 <meta name="theme-color" content="#080A0D" />
 <link rel="canonical" href="${url}" />
 
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
-<link rel="manifest" href="../site.webmanifest" />
+<link rel="icon" type="image/png" sizes="32x32" href="${prefix}assets/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="${prefix}assets/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="${prefix}assets/apple-touch-icon.png" />
+<link rel="manifest" href="${prefix}site.webmanifest" />
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content="${p.article ? "article" : "website"}" />
 <meta property="og:site_name" content="Mango's Photo Booth & Entertainment" />
 <meta property="og:title" content="${p.ogTitle || p.title}" />
 <meta property="og:description" content="${p.description}" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:url" content="${url}" />
-<meta property="og:image" content="${OG_IMG}" />
-<meta property="og:image:secure_url" content="${OG_IMG}" />
+<meta property="og:image" content="${p.socialImage || OG_IMG}" />
+<meta property="og:image:secure_url" content="${p.socialImage || OG_IMG}" />
 <meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1536" />
-<meta property="og:image:height" content="1024" />
-<meta property="og:image:alt" content="Mango's Photo Booth & Entertainment — luxury photo booth rental in Southwest Florida" />
+<meta property="og:image:width" content="${p.socialImage ? 1200 : 1536}" />
+<meta property="og:image:height" content="${p.socialImage ? 630 : 1024}" />
+<meta property="og:image:alt" content="${p.socialAlt || "Mango's Photo Booth & Entertainment — luxury photo booth rental in Southwest Florida"}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${p.ogTitle || p.title}" />
 <meta name="twitter:description" content="${p.description}" />
-<meta name="twitter:image" content="${OG_IMG}" />
-<meta name="twitter:image:alt" content="Mango's Photo Booth & Entertainment at a Southwest Florida celebration" />
+<meta name="twitter:image" content="${p.socialImage || OG_IMG}" />
+<meta name="twitter:image:alt" content="${p.socialAlt || "Mango's Photo Booth & Entertainment at a Southwest Florida celebration"}" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700&display=swap" />
 
-<link rel="stylesheet" href="../css/styles.css" />
+<link rel="stylesheet" href="${prefix}css/styles.css?v=20261114-blog" />
 
+${p.blog ? `<link rel="stylesheet" href="${prefix}css/blog.css" />` : ""}
 <noscript><style>
   .sec-head, .foot-cta { opacity: 1 !important; transform: none !important; }
 </style></noscript>
@@ -126,20 +127,21 @@ ${p.keywords ? `<meta name="keywords" content="${p.keywords}" />\n` : ""}<meta n
 <a class="skip" href="#main">Skip to content</a>`;
 }
 
-function header() {
+function header(prefix = "../") {
   return `
 <header class="hdr" id="site-header">
-  <a class="hdr-brand" href="../index.html" aria-label="Mango's Photo Booth &amp; Entertainment — home">
-    <img src="../assets/mango-logo-final.png" alt="Mango's Photo Booth &amp; Entertainment logo" width="1210" height="1238" />
+  <a class="hdr-brand" href="${prefix}index.html" aria-label="Mango's Photo Booth &amp; Entertainment — home">
+    <img src="${prefix}assets/mango-logo-final.png" alt="Mango's Photo Booth &amp; Entertainment logo" width="1210" height="1238" />
   </a>
 
   <nav class="hdr-nav" aria-label="Primary">
-    <a href="../index.html#events" class="hdr-link">Events</a>
-    <a href="../index.html#how" class="hdr-link">How It Works</a>
-    <a href="../index.html#packages" class="hdr-link">Packages</a>
-    <a href="../index.html#backdrops" class="hdr-link">Backdrops</a>
-    <a href="../gallery/index.html" class="hdr-link">Gallery</a>
-    <a href="../index.html#faq" class="hdr-link">FAQ</a>
+    <a href="${prefix}index.html#events" class="hdr-link">Events</a>
+    <a href="${prefix}index.html#how" class="hdr-link">How It Works</a>
+    <a href="${prefix}index.html#packages" class="hdr-link">Packages</a>
+    <a href="${prefix}index.html#backdrops" class="hdr-link">Backdrops</a>
+    <a href="${prefix}gallery/index.html" class="hdr-link">Gallery</a>
+    <a href="${prefix}blog/" class="hdr-link">Blog</a>
+    <a href="${prefix}index.html#faq" class="hdr-link">FAQ</a>
   </nav>
 
   <div class="hdr-right">
@@ -151,12 +153,13 @@ function header() {
   </div>
 
   <div class="hdr-mobile" id="hdr-mobile">
-    <a href="../index.html#events">Events</a>
-    <a href="../index.html#how">How It Works</a>
-    <a href="../index.html#packages">Packages</a>
-    <a href="../index.html#backdrops">Backdrops</a>
-    <a href="../gallery/index.html">Gallery</a>
-    <a href="../index.html#faq">FAQ</a>
+    <a href="${prefix}index.html#events">Events</a>
+    <a href="${prefix}index.html#how">How It Works</a>
+    <a href="${prefix}index.html#packages">Packages</a>
+    <a href="${prefix}index.html#backdrops">Backdrops</a>
+    <a href="${prefix}gallery/index.html">Gallery</a>
+    <a href="${prefix}blog/">Blog</a>
+    <a href="${prefix}index.html#faq">FAQ</a>
     <a class="hdr-mobile-cta" href="https://mangos-photo-booth-and-entertainment.checkcherry.com/reservation" target="_blank" rel="noopener noreferrer" data-loc="mobile-menu">Book Now</a>
   </div>
 </header>
@@ -214,7 +217,7 @@ ${loc}
   </div>
 </footer>
 
-<script src="../js/main.js" defer></script>
+<script src="${prefix}js/main.js" defer></script>
 </body>
 </html>`;
 }
@@ -731,4 +734,5 @@ for (const p of PAGES) {
   count++;
   console.log("wrote " + p.slug + "/index.html");
 }
+require("./scripts/build-blog")({ root: __dirname, site: SITE, head, header, footer });
 console.log("Done. " + count + " pages generated.");

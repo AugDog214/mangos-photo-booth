@@ -126,6 +126,8 @@ If CheckCherry package IDs change, update the three package buttons in `index.ht
 
 ## 8. SEO notes (already set up for you)
 
+Edit blog copy in `scripts/blog-articles.json` and run `node build-pages.js` to rebuild the index and articles. The first entry is the featured guide. Each entry uses a 1200 × 630 JPEG at `assets/blog/<slug>.jpg` for the website and social previews. Add the permanent URL to `sitemap.xml` for each new article. Keep links in shared posts tagged by platform and leave the article’s canonical URL clean.
+
 The site is pre-wired for **mangosphotobooth.com** with page title, description, social-share tags, and Google/AI-readable entity structured data (your packages, phone, hours, and the Fort Myers / Cape Coral / Naples / Marco Island / Estero / Bonita Springs service areas).
 
 Two things to upgrade when you can:

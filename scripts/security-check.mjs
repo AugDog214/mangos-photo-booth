@@ -5,6 +5,9 @@ import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root=resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const pages=['index.html',...readdirSync(root,{withFileTypes:true}).filter(d=>d.isDirectory()&&!d.name.startsWith('.')&&d.name!=='upload-api'&&existsSync(join(root,d.name,'index.html'))).map(d=>`${d.name}/index.html`)];
+for (const entry of readdirSync(join(root, 'blog'), { withFileTypes: true })) {
+  if (entry.isDirectory()) pages.push(`blog/${entry.name}/index.html`);
+}
 let bookingLinks=0;
 for(const file of pages){
   const html=readFileSync(join(root,file),'utf8');
