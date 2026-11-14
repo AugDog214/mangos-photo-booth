@@ -1,8 +1,12 @@
 # Project Status
 
+## Gallery booking button contrast, November 14, 2026
+
+Codex changed the gallery hero booking button to cream text and border on a dark translucent background. Hover and keyboard focus use a cream fill with navy text. Updated css/styles.css and the gallery stylesheet version. Focused source review confirmed a CSS-only change to the existing booking link. Verification and publication underway.
+
 ## Six-guide blog release, November 14, 2026
 
-Codex prepared the blog for the owner-authorized push to main. The guest-capacity article and metadata use “more than 50 guests” for the guest-count charge. All six guides carry their publication date in the byline and article structured data. Release verification continues after the push.
+Codex committed and pushed the six guides to main at d6695e3. GitHub Pages deployed the release in run 43647075675. The public blog returned 200 with six guide links, and the guest-capacity page returned 200 with “only to events with more than 50 guests,” a loaded cover image and the November 14 publication date. Before pushing, the static security check passed on 22 pages and 89 booking links, and local mobile and desktop browser checks passed. The website release is complete.
 
 ## Guest-count pricing clarification, November 14, 2026
 

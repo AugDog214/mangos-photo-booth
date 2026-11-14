@@ -148,7 +148,10 @@ body.bw-gallery .simg-img { filter: grayscale(1) contrast(1.05); }
 
 .btn-ghost { background: transparent; color: var(--paper); border-color: var(--line-strong); }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
-.gallery-book-btn { color: var(--gold); border-color: var(--gold); }
+.gallery-book-btn { color: #F6F4EE; border-color: #F6F4EE; background: rgba(8,10,13,.55); }
+.gallery-book-btn:hover, .gallery-book-btn:focus-visible {
+  color: #102E4B; border-color: #F6F4EE; background: #F6F4EE;
+}
 
 /* ---------- Section scaffolding ---------- */
 .section { padding: var(--section) var(--gut); position: relative; }
