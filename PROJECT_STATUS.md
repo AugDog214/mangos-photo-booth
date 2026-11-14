@@ -1,8 +1,12 @@
 # Project Status
 
+## Expanded event gallery, November 14, 2026
+
+Codex added eleven existing optimized event photos to gallery/index.html, bringing the gallery to twenty images. Nine wedding setup and guest photos and two additional group photos are interleaved with the birthday collection. Updated gallery copy and image structured data to describe the broader collection. Added descriptive alternative text and dimensions on new images. Focused static review found no executable-code or permission changes. Local checks passed across 22 pages; browser verified all 20 gallery images loaded, matching image schema, no mobile overflow and a clean console. Desktop and mobile previews inspected. Publication underway.
+
 ## Gallery booking button contrast, November 14, 2026
 
-Codex changed the gallery hero booking button to cream text and border on a dark translucent background. Hover and keyboard focus use a cream fill with navy text. Updated css/styles.css and the gallery stylesheet version. Focused source review confirmed a CSS-only change to the existing booking link. Verification and publication underway.
+Codex changed the gallery hero booking button to cream text and border on a dark translucent background. Hover and keyboard focus use a cream fill with navy text. Updated css/styles.css and the gallery stylesheet version. Focused source review confirmed a CSS-only change to the existing booking link. Static checks passed across 22 pages; mobile screenshot inspected and desktop hover checked. Commit bb01763 pushed to main and Pages run 43649057483 succeeded. The live gallery returned 200 and confirmed the new cream text and dark background. No work remains for this fix.
 
 ## Six-guide blog release, November 14, 2026
 
