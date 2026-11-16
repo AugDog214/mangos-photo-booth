@@ -1,0 +1,25 @@
+/* Holiday campaign only; shared service-page styling remains untouched. */
+.hero-holiday { height: auto; min-height: max(880px, 100svh); }
+.hero-holiday .hero-inner { padding: 215px var(--gut) 165px; }
+.hero-holiday .hero-scrim { background: linear-gradient(90deg,rgba(9,28,27,.79),rgba(9,28,27,.3) 75%),linear-gradient(0deg,rgba(9,28,27,.7),transparent 45%); }
+.hero-holiday .hero-eyebrow { color: #ffe4a2; letter-spacing: .16em; text-transform: uppercase; font-size: .75rem; }
+.hero-holiday .hero-title { font-size: var(--holiday-h1,clamp(2.4rem,4.8vw,4.6rem)); max-width: 20ch; margin: 1rem 0; line-height: 1.08; }
+.hero-holiday .hero-title span { color: #ffe4a2; }
+.holiday-subtitle { font: 500 var(--holiday-h2,clamp(1.2rem,2vw,1.8rem))/1.3 var(--sans); margin: 1.2rem 0 .8rem; }
+.holiday-description { font: 400 var(--holiday-h3,clamp(.95rem,1.2vw,1.15rem))/1.65 var(--sans); max-width: 55ch; color: #fff5df; }
+.hero-holiday .hero-inner { text-align: var(--holiday-align,left); }
+.hero-holiday .hero-inner > :is(h1,h2,h3,p) { position: relative; left: var(--holiday-x,0px); top: var(--holiday-y,0px); }
+.hero-holiday .hero-actions { margin-top: 1.6rem; }
+.snowcap { position:relative; }
+.snowcap::before { content:""; position:absolute; pointer-events:none; inset:-10px -2px auto; height:17px; background:url("../assets/holiday-snowcap.svg") center / 100% 100% no-repeat; }
+.holiday-editor { position:fixed; right:12px; bottom:12px; width:min(330px,calc(100vw - 24px)); z-index:150; padding:1rem; border-radius:12px; background:#fff8e9; color:#163e35; box-shadow:0 8px 40px #0005; max-height:60svh; overflow:auto; font:14px/1.4 sans-serif; }
+.holiday-editor label { display:block; margin:.6rem 0; }
+.holiday-editor input,.holiday-editor select { width:100%; }
+.holiday-editor button { padding:.5rem; margin:.3rem; cursor:pointer; }
+@media(max-width:768px) {
+  .hero-holiday { min-height:950px; }
+  .hero-holiday .hero-inner { padding-top:180px; padding-bottom:180px; }
+  .hero-holiday .hero-title { max-width:19ch; }
+  .hero-holiday .hero-actions { flex-direction:column; align-items:flex-start; }
+  .hero-holiday .hero-actions .btn { font-size:.68rem; max-width:100%; }
+}

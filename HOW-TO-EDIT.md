@@ -6,6 +6,21 @@ A plain-English guide for updating your site. **You don't need to know how to co
 
 ## 1. The files (what's what)
 
+### Holiday local preview (November 2026)
+
+Run a localhost static server for this repository, then open
+`http://127.0.0.1:4173/?holiday-edit=1` in the side-panel browser. The small editor
+lets you select each holiday heading and adjust its size, horizontal position
+and vertical position. Settings are local browser drafts only, not file edits
+or live publication. Export layout downloads a JSON file you can attach in chat
+to have the settings applied to source. Reset restores responsive defaults.
+Desktop/mobile can need different layouts; verify both before applying a draft.
+The editor is available only on localhost with that query parameter.
+
+Holiday campaign: `css/holiday.css`, `js/holiday.js`, homepage markup and
+`assets/hero-christmas-2026.webp`.
+In the local editor the Christmas image stays on screen until you choose another dot.
+
 | File / folder | What it holds |
 |---|---|
 | `index.html` | All the words, photos, and page sections. **This is the file you'll edit most.** |

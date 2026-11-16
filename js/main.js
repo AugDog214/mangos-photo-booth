@@ -94,7 +94,9 @@
 
     // Respect reduced-motion: don't auto-advance at all (dots still work).
     var timer = null;
-    var start = function () { if (!reduce) timer = setInterval(function () { if (!paused) show(i + 1); }, 5200); };
+    var editorPreview = ['127.0.0.1', 'localhost', '[::1]'].includes(location.hostname) &&
+      new URLSearchParams(location.search).get('holiday-edit') === '1';
+    var start = function () { if (!reduce && !editorPreview) timer = setInterval(function () { if (!paused) show(i + 1); }, hero && hero.classList.contains('hero-holiday') ? 10000 : 5200); };
     var restart = function () { if (timer) { clearInterval(timer); timer = null; } start(); };
     show(0);
     start();
